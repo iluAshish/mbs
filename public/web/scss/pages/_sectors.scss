@@ -1,0 +1,88 @@
+.sectors{
+
+  &-card{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 47%;
+    @include min(992){
+      width: 31.395%;
+
+    }
+  }
+  &-row{
+    gap: 25px 6%;
+    @include min(768){
+      gap: 40px 6%;
+    }
+    @include min(992){
+      gap: 45px 2.9%;
+    }
+    @include min(1200){
+      gap: 55px 2.9%;
+    }
+    @include min(1350){
+      gap: 62px 2.9%;
+    }
+    @include min(1440){
+      gap: 67px 2.9%;
+    }
+  }
+  &-content{
+    width: 100%;
+    @include max(767){
+      margin-top: 12px;
+    }
+    @include min(768){
+      width: 78.91%;
+
+    }
+
+  }
+  h3{
+    @include min(1440){
+      font-size: 18px;
+    }
+    @include min(1600){
+      font-size: 20px;
+    }
+    @include min(1900){
+      font-size: 22px;
+    }
+  }
+  picture{
+    background-color: $primaryLight;
+    border-radius: 6px;
+    padding: 6px;
+    width: fit-content;
+    height: fit-content;
+    @include min(1200){
+          padding: 8px;
+    }
+    @include min(1440){
+          padding: 9px;
+    }
+    img{
+      height: auto;
+      width: 28px;
+      @include min(768){
+        width: 32px;
+      }
+      @include min(992){
+        width: 34px;
+      }
+      @include min(1200){
+        width: 36px;
+      }
+      @include min(1280){
+        width: 38px;
+      }
+      @include min(1350){
+        width: 40px;
+      }
+      @include min(1440){
+        width: 42px;
+      }
+    }
+  }
+}

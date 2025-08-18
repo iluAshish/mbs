@@ -1,0 +1,772 @@
+footer {
+    margin-bottom: 30px;
+            margin-top: 48px;
+
+    @include min(1200) {
+        margin-bottom: 32px;
+                margin-top: 54px;
+    }
+
+    @include min(1280) {
+        margin-bottom: 34px;
+                margin-top: 60px;
+    }
+
+    @include min(1440) {
+        margin-bottom: 36px;
+        margin-top: 66px;
+    }
+
+    @include min(1600) {
+        margin-bottom: 38px;
+    }
+
+    @include min(1900) {
+        margin-bottom: 40px;
+    }
+
+    a {
+        &:hover {
+            color: $lavender;
+        }
+    }
+
+    .container-ctn {
+
+        background: $thirdColor;
+        border-radius: 21px;
+        padding: 25px 20px 25px 20px;
+        @include min(768){
+              padding: 45px 55.5px 28px 55.5px;
+        }
+        @include min(1200) {
+            border-radius: 23px;
+            padding: 50px 60.5px 33px 60.5px;
+        }
+
+        @include min(1280) {
+            border-radius: 25px;
+            padding: 55px 65.5px 38px 65.5px;
+        }
+
+        @include min(1440) {
+            border-radius: 27px;
+            padding: 60px 70.5px 43px 70.5px;
+        }
+
+        @include min(1600) {
+            border-radius: 29px;
+            padding: 65px 75.5px 48px 75.5px;
+        }
+
+        @include min(1900) {
+            border-radius: 31px;
+            padding: 70px 80.5px 53px 80.5px;
+        }
+    }
+
+    .footer-about {
+        width: 100%;
+        @include max(767){
+            gap: 10px;
+        }
+        @include min(1200){
+            width: 54.854%;
+
+        }
+
+            width: 100%;
+        div {
+            a {
+                margin-top: 10px;
+                margin-left: 0px;
+                @include min(768){
+                    margin-top: 16px;
+                    margin-left: 19px;
+
+                }
+                @include min(1280) {
+                    margin-top: 18px;
+                    margin-left: 21px;
+                }
+
+                @include min(1440) {
+                    margin-top: 20px;
+                    margin-left: 23px;
+                }
+
+                @include min(1600) {
+                    margin-top: 22px;
+                    margin-left: 25px;
+                }
+
+                @include min(1900) {
+                    margin-top: 24px;
+                    margin-left: 27px;
+                }
+            }
+
+            @include min(768){
+                width: 79.852%;
+
+            }
+        }
+    }
+
+    .logo {
+        width: 50%;
+        @include  min(768){
+            width: 16.655%;
+
+        }
+    }
+
+    .subscribe-form {
+        width: 100%;
+        @include max(1199){
+            margin-top: 20px;
+        }
+        @include min(1200){
+            width: 36.95%;
+        }
+
+    }
+
+    .footer-top {
+        border-bottom: 1px solid #99999A;
+        padding-bottom: 31.54px;
+        margin-bottom: 44.14px;
+
+        @include min(1280) {
+            padding-bottom: 33.54px;
+            margin-bottom: 46.14px;
+        }
+
+        @include min(1440) {
+            padding-bottom: 35.54px;
+            margin-bottom: 48.14px;
+        }
+
+        @include min(1600) {
+            padding-bottom: 37.54px;
+            margin-bottom: 52.14px;
+        }
+
+        @include min(1900) {
+            padding-bottom: 39.54px;
+            margin-bottom: 56.14px;
+        }
+    }
+
+    p,
+    a,
+    strong,
+    li {
+        color: $accentColorLight;
+    }
+
+    strong {
+        line-height: normal;
+        display: block;
+        font-weight: 600;
+        color: $white;
+        font-size: 14px;
+        margin-bottom: 16.5px;
+
+        @include min(1200) {
+            font-size: 13px;
+            margin-bottom: 16.5px;
+        }
+        @include min(1350) {
+            font-size: 15px;
+            margin-bottom: 17.5px;
+        }
+
+        @include min(1440) {
+            font-size: 16px;
+            margin-bottom: 18.5px;
+        }
+
+        @include min(1600) {
+            font-size: 18px;
+            margin-bottom: 20.5px;
+        }
+
+        @include min(1900) {
+            font-size: 20px;
+            margin-bottom: 22.5px;
+        }
+    }
+}
+
+.subscribe-form {
+    label{
+        display: flex;
+        align-items: center;
+    }
+    div {
+        border-radius: 5px;
+        border: 1px solid $accentColorLight;
+        padding: 4.5px 4px 4.5px 15px;
+       
+        margin-top: 19px;
+        @include min(1200){
+             padding: 2.5px 2px 2.5px 10px;
+        }
+        @include min(1280) {
+            padding: 3px 2.3px 3px 11px;
+            margin-top: 17px;
+        }
+
+        @include min(1440) {
+            padding: 3.77px 3px 3.77px 12px;
+            margin-top: 19px;
+        }
+
+        @include min(1600) {
+            padding: 4.77px 4px 4.77px 13px;
+            margin-top: 21px;
+        }
+
+        @include min(1900) {
+            padding: 5.77px 5px 5.77px 14px;
+            margin-top: 21px;
+        }
+    }
+
+    p {
+        line-height: 138.462%;
+    }
+
+    p,
+    input,
+    input::placeholder {
+        font-size: 13px;
+
+        @include min(1200) {
+            font-size: 12px;
+        }
+
+        @include min(1440) {
+            font-size: 13px;
+        }
+
+        @include min(1600) {
+            font-size: 14px;
+        }
+
+        @include min(1900) {
+            font-size: 15px;
+        }
+    }
+
+    .btn-theme {
+        background-color: $lavender;
+        font-size: 14px;
+
+        @include min(1200) {
+            font-size: 15px;
+            min-width: 130px;
+        }
+
+        @include min(1440) {
+            min-width: 148px;
+            font-size: 16px;
+        }
+
+        @include min(1600) {
+            min-width: 33.945%;
+            font-size: 17px;
+        }
+
+        @include min(1900) {
+            font-size: 17px;
+        }
+    }
+
+    strong {
+        margin-bottom: 4.55px;
+
+        @include min(1200) {
+            margin-bottom: 2.55px;
+        }
+
+        @include min(1440) {
+            margin-bottom: 4.55px;
+        }
+
+        @include min(1600) {
+            margin-bottom: 6.55px;
+        }
+
+        @include min(1900) {
+            margin-bottom: 8.55px;
+        }
+    }
+
+    input {
+        background: transparent;
+        outline: unset;
+        border: unset;
+        margin-left: 12px;
+        @include max(767){
+            width: 100%;
+        }
+        @include min(1200) {
+            margin-left: 10px;
+        }
+
+        @include min(1440) {
+            margin-left: 12px;
+        }
+
+        @include min(1600) {
+            margin-left: 14px;
+        }
+
+        @include min(1900) {
+            margin-left: 16px;
+        }
+
+    }
+
+    svg {
+        width: 20px;
+        height: 20px;
+
+        @include min(992) {
+            width: 22px;
+            height: 22px;
+        }
+        @include min(1200) {
+            width: 16px;
+            height: 16px;
+        }
+
+        @include min(1440) {
+            width: 18px;
+            height: 18px;
+        }
+
+        @include min(1600) {
+            width: 20px;
+            height: 20px;
+        }
+
+        @include min(1900) {
+            width: 22px;
+            height: 22px;
+        }
+    }
+}
+
+
+.footer-bottom {
+    svg {
+        width: 14px;
+        height: 14px;
+
+        @include min(1200) {
+            width: 16px;
+            height: 16px;
+        }
+
+        @include min(1440) {
+            width: 18px;
+            height: 18px;
+        }
+
+        @include min(1600) {
+            width: 20px;
+            height: 20px;
+        }
+
+        @include min(1900) {
+            width: 22px;
+            height: 22px;
+        }
+    }
+
+    ul {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 13px;
+
+        @include min(1200) {
+            gap: 11px;
+        }
+
+        @include min(1440) {
+            gap: 13px;
+        }
+
+        @include min(1600) {
+            gap: 14px;
+        }
+
+        @include min(1900) {
+            gap: 16px;
+        }
+
+        li {
+            width: 100%;
+            display: flex;
+            align-items: flex-start;
+            gap: 4px;
+
+            @include min(1440) {
+                gap: 4px;
+            }
+
+            @include min(1600) {
+                gap: 6px;
+            }
+
+            @include min(1900) {
+                gap: 8px;
+            }
+        }
+
+        span {
+            display: flex;
+        }
+
+        +strong {
+            margin-top: 25.5px;
+
+            @include min(1200) {
+                margin-top: 23.5px;
+            }
+
+            @include min(1440) {
+                margin-top: 25.5px;
+            }
+
+            @include min(1600) {
+                margin-top: 27.5px;
+            }
+
+            @include min(1900) {
+                margin-top: 29.5px;
+            }
+
+            +ul {
+                gap: 15px;
+
+                @include min(1200) {
+                    gap: 13px;
+                }
+
+                @include min(1440) {
+                    gap: 15px;
+                }
+
+                @include min(1600) {
+                    gap: 17px;
+                }
+
+                @include min(1900) {
+                    gap: 19px;
+                }
+
+                li {
+                    line-height: 20px;
+
+                    @include min(1600) {
+                        line-height: 22px;
+                    }
+
+                    @include min(1900) {
+                        line-height: 24px;
+                    }
+                }
+            }
+        }
+
+    }
+
+    li,
+    a {
+        line-height: normal;
+    }
+
+    .colums {
+        width: 100%;
+        @include min(1200){
+            width: 44.373%;
+
+        }
+
+        @include min(1440) {
+            // gap: 55px;
+        }
+
+        div {
+            &:nth-child(1) {
+                width: 30%;
+                @include min(768){
+                    width: 16.73%;
+
+                }
+            }
+
+            &:nth-child(2) {
+                width: 57%;
+                  @include min(768){
+                           width: 31.62%;
+
+                }
+            }
+
+            &:nth-child(3) {
+                width: 100%;
+                @include max(767){
+                    margin-top: 25px;
+                }
+                @include min(768){
+                    width: 31.62%;
+
+                }
+            }
+        }
+    }
+
+    .grids {
+        width: 100%;
+        justify-content: space-between;
+        @include min-max(768,1199){
+            margin-top: 40px;
+        }
+        @include max(575){
+            margin-top: 25px;
+            gap: 25px;
+        }
+        @include min(1200){
+            width: 51.061%;
+            
+        }
+        div {
+            width: 100%;
+            @include min(768){
+                width: 47%;
+
+            }
+        }
+    }
+}
+
+.copyright {
+    border-top: 1px solid #99999A;
+    margin-top: 43.36px;
+    padding-top: 12.18px;
+    @include max(1199){
+        gap: 10px;
+    }
+
+    @include min(1200) {
+        margin-top: 45.36px;
+        padding-top: 13.18px;
+    }
+
+    @include min(1440) {
+        margin-top: 47.36px;
+        padding-top: 15.18px;
+    }
+
+    @include min(1600) {
+        margin-top: 49.36px;
+        padding-top: 17.18px;
+    }
+
+    @include min(1900) {
+        margin-top: 51.36px;
+        padding-top: 19.18px;
+    }
+
+    ul,
+    .copy-text {
+        gap: 10.27px;
+        @include min(768){
+            gap: 12.27px;
+
+        }
+
+        @include min(1200) {
+            gap: 14.27px;
+        }
+
+        @include min(1440) {
+            gap: 16.27px;
+        }
+
+        @include min(1600) {
+            gap: 18.27px;
+        }
+
+        @include min(1900) {
+            gap: 20.27px;
+        }
+    }
+
+    ul {
+        display: flex;
+        @include max(767){
+            width: 100%;
+            justify-content: center;
+        }
+
+        li {
+            position: relative;
+            height: fit-content;
+                padding-left: 15.73px;
+            padding-left: 22.73px;
+
+            @include min(1200) {
+                padding-left: 24.73px;
+            }
+
+            @include min(1440) {
+                padding-left: 26.73px;
+            }
+
+            @include min(1600) {
+                padding-left: 28.73px;
+            }
+
+            @include min(1900) {
+                padding-left: 30.73px;
+            }
+
+            &::before {
+                content: '';
+                position: absolute;
+                width: 6px;
+                height: 6px;
+                background-color: #D9D9D9;
+                border-radius: 50%;
+                left: 0;
+                top: 50%;
+                transform: translateY(-50%);
+
+                @include min(1200) {
+                    width: 10px;
+                    height: 10px;
+                }
+
+                @include min(1440) {
+                    width: 10px;
+                    height: 10px;
+                }
+
+                @include min(1600) {
+                    width: 11px;
+                    height: 11px;
+                }
+
+                @include min(1900) {
+                    width: 12px;
+                    height: 12px;
+                }
+            }
+        }
+    }
+    p{
+        @include max(767){
+   
+           
+            width: 100%;
+        }
+    }
+     @include max(767){
+        p,a{
+                     text-align: center;
+             font-size: 12px;
+        }
+     }
+}
+
+.social {
+    @include max(767){
+        width: 100%;
+        text-align: center;
+    &-links{
+        justify-content: center;
+    }
+    }
+    @include max(1199){
+        order: -2;
+    }
+    + div{
+        @include max(1199){
+            width: 100%;
+            
+        
+        }
+        @include min-max(768,1199){
+            order: 2;
+        }
+    }
+    strong {
+        margin-bottom: 10.5px;
+
+        @include min(1200) {
+            margin-bottom: 10.5px;
+        }
+        @include min(1440) {
+            margin-bottom: 12.5px;
+        }
+
+        @include min(1600) {
+            margin-bottom: 14.5px;
+        }
+
+        @include min(1900) {
+            margin-bottom: 16.5px;
+        }
+    }
+
+    &-links {
+        gap: 10px;
+
+        @include min(1200) {
+            gap: 12px;
+        }
+        @include min(1440) {
+            gap: 14px;
+        }
+
+        @include min(1600) {
+            gap: 16px;
+        }
+
+        @include min(1900) {
+            gap: 18px;
+        }
+
+        a {
+            display: flex;
+
+            &:hover {
+                filter: invert(1);
+            }
+
+        }
+        svg{
+            width: 18px;
+            height: 18px;
+            @include min(1200){
+                  width: 21px;
+            height: 21px;
+            }
+            @include min(1280){
+                  width: 23px;
+            height: 23px;
+            }
+            @include min(1440){
+                  width: 25px;
+            height: 25px;
+            }
+        }
+    }
+
+}

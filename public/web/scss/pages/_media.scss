@@ -1,0 +1,501 @@
+.media {
+    .title {
+        h2 {
+            margin: 0;
+        }
+
+        span {
+            font-weight: 400;
+
+            display: block;
+        }
+    }
+    .gallery {
+    gap: 10px 1.8%;
+    margin-top: 25px;
+
+    @include min(768) {
+        margin-top: 35px;
+    }
+
+    @include min(992) {
+        margin-top: 40px;
+    }
+
+    @include min(1200) {
+        margin-top: 45px;
+        gap: 18px 1.8%;
+    }
+
+    @include min(1350) {
+        gap: 20px 1.8%;
+        margin-top: 55px;
+    }
+
+    @include min(1440) {
+        margin-top: 60px;
+    }
+
+    &-item {
+        position: relative;
+        width: 49.1%;
+
+        @include min(768) {
+            width: 32.1%;
+
+        }
+
+        @include min(1200) {
+            width: 23.65%;
+
+        }
+
+        &::before {
+            @extend .position;
+            width: 100%;
+            height: 100%;
+            left: 0;
+            bottom: 0;
+            border-radius: 10px;
+            background: linear-gradient(180deg, rgba(196, 196, 196, 0.00) 38.59%, rgba(0, 0, 0, 0.47) 80.87%);
+
+            transition: 0.5s ease all;
+        }
+
+        &::after {
+
+            @extend .position;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="21" height="20" viewBox="0 0 21 20" fill="none"><path d="M9.19956 17.0026C13.6196 17.0026 17.2028 13.4194 17.2028 8.99936C17.2028 4.57928 13.6196 0.996094 9.19956 0.996094C4.77947 0.996094 1.19629 4.57928 1.19629 8.99936C1.19629 13.4194 4.77947 17.0026 9.19956 17.0026Z" stroke="%23596075" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M19.2036 19.0053L14.8518 14.6535M9.19947 6V12.0025M6.19824 9.00123H12.2007" stroke="%23596075" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>');
+            background-size: 18px;
+            background-repeat: no-repeat;
+            background-color: rgba(255, 255, 255, 0.66);
+            ;
+            right: 19px;
+            bottom: 13px;
+            background-position: center;
+            transform: scale(0);
+            transition: 0.3s ease all;
+        }
+
+        &:hover {
+            img {
+                filter: contrast(0.5);
+            }
+
+            &::before {
+                height: 0%;
+                transition: 0.3s ease all;
+            }
+
+            &::after {
+                transition: 0.3s ease all;
+                transform: scale(1);
+            }
+        }
+    }
+
+    img {
+        width: 100%;
+        object-fit: cover;
+        border-radius: 10px;
+        height: 178px;
+
+        @include min(576) {
+            height: 248px;
+        }
+
+        @include min(768) {
+            height: 248px;
+        }
+
+        @include min(992) {
+            height: 250px;
+        }
+
+        @include min(1350) {
+            height: 270px;
+        }
+
+        @include min(1440) {
+            height: 298px;
+        }
+
+        @include min(1600) {
+            height: 328px;
+        }
+
+        @include min(1900) {
+            height: 388px;
+        }
+
+    }
+
+    .caption {
+        position: absolute;
+        color: $white;
+        font-weight: 600;
+        line-height: 90%;
+        font-size: 13px;
+        left: 0px;
+        bottom: 10px;
+
+        @include max(575) {
+            width: 100%;
+            text-align: center;
+        }
+
+        @include min(768) {
+            font-size: 14px;
+            bottom: 20px;
+        }
+
+        @include min(992) {
+            bottom: 29px;
+            font-size: 15px;
+        }
+
+        @include min(1200) {
+            left: 26px;
+            font-size: 16px;
+        }
+
+        @include min(1350) {
+            font-size: 18px;
+        }
+
+        @include min(1440) {
+            font-size: 20px;
+        }
+    }
+}
+}
+
+.filter-dropdown {
+    margin-top: 20px;
+    border: 2px solid $secondaryColor;
+    padding: 5px 15px;
+    border-radius: 30px;
+    color: $primaryColor;
+
+    &:focus,
+    &:focus-within {
+        border: 2px solid $secondaryColor;
+
+    }
+}
+
+.filter-buttons {
+    width: 84.536%;
+    display: flex;
+    gap: 28px;
+    position: relative;
+
+    @include min(1440) {
+        gap: 28px;
+    }
+
+    @include min(1600) {
+        gap: 30px;
+    }
+
+    @include min(1900) {
+        gap: 33px;
+    }
+
+    &::before {
+        content: '';
+        border-radius: 80px;
+        width: 100%;
+        height: 3px;
+        background: #DADDE4;
+        position: absolute;
+        bottom: 0;
+
+        @include min(1600) {
+            height: 4px;
+        }
+
+    }
+
+    button {
+        position: relative;
+        padding-bottom: 10px;
+        display: flex;
+        align-items: center;
+        gap: 4px;
+        font-size: 16px;
+
+        @include min(1440) {
+            font-size: 16px;
+        }
+
+        @include min(1600) {
+            font-size: 18px;
+        }
+
+        @include min(1900) {
+            font-size: 20px;
+        }
+
+        span {
+            background-color: $secondaryColor;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 20px;
+            height: 20px;
+            font-weight: 600;
+            line-height: normal;
+            border-radius: 3px;
+            font-size: 10px;
+
+            @include min(1600) {
+                width: 22px;
+                height: 22px;
+                font-size: 12px;
+            }
+
+            @include min(1900) {
+                font-size: 14px;
+                width: 24px;
+                height: 24px;
+            }
+
+
+        }
+
+        &::after {
+            @extend .position;
+            width: 0;
+            height: 3px;
+            bottom: 0;
+            background-color: $primaryColor;
+
+            @include min(1600) {
+                height: 4px;
+            }
+        }
+
+        &.active {
+            color: $primaryColor;
+            font-weight: 600;
+
+            &::after {
+                width: 100%;
+            }
+
+            path {
+                fill: $primaryColor;
+            }
+
+            span {
+                font-weight: 600;
+                background-color: $primaryColor;
+                color: $white;
+
+            }
+
+        }
+
+        svg {
+            height: auto;
+            width: 18px;
+
+            @include min(1440) {
+                width: 18px;
+            }
+
+            @include min(1600) {
+                width: 20px;
+            }
+
+            @include min(1900) {
+                width: 22px;
+            }
+
+        }
+    }
+}
+
+
+
+
+
+// ===============popup=============================
+.popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(25, 33, 60, 0.53);
+
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+.close-btn {
+    cursor: pointer;
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 35px;
+    width: 35px;
+    @include min(768){
+           top: 30px;
+    right: 30px;
+            height: 50px;
+    width: 50px;
+    }
+    &:hover {
+        background-color: $primaryColor;
+
+        svg {
+            filter: invert(1);
+        }
+    }
+}
+
+.popup-caption {
+    color: $headingColor;
+    font-size: 15px;
+    line-height: normal;
+    @include min(768){
+        font-size: 18px;
+    }
+    @include min(1440){
+        font-size: 20px;
+    }
+}
+
+.popup-card {
+
+    border-radius: 20px;
+    background: #FFF;
+    padding: 10px 10px 25px;
+    width: 85%;
+
+    @include min(768) {
+            padding: 20px 20px 35px;
+        width: 550px;
+
+
+    }
+
+    @include min(992) {
+        width: 580px;
+
+
+    }
+
+    @include min(1200) {
+        width: 580px;
+
+
+    }
+
+    @include min(1350) {
+        width: 626px;
+
+
+    }
+
+    @include min(1440) {
+        width: 746px;
+
+    }
+
+    @include min(1600) {
+        width: 760px;
+
+    }
+
+    @include min(1900) {
+        width: 780px;
+
+    }
+
+    img {
+        object-fit: cover;
+        width: 100%;
+        border-radius: 20px;
+        height: 270px;
+
+        @include min(768) {
+            height: 380px;
+        }
+
+        @include min(992) {
+            height: 400px;
+        }
+
+        @include min(1200) {
+            height: 450px;
+        }
+
+        @include min(1350) {
+            height: 520px;
+        }
+
+        @include min(1440) {
+            height: 576px;
+        }
+
+        @include min(1600) {
+            height: 590px;
+        }
+
+        @include min(1900) {
+            height: 610px;
+        }
+
+    }
+
+
+}
+
+img.popup-image {
+    margin-bottom: 25px;
+    @include min(768){
+            margin-bottom: 38px;
+
+    }
+}
+
+.popup-nav {
+    gap: 15px;
+
+    span {
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+
+        &:hover {
+            color: $primaryColor;
+        }
+    }
+
+    svg {
+        height: auto;
+        width: 18px;
+
+        @include min(1600) {
+            width: 22px;
+        }
+
+        @include min(1900) {
+            width: 26px;
+        }
+    }
+}

@@ -1,0 +1,118 @@
+<?php
+namespace Database\Seeders;
+
+use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
+
+class CategoriesTableSeeder extends Seeder
+{
+    public function run()
+    {
+        // Replace the data with your actual values
+        $data = [
+            [
+                'parent_id' => null,
+                'title' => 'Category 1',
+                'short_description' => 'Short description for Category 1',
+                'description' => 'Full description for Category 1',
+                'short_url' => 'category-1',
+                'banner_image' => 'banner-image-url-1',
+                'banner_image_webp' => 'banner-image-webp-url-1',
+                'banner_image_attribute' => 'Banner Image Attribute 1',
+                'thumbnail_image' => 'thumbnail-image-url-1',
+                'thumbnail_image_webp' => 'thumbnail-image-webp-url-1',
+                'thumbnail_image_attribute' => 'Thumbnail Image Attribute 1',
+                'featured_image' => 'featured-image-url-1',
+                'featured_image_webp' => 'featured-image-webp-url-1',
+                'featured_image_attribute' => 'Featured Image Attribute 1',
+                'display_to_home' => 'Yes',
+                'meta_title' => 'Meta Title 1',
+                'meta_description' => 'Meta Description 1',
+                'meta_keyword' => 'Meta Keyword 1',
+                'other_meta_tag' => 'Other Meta Tag 1',
+                'sort_order' => 1,
+                'status' => 'Active',
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+            [
+                'parent_id' => null,
+                'title' => 'Category 2',
+                'short_description' => 'Short description for Category 2',
+                'description' => 'Full description for Category 2',
+                'short_url' => 'category-2',
+                'banner_image' => 'banner-image-url-2',
+                'banner_image_webp' => 'banner-image-webp-url-2',
+                'banner_image_attribute' => 'Banner Image Attribute 2',
+                'thumbnail_image' => 'thumbnail-image-url-2',
+                'thumbnail_image_webp' => 'thumbnail-image-webp-url-2',
+                'thumbnail_image_attribute' => 'Thumbnail Image Attribute 2',
+                'featured_image' => 'featured-image-url-2',
+                'featured_image_webp' => 'featured-image-webp-url-2',
+                'featured_image_attribute' => 'Featured Image Attribute 2',
+                'display_to_home' => 'Yes',
+                'meta_title' => 'Meta Title 2',
+                'meta_description' => 'Meta Description 2',
+                'meta_keyword' => 'Meta Keyword 2',
+                'other_meta_tag' => 'Other Meta Tag 2',
+                'sort_order' => 2,
+                'status' => 'Active',
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+            [
+                'parent_id' => null,
+                'title' => 'Category 3',
+                'short_description' => 'Short description for Category 3',
+                'description' => 'Full description for Category 3',
+                'short_url' => 'category-3',
+                'banner_image' => 'banner-image-url-3',
+                'banner_image_webp' => 'banner-image-webp-url-3',
+                'banner_image_attribute' => 'Banner Image Attribute 3',
+                'thumbnail_image' => 'thumbnail-image-url-3',
+                'thumbnail_image_webp' => 'thumbnail-image-webp-url-3',
+                'thumbnail_image_attribute' => 'Thumbnail Image Attribute 3',
+                'featured_image' => 'featured-image-url-3',
+                'featured_image_webp' => 'featured-image-webp-url-3',
+                'featured_image_attribute' => 'Featured Image Attribute 3',
+                'display_to_home' => 'Yes',
+                'meta_title' => 'Meta Title 3',
+                'meta_description' => 'Meta Description 3',
+                'meta_keyword' => 'Meta Keyword 3',
+                'other_meta_tag' => 'Other Meta Tag 3',
+                'sort_order' => 2,
+                'status' => 'Active',
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+            [
+                'parent_id' => null,
+                'title' => 'Category 4',
+                'short_description' => 'Short description for Category 4',
+                'description' => 'Full description for Category 4',
+                'short_url' => 'category-4',
+                'banner_image' => 'banner-image-url-4',
+                'banner_image_webp' => 'banner-image-webp-url-4',
+                'banner_image_attribute' => 'Banner Image Attribute 4',
+                'thumbnail_image' => 'thumbnail-image-url-4',
+                'thumbnail_image_webp' => 'thumbnail-image-webp-url-4',
+                'thumbnail_image_attribute' => 'Thumbnail Image Attribute 4',
+                'featured_image' => 'featured-image-url-4',
+                'featured_image_webp' => 'featured-image-webp-url-4',
+                'featured_image_attribute' => 'Featured Image Attribute 4',
+                'display_to_home' => 'Yes',
+                'meta_title' => 'Meta Title 4',
+                'meta_description' => 'Meta Description 4',
+                'meta_keyword' => 'Meta Keyword 4',
+                'other_meta_tag' => 'Other Meta Tag 4',
+                'sort_order' => 2,
+                'status' => 'Active',
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+            // Add more entries as needed
+        ];
+
+        DB::table('categories')->insert($data);
+    }
+}

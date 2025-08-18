@@ -1,0 +1,175 @@
+.btn{
+  &.commonBtn{
+
+    position: relative;
+    &.bgLinear{
+      &::before{
+        background: linear-gradient(97deg, #8A0CE1 0.11%, #5E0C9E 50%, #320064 99.89%);
+      }
+    }
+    &::before,&::after{
+      @extend .position;
+      height: 100%;
+      top:0;
+      left: 0;
+      z-index: 0;
+    }
+    &::before{
+      width: 100%;
+    }
+    &::after{
+      width: 0;
+
+      transition: 0.5s ease all;
+    }
+    &:hover{
+      &::after{
+        background: #8A0CE1;
+        width: 100%;
+        transition: 0.5s ease all;
+      }
+    }
+    p,span{
+      font-family: Inter;
+      font-weight: 600;
+      z-index: 1;
+      color: $white;
+      position: relative;
+  
+    }
+  }
+  &.themeBtn{
+    position: relative;
+    width: fit-content;
+    color: $white;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 49px;
+    gap: 25px;
+    padding: 0px 15px 0px 20px;
+    @include min(768){
+        height: 58px;
+        gap: 42px;
+        padding: 0px 19px 0px 24px;
+    }
+    @include min(992){
+        height: 60px;
+        gap: 45px;
+        padding: 0px 20px 0px 26px;
+    }
+    @include min(1200){
+        height: 62px;
+        gap: 48px;
+        padding: 0px 22px 0px 28px;
+    }
+    @include min(1360){
+        height: 66px;
+        gap: 50px;
+        padding: 0px 24px 0px 29px;
+    }
+    @include min(1440){
+        height: 69px;
+        gap: 54px;
+        padding: 0px 26px 0px 31px;
+    }
+    @include min(1600){
+        height: 71px;
+        gap: 58px;
+        padding: 0px 29px 0px 33px;
+    }
+    @include min(1900){
+        height: 73px;
+        gap: 60px;
+        padding: 0px 30.5px 0px 35px;
+    }
+    svg{
+        transform: translateX(0px);
+        transition: 0.5s ease all;
+    }
+    &::before,&::after{
+        @extend .position;
+        height: 100%;
+        top:0;
+        left: 0;
+        z-index: -1;
+      }
+      &::before{
+        width: 100%;
+        background: linear-gradient(97deg, #8B0CE0 0.11%, #5E0C9E 50.5%, #340067 99.89%);
+    }
+      &::after{
+        width: 0;
+        transition: 0.5s ease all;
+      }
+      &:hover{
+        &::after{
+          background: #8A0CE1;
+          width: 100%;
+          transition: 0.5s ease all;
+        }
+        svg{
+            transform: translateX(-15px);
+            transition: 0.5s ease all;
+        }
+      }
+  }
+  svg{
+    height: auto;
+    width: 20px;
+    @include min(768){
+        width: 16px;
+    }
+    @include min(1200){
+        width: 18px;
+    }
+    @include min(1360){
+        width: 19px;
+    }
+    @include min(1600){
+        width: 20px;
+    }
+  }
+}
+
+.btn-normal{
+  height: fit-content;
+  display: block;
+    width: fit-content;
+      font-weight: 500;
+  
+      color: $secondaryColor;
+      position: relative;
+      &::after{
+        @extend .position;
+        width: 100%;
+        height: 1px;
+        background-color: $secondaryColor;
+        bottom: 0;
+        left: 0;
+        @include min(1200){
+          bottom: 5px;
+        }
+      }
+      &::before{
+        z-index: 1;
+        transition: 0.5s ease all;
+        @extend .position;
+        width: 0%;
+        height: 1px;
+        background-color: $yellow;
+        bottom: 0;
+        left: 0;
+        @include min(1200){
+          bottom: 5px;
+        }
+      }
+      &:hover{
+        &::before{
+          width: 100%;
+           transition: 0.5s ease all
+        }
+      }
+    
+  }

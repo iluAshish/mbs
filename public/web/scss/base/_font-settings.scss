@@ -1,0 +1,104 @@
+h1,.h1,
+h2,.h2,
+h3,
+h4,
+h5,
+h6 {
+  color: $headingColor;
+  font-weight: 600;
+    line-height:  normal;
+}
+h2 span,h1 span{
+  line-height: normal;
+}
+h1,.h1{
+ 
+  font-size: 22px;
+
+  @include min(768) {
+    font-size: 27px;
+  }
+  @include min(992) {
+    font-size: 34px; 
+   }
+  @include min(1200) {
+    font-size: 45px;
+  }
+  @include min(1360) {
+    font-size: 50px;
+  }
+  @include min(1440) {
+    font-size:56px;
+  }
+  @include min(1600){
+    font-size: 66px;
+  }
+  @include min(1900){
+    font-size: 80px;
+  }
+}
+
+h2,.h2,
+h2 span ,.h2 span{
+
+
+  font-size: 24px;
+
+  @include min(768) {
+    font-size: 26px;
+  }
+  @include min(992) {
+    font-size: 28px;
+  }
+  @include min(1200) {
+    font-size: 30px;
+  }
+  @include min(1360) {
+    font-size: 32px;
+  }
+  @include min(1440) {
+    font-size: 34px;
+  }
+  @include min(1600) {
+    font-size: 40px;
+  }
+  @include min(1900) {
+    font-size: 48px;
+  }
+  // @include min(1600) {
+  //   font-size: 49px;
+  // }
+  // @include min(1900) {
+  //   font-size: 55px;
+  // }
+}
+
+h3,
+.h3 {
+  font-weight: 500;
+
+  font-size: 16px;
+  line-height: 100%;
+
+  @include min(992) {
+    font-size: 17px;
+  }
+  @include min(1280) {
+    font-size: 18px;
+
+  }
+
+  @include min(1440) {
+    font-size: 20px;
+  }
+  @include min(1600){
+    font-size: 25px;
+  }
+  @include min(1900){
+    font-size: 30px;
+  }
+
+}
+p{
+  margin-bottom: 0;
+}

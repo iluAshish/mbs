@@ -1,0 +1,566 @@
+.top-header {
+    padding: 10px 0px 10px 0px;
+    z-index: 999;
+    position: relative;
+       @include max(767){
+            display: none!important;
+        }
+    @include min(768){
+          padding: 10px 0px 10px 0px;
+  
+    }
+    @include min(1200){
+            padding: 19.09px 0px 19.09px 0px;
+    }
+    @include min(1600){
+            padding: 20px 0px 20px 0px;
+    }
+
+
+    >div>.d-flex {
+        max-width:100%;
+        margin-left: auto;
+        @include min(768){
+                max-width: 85%;
+        }
+        @include min(1440){
+            max-width: 86.463%;
+
+        }
+        @include min(1921){
+            // max-width: 86.583%;
+
+        }
+    }
+
+    .country {
+        gap: 17px;
+        @include min(1900){
+            gap: 25px;
+        }
+        img{
+            height: auto;
+            margin-right: 8px;
+            @include min(1600){
+                width: 35px;
+            }
+            @include min(1900){
+                width: 40px;
+            }
+        }
+
+        a {
+            color: $headingColor;
+        }
+    }
+}
+
+header {
+ + picture {
+    position: absolute;
+    top: 22px;
+    z-index: 0;
+    img{
+        width: 100%;
+        height: auto;
+    }
+}
+    transition: 0.5s ease all;
+    position: relative;
+    z-index: 9999;
+    @include max(767){
+        &.scrolled{
+           nav{
+             align-items: center;
+           }
+        }
+    }
+    .main-header {
+        top: 3px;
+        position: fixed;
+        width: 100%;
+        z-index: 99;
+        @include min(768){
+                  top: 35px;
+            padding-right: 20px;
+        }
+        @include min(992){
+                  top: 29px;
+            padding-right: 25px;
+        }
+        @include min(992){
+            padding-right: 25px;
+        }
+        @include min(1200){
+            padding-right: 30px;
+               top: 33px;
+        }
+    
+        @include min(1600){
+                   top: 36px;
+
+        }
+        @include min(1900){
+                top: 39px;
+        }
+
+        a.brand {
+            width: 90px;
+            @include min(768){
+                         width: 11.54%;
+
+                    transform: translateX(-15px);
+            }
+            @include min(1600){
+                    transform: translateX(-27px);
+            }
+
+            img {
+                width: 100%;
+                height: auto;
+            }
+        }
+
+        nav {
+            display: flex;
+          
+            justify-content: end;
+            
+            width: 80.5%;
+
+            @include max(767){
+                margin-top: 8px;
+            }
+            @include min(768){
+                  align-items: center;
+                margin-top: 22px;
+                border-radius: 5px;
+    
+                width: fit-content;
+              
+                        padding:5px 5px 5px 20px;   
+            }
+            @include max(1199){
+                gap: 20px;
+            }
+            @include min(1200){
+                            background-color: $white;
+            justify-content: space-between;
+              width: 87.579%;
+
+            }
+            @include min(1280){
+                     padding: 6px 6px 6px 24px;
+            }
+            @include min(1440){
+                        padding: 8px 8px 8px 28px;
+                //  width: 84.2%;
+                    width: 86.579%;
+            }
+            @include min(1600){
+                width: 85.9%;
+                       padding: 10px 10px 10px 30px;
+            }
+            @include min(1900){
+     
+                       padding: 12px 12px 12px 35px;
+            }
+            ul {
+                gap: 33px;
+                @include min(1200){
+                    gap: 20px;
+                }
+                @include min(1280){
+                    gap: 26px;
+                }
+                @include min(1440){
+                    gap: 33px;
+                }
+                @include min(1600){
+                    gap: 45px;
+                }
+                @include min(1900){
+                    gap: 49px;
+                }
+                a {
+                    font-weight: 400;
+                    color: $headingColor;
+    
+                    &:hover,&.active  {
+                        color: $primaryColor;
+                  
+                    }
+                }
+            }
+
+        }
+    }
+
+    .contact-details {
+     
+        gap: 18px;
+        @include min(1200){
+            gap: 20px;
+        }
+        @include min(1440){
+            gap: 24px;
+        }
+        @include min(1600){
+            gap: 30px;
+        }
+        @include min(1900){
+            gap: 35px;
+        }
+
+        div {
+            display: flex;
+            align-items: center;
+
+            a {
+                color: $headingColor;
+                position: relative;
+                font-size: 14px;
+                line-height: 16px;
+                @include min(1600){
+                    font-size: 16px;
+                }
+                @include min(1900){
+                    font-size: 18px;
+                }
+
+                +a {
+                    &::after {
+                        // @extend .psition;
+                        position: absolute;
+                        content: '|';
+                        // width: 1px;
+                        // height: 100%;
+                        // background-color: $headingColor;
+                        left: 0;
+                    }
+
+                    padding-left: 10px;
+                    margin-left: 10px;
+                    @include min(1600){
+                        
+                    padding-left: 12px;
+                    margin-left: 12px;
+                    }
+                    @include min(1600){
+                        
+                    padding-left: 14px;
+                    margin-left: 14px;
+                    }
+                }
+
+                &:hover {
+                    color: $primaryColor;
+                }
+            }
+        }
+
+        svg {
+            margin-right: 5px;
+            height: auto;
+            @include min(1600){
+                width: 18px;
+            }
+            @include min(1900){
+                    margin-right:8px;
+                width: 23px;
+            }
+        }
+    }
+}
+
+// .mega {
+//         box-shadow: 0px 3px 2px rgba(0, 0, 0, 0.1803921569);
+//     background-color: $white;
+//     min-width: 672px;
+//     position: absolute;
+//     z-index: 310;
+//     width: fit-content;
+//     gap: 10px;
+//     top: 20px;
+//     width: fit-content;
+//     display: none;
+//     padding: 20px 0px 0px 0px;
+//     border-radius: 5px;
+
+// }
+
+.drop-downs {
+    position: relative;
+    padding-right: 20px;
+    @include min(1600){
+        padding-right: 25px;
+    }
+    @include min(1900){
+        padding-right: 30px;
+    }
+
+    &::after {
+        @extend .position;
+        background: url('data:image/svg+xml,<svg width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0.431969 1.13119C0.596056 0.967151 0.818576 0.875 1.05059 0.875C1.28261 0.875 1.50513 0.967151 1.66922 1.13119L6.00047 5.46244L10.3317 1.13119C10.4967 0.9718 10.7178 0.883605 10.9472 0.885598C11.1766 0.887592 11.3961 0.979615 11.5583 1.14185C11.7205 1.30408 11.8126 1.52354 11.8146 1.75296C11.8166 1.98238 11.7284 2.20341 11.569 2.36844L6.61909 7.31831C6.45501 7.48235 6.23249 7.5745 6.00047 7.5745C5.76845 7.5745 5.54593 7.48235 5.38184 7.31831L0.431969 2.36844C0.267932 2.20435 0.175781 1.98183 0.175781 1.74981C0.175781 1.51779 0.267932 1.29527 0.431969 1.13119Z" fill="%23414A66"/></svg>');
+        width: 12px;
+        height: 12px;
+        top: 46%;
+        transform: translateY(-50%);
+        right: 0;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: bottom right;
+        @include min(1440){
+            width: 14px;
+            height: 14px;
+        }
+        @include min(1900){
+            width: 16px;
+            height: 16px;
+        }
+    }
+
+    &:hover {
+        .product-sidebar {
+            display: block;
+
+           
+        }
+    }
+}
+
+.navbar-toggler {
+    background: #2e3192;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex
+;
+    align-items: center;
+}
+
+.scrolled{
+    .main-header{
+        padding-top: 10px;
+        padding-bottom: 10px;
+        background-color: #fff;
+                padding-right: 0;
+            top: 0;
+            transition: 0.8s ease all;
+          a.brand {
+            width: 60px;
+            transition: 0.5s ease all;
+            transform: translateX(0);
+            @include min(768){
+                      width: 80px;
+
+                  }
+        }
+        nav{
+            margin-top: 0;
+         
+            
+         
+        }
+    }
+}
+
+.mobDropDown {
+  position: relative;
+  button {
+    background-color: $primaryColor;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 27px;
+    height: 27px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    svg{
+      transform: rotate(0deg);
+      transition: transform 0.5s ease;
+    }
+    &.show{
+      svg{
+        transition: transform 0.5s ease;
+        transform: rotate(180deg);
+      }
+
+    }
+  }
+  .dropdown-menu {
+    position: unset !important;
+    transform: translate(0) !important;
+    border: unset;
+    padding-left: 25px;
+    background: unset;
+    li {
+      margin-bottom: 10px;
+    }
+  }
+}
+.submenu{
+    > ul{
+        padding-left:20px}                  
+    }
+
+body.modal-open header {
+    z-index: 999;
+    transition: 0.5s ease all;
+}
+
+header{
+    .product-menu{
+        background: #FFF;
+
+        padding: 28px;
+        width: 47.323%;
+      
+    }
+    .top-brands{
+             padding: 28px;
+        width: 52.6%;
+    }
+.product-sidebar {
+      p {
+        color: $headingColor;
+        line-height: normal;
+        padding-bottom: 13px;
+		margin-bottom: 17px;
+		color: #333;
+        border-bottom: 1px solid rgba(129, 141, 166, 0.22);
+	}
+    padding-top: 13px;
+    @include min(1440){
+            padding-top: 18px;
+    }
+    position: absolute;
+    width: 672px;
+	// padding: 20px;
+    @include min(1440){
+          width: 672px;
+    }
+    @include min(1600){
+          width: 700px;
+    }
+    @include min(1900){
+          width: 800px;
+    }
+    top: 23px;
+    display: none;
+    border-radius: 0px 0px 12px 12px;
+    overflow: hidden;
+    .d-flex{
+        	background: #f7f8fc;
+    }
+	.icon{
+        display: flex;
+        svg{
+            height: auto;
+           width:18px;
+
+        }
+    }
+}
+.accordion-item {
+
+	overflow: hidden;
+border-radius: 5px!important;
+background: rgba(217, 217, 217, 0.22);
+    border: unset;
+	&.active {
+        button{
+            color: $primaryColor;
+            path{
+                stroke: $primaryColor;
+            }
+        }
+		.submenu {
+			display: block;
+		}
+		.accordion-toggle {
+			.arrow {
+				transform: rotate(180deg);
+			}
+		}
+	}
+    + div{
+        margin-top: 10px;
+    }
+}
+.accordion-toggle {
+    
+    gap: 8px;
+	width: 100%;
+	padding: 6px 12px;
+	background: none;
+	border: none;
+	outline: none;
+ background: none;
+	font-size: 13px;
+	display: flex;
+	cursor: pointer;
+	  position: relative;
+      &::after {
+    content: "";
+    position: absolute;
+    top: 35%;
+
+    right: 13px;
+    width: 14px;
+    height: 14px;
+    background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M1.43197 4.63143C1.59606 4.4674 1.81858 4.37524 2.05059 4.37524C2.28261 4.37524 2.50513 4.4674 2.66922 4.63143L7.00047 8.96268L11.3317 4.63143C11.4967 4.47204 11.7178 4.38385 11.9472 4.38584C12.1766 4.38784 12.3961 4.47986 12.5583 4.64209C12.7205 4.80432 12.8126 5.02378 12.8146 5.25321C12.8166 5.48263 12.7284 5.70366 12.569 5.86868L7.61909 10.8186C7.45501 10.9826 7.23249 11.0747 7.00047 11.0747C6.76845 11.0747 6.54593 10.9826 6.38184 10.8186L1.43197 5.86868C1.26793 5.7046 1.17578 5.48208 1.17578 5.25006C1.17578 5.01804 1.26793 4.79552 1.43197 4.63143Z" fill="%23414A66"/></svg>');
+    background-size: contain;
+    background-repeat: no-repeat;
+    transition: transform 0.3s ease;
+  }
+}
+.accordion-item.active .accordion-toggle::after {
+  transform: rotate(180deg);
+}
+.submenu {
+	list-style: none;
+	margin: 0;
+	padding: 0 0px 0px 14px;
+	display: none;
+    max-height: 139px;
+    overflow-y: auto;
+    direction:rtl;
+    margin-left: 33px;
+    margin-bottom: 13px;
+    &::-webkit-scrollbar {
+        width: 2px;
+    }
+  &::-webkit-scrollbar-thumb{
+    background: $headingColor;
+  }
+    li{
+        +li{
+            margin-top: 14px;
+        }
+    }
+    li,a{
+        line-height: normal;
+        font-size: 13px;
+       
+    }
+	
+}
+}
+
+.brands-grid {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 10px;
+	picture {
+        text-align: center;
+            width: 48%;
+		background: #fff;
+		border-radius: 8px;
+		padding: 16px 17px;
+        height: auto;
+		box-sizing: border-box;
+	}
+}

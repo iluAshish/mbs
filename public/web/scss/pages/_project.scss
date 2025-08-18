@@ -1,0 +1,518 @@
+.project {
+   &-row{
+     align-items: stretch;
+     gap: 20px 3%;
+     @include min(576){
+       gap: 22px 3%;
+     }
+     @include min(768){
+       gap: 25px 3%;
+     }
+     @include min(992){
+       gap: 30px 3%;
+     }
+     @include min(1200){
+       gap: 33px 3%;
+     }
+     @include min(1350){
+       gap: 36px 3%;
+     }
+     @include min(1440){
+       gap: 38px 3%;
+     }
+   }
+  &-card {
+    display: flex;
+    flex-direction: column;
+    border-radius: 20px;
+    border: 1px solid #E2E2F0;
+    background: #FFF;
+    width: 100%;
+    @include min(768){
+       width: 48.4%;
+    }
+    @include min(1200){
+      width: 31.287%;
+
+    }
+    h3{
+      font-size: 16px;
+      color: #323C59;
+      @include min(1600){
+        font-size: 18px;
+      }
+      @include min(1900){
+        font-size: 20px;
+      }
+    }
+  }
+
+  &-details {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 14px;
+    @include min(1200){
+    padding: 16px;
+  }
+    @include min(1350){
+    padding: 18px;
+  }
+    @include min(1440){
+    padding: 20px;
+  }
+    @include min(1600){
+    padding: 22px;
+  }
+    @include min(1900){
+    padding: 26px;
+  }
+  .description{
+    margin-bottom: 18px;
+    line-height: 157.143% ;
+  }
+  }
+
+  &-image {
+    position: relative;
+    img{
+         width: 100%;
+        height: auto;
+    }
+    .logo{
+      position: absolute;
+      bottom: 5px;
+      right: 5px;
+      width: 31.319%;
+      @include min(1600){
+              bottom: 7px;
+      right: 7px;
+      }
+      @include min(1900){
+              bottom: 9px;
+      right: 9px;
+      }
+      img{
+        border-radius: 5px;
+     
+
+      }
+    }
+    >picture
+    img {
+      border-radius: 20px 20px 0px 0px;
+    }
+  }
+  .btn-theme{
+    margin-top: auto;
+  }
+  .country{
+    gap: 8px;
+    width: 100%;
+    img{
+      width: 18px;
+      height: 18px;
+      @include min(1900){
+              width: 22px;
+             height: 22px;
+      }
+    }
+  }
+}
+
+
+
+// ========================Project Detais=======================
+
+
+.projects-details{
+  .slick-nav{
+    width: fit-content;
+    gap: 15px;
+
+    div{
+          width: fit-content;
+    height: fit-content;
+    }
+  }
+  .projects-slider-container{
+
+    img{
+      width: 100%;
+      height: auto;
+    }
+    width: 100%;
+    @include min(992){
+      width: 40.47%;
+      
+    }
+    img,picture{
+      border-radius: 20px;
+    }
+  }
+  .description{
+    width: 100%;
+    @include max(991){
+      order: -1;
+      margin-bottom: 30px;
+    }
+    @include min(992){
+      width: 56.5%;
+
+    }
+    > picture{
+      width: 21.698%;
+      margin-bottom: 11px;
+      img{
+        width: 100%;
+        height: auto;
+      }
+    }
+    p,div,li{
+      line-height: 162.5% ;
+      font-weight: 400;
+
+      @include min(1200){
+             font-size: 13px;
+      }
+      @include min(1350){
+             font-size: 14px;
+      }
+      @include min(1440){
+             font-size: 16px;
+      }
+      @include min(1600){
+        font-size: 18px;
+      }
+      @include min(1900){
+        font-size: 20px;
+      }
+    }
+    h2{
+      margin-bottom: 12px;
+    }
+    ul,p+p{
+      margin-top: 15px;
+      @include min(1200){
+        margin-top: 18px;
+      }
+      @include min(1350){
+        margin-top: 20px;
+      }
+      @include min(1440){
+        margin-top: 25px;
+      }
+      @include min(1600){
+        margin-top: 30px;
+      }
+      @include min(1900){
+        margin-top: 33px;
+      }
+    }
+    .project-info{
+      margin-bottom: 10px;
+      @include min(992){
+        margin-bottom: 15px;
+      }
+      @include min(1200){
+        margin-bottom: 18px;
+      }
+      @include min(1350){
+        margin-bottom: 22px;
+      }
+      @include min(1440){
+        margin-bottom: 24px;
+      }
+    }
+    .project-info{
+      display: flex;
+      align-items: center;
+      gap: 27px;
+      div{
+        display: flex;
+        align-items: center;
+        gap:8px;
+      }
+    }
+
+  }
+  .slick-list{
+         border-radius: 20px;
+                 margin-bottom: 20px;
+    @include min(1200){
+      margin-bottom: 25px;
+    }
+    @include min(1440){
+      margin-bottom: 27px;
+    }
+  }
+  .slick-nav{
+    position: unset;
+    margin: auto;
+    div{
+      color: #B5B7BD;
+      &:hover,&:focus,&:focus-within{
+        color: $headingColor;
+      }
+    }
+  }
+  .heighlights {
+    margin-top: 22px;
+    gap: 10px 2.5%;
+    @include min(768){
+      gap: 10px 1.8%;
+          margin-top: 25px;
+    }
+    @include min(992){
+      gap:10px 2%;
+          margin-top: 28px;
+    }
+    @include min(1200){
+      gap: 10px 3%;
+          margin-top: 30px;
+    }
+    @include min(1350){
+      gap:10px 3.3%;
+          margin-top: 33px;
+    }
+    @include min(1440){
+      gap: 10px 3.5%;
+          margin-top: 38px;
+    }
+    img{
+      width: 100%;
+      height: auto;
+    }
+    picture{
+      width: 26px;
+      @include min(768){
+        width: 30px;
+      }
+      @include min(992){
+        width: 22px;
+      }
+      @include min(1200){
+        width: 24px;
+      }
+      @include min(1350){
+        width: 26px;
+      }
+      @include min(1440){
+        width: 32px;
+      }
+      @include min(1600){
+        width: 35px;
+      }
+      @include min(1900){
+        width: 38px;
+      }
+    }
+  >  div{
+    
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    border-radius: 5px;
+    background: #FADBDB;
+    padding:10px 15px;
+    width: 48.6%;
+    @include max(767){
+      gap: 10px;
+    }
+    @include min(768){
+        justify-content: space-between;
+        width: 23.6%;
+           padding: 11px 15px;
+
+      }
+      @include min(992){
+        width: 23.5%;
+           padding: 9px 5px;
+
+      }
+      @include min(1200){
+              padding: 11px 7px;
+                     width: 22.55%;
+      }
+      @include min(1350){
+              padding: 13px 9px;
+                     width: 20.55%;
+      }
+      @include min(1440){
+              padding: 15px 11px;
+      }
+      @include min(1600){
+              padding: 17px 13px;
+      }
+      @include min(1900){
+              padding: 19px 15px;
+      }
+      div{
+        width: 65%;
+        display: flex;
+        flex-direction: column;
+      }
+    }
+    span,strong{
+      line-height: normal;
+      @include min-max(992,1199){
+        font-size: 12px;
+      }
+
+    }
+    span{
+      display: block;
+    }
+  }
+  .list ul li::before{
+    top: 1px;
+  }
+}
+
+
+// =======================Case=============================
+.case-study{
+  padding-top: 49px;
+  padding-bottom: 75px;
+  gap: 20px 3.7%;
+  @include min(992){
+      gap: 40px 4.7%;
+  }
+}
+.case-card{
+  border-radius: 10px;
+  background-color: $secondaryColor;
+  padding: 18px;
+  width: 100%;
+  @include min(576){
+    width: 48%;
+    padding: 20px;
+  }
+  @include min(992){
+    width: 30.169%;
+    padding: 24px;
+  }
+  @include min(1200){
+      padding: 26px;
+  }
+  @include min(1280){
+      padding: 28px;
+  }
+  @include min(1440){
+      padding: 30px;
+  }
+  picture{
+    background-color: #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 15px;
+    width: 70px;
+    height: 70px;
+    @include min(992){
+          width: 68px;
+        height: 68px;
+    }
+    @include min(1200){
+          width: 72px;
+        height: 72px;
+    }
+    @include min(1280){
+          width: 75px;
+        height: 75px;
+    }
+    @include min(1440){
+          width: 80px;
+        height: 80px;
+    }
+    img{
+      width: 45px;
+      height: auto;
+      @include min(768){
+        width: 42px;
+      }
+      @include min(992){
+        width: 46px;
+      }
+      @include min(1200){
+        width: 48px;
+      }
+      @include min(1280){
+        width: 50px;
+      }
+      @include min(1440){
+        width: 54px;
+      }
+    }
+  }
+  h3{
+    color: #5252B7;
+    line-height: 130%;
+    font-weight: 600;
+    font-size: 20px;
+  }
+  p{
+    font-weight: 400;
+    line-height: 162.5%;
+    font-size: 16px;
+    +p{
+      margin-top: 19px;
+    }
+
+  }
+}
+
+// ===================Recent Projects=======================
+.recent-project-slider{
+  .country{
+    gap: 8px;
+  }
+  margin-top: 33px;
+  .slick-slide{
+    margin: 0px 20.5px;
+  }
+  .slick-list{
+    margin: 0px -20.5px;
+  }
+  .project-details{
+    background-color: #fff;
+        border-radius: 0px 0px 20px 20px;
+  }
+}
+.recent-project-item{
+
+
+  picture{
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 13px 0px;
+    @include min(768){
+      padding: 18px 0px;
+    }
+    @include min(992){
+      padding: 20px 0px;
+    }
+    @include min(1200){
+      padding: 22px 0px;
+    }
+    @include min(1350){
+      padding: 27px 0px;
+    }
+    @include min(1440){
+      padding: 29px 0px;
+    }
+      img{
+    width: 100%;
+    height: auto;
+  }
+  }
+  display: flex;
+    flex-direction: column;
+    border-radius: 20px;
+    border: 1px solid #E2E2F0;
+    background: rgba(218, 221, 228, 0.71);
+
+}

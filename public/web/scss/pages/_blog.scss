@@ -1,0 +1,723 @@
+.header-section{
+  .col-left{
+    width: 100%;
+      @include min(992){
+            width: 45%;
+      }
+  }
+  .col-right{
+    width: 100%;
+    @include min(992){
+          width: 45%;
+    }
+  }
+    .slick-nav {
+      display: flex;
+      position: initial;
+
+    div {
+      border: 0.65px solid #D9D9D9;
+      background: #FFF;
+
+      &:hover {
+        background-color: $primaryLight;
+
+        path {
+          fill: $primaryColor;
+        }
+      }
+    }
+  }
+}
+
+
+.recent-blog{
+  .recent-blog-slider{
+    picture{
+      img{
+
+        @include min(992){
+          height: 412px;
+        }
+        @include min(1200){
+          height: 332px;
+        }
+        @include min(1280){
+          height: 333px;
+        }
+        @include min(1350){
+          height: 343px;
+        }
+        @include min(1440){
+          height: 373px;
+        }
+        @include min(1600){
+          height: 413px;
+        }
+        @include min(1900){
+          height: 450px;
+        }
+      }
+    }
+    margin-top: 20px;
+    @include min(1200){
+          margin-top: 30px;
+
+    }
+    @include min(1350){
+          margin-top: 35px;
+
+    }
+    @include min(1440){
+          margin-top: 42px;
+
+    }
+    @include min(1600){
+          margin-top: 47px;
+
+    }
+    @include min(1900){
+          margin-top: 52px;
+
+    }
+      .recent-blog-details{
+        position: relative;
+        width: 100%;
+        padding: 18px;
+        @include min(992){
+      width: 53.72%;
+      padding: 30px;
+    }
+    @include min(1200){
+      padding: 28px 45px 28px 28px;
+    }
+    @include min(1280){
+      padding: 28px 65px 28px 28px;
+    }
+    @include min(1440){
+      padding: 30px 71px 30px 30px;
+    }
+  }
+  }
+  .profile{
+        @include min(1200){
+          margin-right: 28px;
+        }
+    img{
+      border-radius: 50%;
+      width: 35px;  
+      height: 35px;
+    }
+  }
+
+  picture{
+    width: 100%;
+    @include max(991){
+      order: -1;
+    }
+    @include min(992){
+         width: 46.268%;
+    }
+    img{
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+  .author{
+    justify-content: space-between;
+  }
+  .recent-blog-details{
+    h2{
+      font-size: 20px;
+      font-weight: 500;
+      margin-bottom: 10px;
+      
+      @include min(1200){
+        font-size: 20px;
+      }
+      @include min(1350){
+        margin-bottom: 18px;
+        font-size: 22px;
+      }
+      @include min(1440){
+        margin-bottom: 20px;
+        font-size: 24px;
+      }
+      @include min(1600){
+        font-size: 28px;
+      }
+      @include min(1900){
+        font-size: 32px;
+      }
+
+    }
+  }
+  .btn-theme {
+    margin-top: 22px;
+    @include min(1280){
+      margin-top: 27px;
+    }
+    @include min(1440){
+      margin-top: 31px;
+    }
+  }
+}
+
+.blog-listing{
+  @include max(575){
+      .views {
+    position: absolute;
+    right: 17px;
+    text-align: right;
+    width: fit-content !important;
+}
+  }
+  picture{
+    img{
+      width: 100%;
+      // height: auto;
+      object-fit: cover;
+             height: 220px;
+      @include min(992){
+       height: 180px;
+
+      }
+      @include min(1200){
+       height: 190px;
+
+      }
+      @include min(1350){
+       height: 210px;
+
+      }
+      @include min(1440){
+       height: 220px;
+
+      }
+      @include min(1600){
+       height: 270px;
+
+      }
+      @include min(1900){
+       height: 300px;
+
+      }
+    }
+  }
+  .recent-blog-card{
+        align-items: center;
+    overflow: hidden;
+    border-radius: 20px;
+    border: 1px solid #E2E2F0;
+    background: #FFF;
+  }
+  .profile, meta div,.author  div{
+    font-size: 11px;
+    @include min(1440){
+      font-size: 11px;
+    }
+    @include min(1600){
+      font-size: 13px;
+    }
+    @include min(1900){
+      font-size: 15px;
+    }
+  }
+  .profile {
+
+
+    span{
+      display: block;
+      line-height: normal;
+      margin-left: 8px;
+      color: $accentColorLight;
+      font-size: 13px;
+      @include min(1440){
+        font-size: 13px;
+      }
+      @include min(1600){
+        font-size: 15px;
+      }
+      @include min(1900){
+        font-size: 16px;
+      }
+    }
+  
+  }
+  .author {
+        margin-bottom: 18px;
+        @include max(1199){
+          gap: 17px;
+        }
+        @include max(575){
+          gap: 10px;
+        }
+    > div{
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+    div{
+      color: $accentColor;
+      @include max(575){
+        width: fit-content;
+      }
+    }
+    .date{
+      + .time{
+        margin-left: 8px;
+      }
+    }
+    .time{
+      + .date{
+        margin-left: 8px;
+      }
+    }
+  }
+
+}
+
+.blog-list{
+  .views {
+    position: absolute;
+    right: 18px;
+    bottom: 20px;
+    font-size: 11px;
+    @include min(1440){
+      font-size: 11px;
+    }
+    @include min(1600){
+      font-size: 13px;
+    }
+    @include min(1900){
+      font-size: 15px;
+    }
+
+}
+  .container-short > .d-flex{
+    gap: 14px 3.2%;
+  }
+    .recent-blog-card {
+    
+      width: 100%;
+      @include min(768){
+             width: 48.18%;
+      }
+      @include min(1200){
+             width: 31.18%;
+      }
+    }
+    .recent-blog-details{
+       div + a{
+        margin-top: 21px;
+        @include min(1440){
+          margin-top: 21px;
+        }
+        @include min(1600){
+          margin-top: 23px;
+        }
+        @include min(1900){
+          margin-top: 25px;
+        }
+      }
+      position: relative;
+    padding: 18px;
+    @include min(1440){
+      padding: 18px;
+    }
+    @include min(1600){
+      padding: 22px;
+    }
+    @include min(1440){
+      padding: 26px;
+    }
+    p{
+      font-size: 13px;
+      @include min(1440){
+        font-size: 13px;
+      }
+      @include min(1600){
+        font-size: 15px;
+      }
+      @include min(1900){
+        font-size: 17px;
+      }
+    }
+
+  }
+  .author {
+     img{
+      border-radius: 50%;
+      width: 28px;  
+      height: 28px;
+    }
+    justify-content: space-between;
+    .profile {
+      width: 100%;
+      @include min(768){
+        width: 45%;
+
+      }
+    }
+    .meta {
+    width: 100%;
+    @include min(768){
+      width: 53%;
+
+    }
+    justify-content: space-between;
+}
+  }
+   h3,h2{
+    line-height: normal;
+    font-size: 16px;
+    @include min(1440){
+      font-size: 16px;
+    }
+    @include min(1600){
+      font-size: 18px;
+    }
+    @include min(1900){
+      font-size: 20px;
+    }
+   }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// ========================================Blog Detail==============================================
+
+
+.blog-info{
+  .profile{
+    gap: 12px;
+    @include max(991){
+      width: 100%;
+      justify-content: space-between;
+    }
+  }
+  .views{
+    margin-left: 6px;
+  }
+  .meta-info{
+    gap: 18px;
+      @include max(991){
+        margin-top: 10px;
+      width: 100%;
+      justify-content: space-between;
+    }
+    div{
+      gap: 8px;
+    display: flex;
+    align-items: center;
+    }
+  }
+}
+.newsDetail {
+
+  article{
+    width: 100%;
+    @include min(992){
+      width: 62.625%;
+
+    }
+    h1{
+      margin-bottom: 19px;
+    }
+    .blogHead {
+      margin-bottom: 19px;
+      width: 100%;
+    }
+    picture{
+      margin-bottom: 18px;
+      @include min(992){
+        margin-bottom: 28px;
+
+      }
+      img{
+        border-radius: 20px;
+        width: 100%;
+        height: auto;
+  
+      }
+    }
+    p+p,p+ul,ul+p,p+ picture, ul + picture, p +  h3, p+ h2{
+      margin-top: 15px;
+      @include min(768){
+        margin-top: 18px;
+      }
+      @include min(992){
+        margin-top: 20px;
+      }
+      @include min(1200){
+        margin-top: 24px;
+      }
+      @include min(1350){
+        margin-top: 26px;
+      }
+      @include min(1440){
+        margin-top: 28px;
+      }
+    }
+    picture + h3, picture + h2.picture + p, picture + ul{
+      margin-top: 6px;
+      @include min(992){
+        margin-top:8px;
+      }
+      @include min(1200){
+        margin-top: 10px;
+      }
+      @include min(1350){
+        margin-top: 12px;
+      }
+      @include min(1440){
+        margin-top: 14px;
+      }
+    }
+    .navigation-and-share {
+      border-top: 1px solid #D9D9D9;
+      border-bottom: 1px solid #D9D9D9;
+      
+      padding: 8px 0px;
+      margin-top: 20px;
+      width: 100%;
+      @include min(992){
+              padding: 12.5px 0px;
+      margin-top: 31px;
+      }
+      @include max(991){
+        margin-bottom: 30px;
+      }
+      .share{
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        > a{
+          gap: 5px;
+          display: flex;
+          align-items: center;
+          @include min(992){
+               gap: 12px;
+          }
+          svg{
+            height: auto;
+            width: 15px;
+            @include min(992){
+              width: 20px;
+            }
+          }
+        }
+        ul{
+          display: flex;
+          gap: 8px;
+          align-items: center;
+          @include min(992){
+          gap: 14px;
+
+          }
+          svg{
+            height: auto;
+            width: 18px;
+            @include min(992){
+                    width: 24px;
+            }
+          }
+        }
+        li{
+          margin: 0;
+          padding-left: 0;
+          display: flex;
+          align-items: center;
+        }
+        li:before{
+          content: none;
+        }
+      }
+      .navigation{
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        a{
+          display: flex;
+          align-items: center;
+          color: $headingColor;
+          gap: 4px;
+          font-size: 14px;
+          @include min(992){
+            gap: 8px;
+            font-size: 16px;
+
+          }
+           &:hover{
+            color: $primaryColor;
+            path{
+     
+                stroke: $primaryColor;
+
+              
+            } 
+          }
+          &.disabled{
+            color: #B5B7BD;
+            cursor: unset;
+            path{
+                              stroke: #B5B7BD;
+
+            }
+
+          }
+         
+        }
+      }
+    }
+    ul{
+      &:has(li:nth-child(5)) {
+       @include min(768){
+         column-count: 2;
+       }
+    }
+    }
+  }
+  aside{
+    position: sticky;
+    top: 100px;
+    height: fit-content;
+    padding: 22px;
+    width: 100%;
+    border-radius: 20px;
+background: rgba(214, 223, 250, 0.42);
+@include min(992){
+    width: 33.439%;
+}
+    h2{
+      margin-bottom: 11px;
+      font-size:22px;
+      @include min(992){
+        font-size: 20px;
+      }
+      @include min(1200){
+        font-size: 22px;
+      }
+      @include min(1360){
+        font-size: 26px;
+      }
+      @include min(1440){
+
+        font-size: 28px;
+      }
+
+    }
+    .recent-article{
+      border-radius: 10px;
+      background: #FFF; 
+      overflow: hidden;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+      +div{
+        margin-top: 10px;
+        @include min(992){
+          margin-top: 20px;
+
+        }
+      }
+      h3{
+        font-size: 15px;
+        line-height: normal;
+        @include min(992){
+      font-size: 12px;
+
+    }
+        @include min(1200){
+      font-size: 14px;
+
+    }
+        @include min(1350){
+      font-size: 15px;
+
+    }
+        @include min(1440){
+      font-size: 16px;
+
+    }
+        @include min(1600){
+      font-size: 18px;
+
+    }
+        @include min(1900){
+      font-size: 22px;
+
+    }
+
+      }
+      img{
+        width: 100%;
+        height: 80px;
+        object-fit: cover;
+
+        @include min(1200){
+          height: 85px;
+        }
+        @include min(1350){
+          height: 90px;
+        }
+        @include min(1440){
+          height: 100px;
+        }
+        @include min(1600){
+          height: 120px;
+        }
+        @include min(1900){
+          height: 140px;
+        }
+      }
+      picture{
+        width: 33.98%;
+
+      }
+      > div{
+        padding: 0px 20px 0px 0px;
+        width: 60%;
+      }
+      a{
+        i{
+          height: 20.917px;
+          width: 20.917px;
+          @include min(992){
+               height: 24.917px;
+          width: 24.917px;
+          }
+          svg{
+            width: 8.97px;
+
+          }
+        }
+      }
+    }
+  }
+}

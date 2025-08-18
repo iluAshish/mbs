@@ -1,0 +1,1020 @@
+.page-about-us {}
+
+
+.mission-vision {
+    background: unset;
+
+    .col-left p {
+        @include min-max(1200, 1279) {
+            font-size: 13.5px;
+        }
+    }
+
+    h3 {
+        display: flex;
+        flex-direction: column;
+        gap: 17px;
+
+        @include min(1440) {
+            gap: 17px;
+        }
+
+        @include min(1600) {
+            gap: 18px;
+        }
+
+        @include min(1900) {
+            gap: 19px;
+        }
+
+        span {
+            color: $headingColor;
+            font-weight: 400;
+
+            line-height: 75%;
+            font-size: 32px;
+
+            @include min(1440) {
+                font-size: 32px;
+            }
+
+            @include min(1600) {
+                font-size: 34px;
+            }
+
+            @include min(1900) {
+                font-size: 36px;
+            }
+        }
+
+        line-height: 66.667%;
+        margin-bottom: 20px;
+        font-size: 25px;
+
+        @include min(992) {
+            margin-bottom: 22px;
+            font-size: 30px;
+        }
+
+        @include min(1200) {
+            margin-bottom: 20px;
+            font-size: 33px;
+        }
+
+        @include min(1280) {
+            margin-bottom: 24px;
+            font-size: 35px;
+        }
+
+        @include min(1440) {
+            margin-bottom: 29px;
+            font-size: 36px;
+        }
+
+        @include min(1600) {
+            margin-bottom: 31px;
+            font-size: 34px;
+        }
+
+        @include min(1900) {
+            margin-bottom: 33px;
+            font-size: 38px;
+        }
+    }
+
+    &-wrapper-box {
+        position: relative;
+
+        &::before {
+            @extend .position;
+            width: 16%;
+            height: 100%;
+            background-size: contain;
+            background-repeat: no-repeat;
+            right: 0;
+            top: -1px;
+            background-image: url(../images/about/shape.webp);
+        }
+
+        &:nth-child(odd) {
+            background-color: $secondaryColor;
+        }
+
+        &:nth-child(even) {
+            background-color: rgb(214 223 250 / 50%);
+        }
+
+        border-radius: 40px;
+        padding: 25px;
+        width: 100%;
+
+        @include min(576) {
+            padding: 30px 99px 30px 30px;
+        }
+
+        @include max(767) {
+            +div {
+                margin-top: 20px;
+            }
+        }
+
+        @include min(768) {
+            width: 49%;
+            padding: 20px;
+        }
+
+        @include min(1200) {
+            width: 31.945%;
+            padding: 25px 25px 50px 25px;
+        }
+
+        @include min(1280) {
+            padding: 28px 33px 65px 33px;
+        }
+
+        @include min(1350) {
+            padding: 30px 35px 70px 35px;
+        }
+
+        @include min(1440) {
+            // height: 390px;
+            padding: 36px 41px 83px 41px;
+        }
+
+        @include min(1600) {
+            // height: 435px;
+
+        }
+
+        @include min(1900) {
+            // height: 525px;
+
+        }
+
+    }
+
+    picture {
+        overflow: hidden;
+        width: 100%;
+
+        @include max(1199) {
+            margin-top: 30px;
+        }
+
+        @include min(1200) {
+            width: 33.498%;
+
+        }
+
+        img {
+            border-radius: 30px;
+            object-fit: cover;
+        }
+    }
+}
+
+
+
+
+
+
+
+// =========================== Core Values===========================
+.core-values {
+    @include min(992) {
+        margin-top: 60px;
+
+    }
+
+    &::before {
+        @extend .position;
+        width: 11.158%;
+        height: 90px;
+        background-color: $secondaryColor;
+        left: 0;
+        top: 0;
+
+        @include min(768) {
+            height: 100px;
+        }
+
+        @include min(992) {
+            height: 120px;
+            top: 36px;
+
+        }
+
+        @include min(1200) {
+            height: 130px;
+        }
+
+        @include min(1280) {
+            height: 138px;
+        }
+
+        @include min(1440) {
+            height: 142px;
+        }
+    }
+
+    h2 {
+        @include max(767) {
+            margin-bottom: 30px;
+            padding-top: 12px;
+        }
+
+        @include min(992) {
+            padding-top: 60px;
+
+        }
+
+        span {
+            font-weight: 300;
+
+            line-height: normal;
+        }
+
+        line-height: normal;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+
+        @include min(992) {
+            width: 8.165%;
+
+        }
+    }
+
+    &-box {
+        background: rgba(214, 223, 250, 0.40);
+        border-radius: 10px 0px 0px 10px;
+        padding: 41px 5% 41px 27px;
+        gap: 20px;
+        width: 100%;
+        justify-content: space-between;
+
+        @include min(768) {
+            gap: 30px;
+            padding: 41px 5% 41px 27px;
+        }
+
+        @include max(991) {}
+
+        @include min(992) {
+            width: 87.766%;
+            gap: 40px;
+            padding: 41px 9% 41px 27px;
+        }
+
+        @include min(1200) {
+            gap: 45px;
+        }
+
+        @include min(1350) {
+            gap: 55px;
+        }
+
+        @include min(1440) {
+            gap: 60px;
+        }
+
+        picture {
+            border-radius: 10px;
+            overflow: hidden;
+            width: 100%;
+
+            @include min(768) {
+                width: 42.917%;
+                margin-top: -107px;
+            }
+
+            img {
+                object-fit: cover;
+            }
+
+        }
+
+    }
+
+    &-box-description {
+        direction: rtl;
+        text-align: left;
+
+        width: 100%;
+        overflow-y: auto;
+
+        @include min(768) {
+            width: 49.043%;
+            padding-left: 36px;
+        }
+
+        @include min(1200) {
+            height: 191px;
+        }
+
+        @include min(1360) {
+            height: 175px;
+        }
+
+        @include min(1440) {
+            height: 215px;
+        }
+
+        @include min(1600) {
+            height: 245px;
+        }
+
+        @include min(1900) {
+            height: 299px;
+        }
+
+    }
+
+    ul {
+        padding-top: 15px;
+    }
+}
+
+
+
+// =========================CEO===========================
+.ceo {
+    position: relative;
+
+    &::before {
+        @extend .position;
+        width: 100%;
+        height: 100%;
+        background: #EEEEF6;
+        left: 0;
+        top: 0;
+        z-index: -1;
+    }
+
+    &-description {
+        width: 100%;
+
+        @include min(768) {
+            width: 60.68%;
+
+        }
+    }
+
+    &-info {
+        &::before {
+            border-radius: 0px 30px;
+            @extend .position;
+            width: 100%;
+            height: 100%;
+            right: -7px;
+            bottom: -8px;
+            background-color: $lavender;
+            z-index: -1;
+
+        }
+
+        position: absolute;
+        right: 0;
+        bottom: 9%;
+        border-radius: 0px 30px;
+        background: #FFF;
+        padding: 7.19% 6.692%;
+
+        @include min(768) {
+            bottom: 16%;
+
+        }
+
+        @include min(992) {
+            bottom: 9%;
+
+        }
+
+        strong,
+        span {
+            display: block;
+            line-height: 100%;
+
+        }
+
+        strong {
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: $headingColor;
+            font-size: 20px;
+
+            @include min(1200) {
+                font-size: 22px;
+            }
+
+            @include min(1600) {
+                font-size: 23px;
+            }
+
+            @include min(1900) {
+                font-size: 25px;
+            }
+        }
+
+        span {
+            font-weight: 500;
+            font-size: 11px;
+
+            @include min(1440) {
+                font-size: 12px;
+            }
+
+            @include min(1600) {
+                font-size: 13px;
+            }
+
+            @include min(1900) {
+                font-size: 14px;
+
+            }
+        }
+    }
+
+    &-image {
+        padding-right: 9.03%;
+        width: 100%;
+
+        @include min(768) {
+            width: 35.243%;
+
+        }
+
+        img {
+            height: auto;
+        }
+
+        picture {
+            padding-top: 46px;
+            border-radius: 134px 135px 80px 0px;
+            overflow: hidden;
+            background: #A5A5DF;
+            z-index: -1;
+            position: relative;
+
+            img {
+                width: 100%;
+                height: auto;
+                ;
+            }
+
+
+            // mask-image: url(../images/about/ceo-mask.png);
+            //     mask-size: 100%;
+            //     mask-repeat: no-repeat;     
+        }
+    }
+
+    &-description {
+        border-radius: 30px;
+        border: 1px solid #8888C7;
+
+        @include max(767) {
+            margin-top: 50px;
+        }
+
+        &-box {
+
+            display: flex;
+            flex-wrap: wrap;
+            height: 100%;
+            flex-direction: column;
+            justify-content: center;
+
+            @include max(767) {
+                width: 80%;
+                margin: auto;
+            }
+
+            @include max(575) {
+                padding: 40px 0px 20px 0px;
+            }
+
+            @include min(576) {
+                padding: 60px 0px 30px 0px;
+            }
+
+            @include min-max(768, 991) {
+                padding-top: 25px;
+                padding-bottom: 25px;
+                margin-left: auto;
+                padding-left: 30px;
+                padding-right: 30px;
+                width: 86%;
+            }
+
+            @include min(992) {
+                margin: auto;
+                padding-left: 4.1%;
+
+                width: 76.7%;
+            }
+
+            @include min(1350) {
+                width: 68.7%;
+            }
+
+        }
+
+        svg {
+            position: absolute;
+            background-color: $primaryColor;
+            border-radius: 50%;
+            padding: 8px;
+            width: 40px;
+            height: 40px;
+            left: 80%;
+            bottom: -6%;
+
+            @include min(768) {
+                padding: 10px;
+                left: 66px;
+                width: 45px;
+                height: 45px;
+                top: -30px;
+            }
+
+            @include min(992) {
+                padding: 10px;
+                width: 55px;
+                height: 55px;
+                top: -30px;
+            }
+
+            @include min(1200) {
+                padding: 12px;
+                width: 65px;
+                height: 65px;
+                top: -35px;
+            }
+
+            @include min(1440) {
+                top: -40px;
+                padding: 16px;
+                width: 80px;
+                height: 80px;
+            }
+        }
+
+        p {
+            font-weight: 400;
+            line-height: 162.5%;
+            font-size: 14px;
+
+            @include min(1200) {
+                font-size: 15px;
+
+            }
+
+            @include min(1440) {
+                font-size: 16px;
+
+            }
+
+            @include min(1600) {
+                font-size: 18px;
+
+            }
+
+            +p {
+                margin-top: 15px;
+            }
+        }
+    }
+
+    .head {
+
+        position: absolute;
+        background: #EEEEF6;
+        left: 9%;
+        top: -6%;
+
+        @include max(767) {
+            padding: 0px 10px;
+        }
+
+        @include min(768) {
+            left: -10.5%;
+            top: 20%;
+        }
+
+        @include min(1900) {
+            left: -9%;
+        }
+
+        span,
+        strong {
+            display: block;
+        }
+
+
+
+        span {
+            margin-bottom: 8px;
+            font-weight: 400;
+            line-height: 116.16%;
+            color: #596075;
+            font-size: 14px;
+
+            @include min(768) {
+                font-size: 16px;
+            }
+
+            @include min(992) {
+                font-size: 18px;
+                margin-bottom: 10px;
+            }
+
+            @include min(1200) {
+                margin-bottom: 12px;
+                font-size: 20px;
+            }
+
+            @include min(1350) {
+                font-size: 22px;
+            }
+
+            @include min(1440) {
+                font-size: 24px;
+            }
+
+            @include min(1600) {
+                font-size: 26px;
+            }
+
+            @include min(1920) {
+                font-size: 28px;
+            }
+        }
+
+        h2 {
+            color: $headingColor;
+            font-size: 22px;
+            line-height: 77.77%;
+
+
+
+            @include min(992) {
+                font-size: 26px;
+            }
+
+            @include min(1200) {
+                font-size: 30px;
+            }
+
+            @include min(1350) {
+                font-size: 33px;
+            }
+
+            @include min(1440) {
+                font-size: 36px;
+            }
+
+            @include min(1600) {
+                font-size: 38px;
+            }
+
+            @include min(1900) {
+                font-size: 40px;
+            }
+        }
+    }
+}
+
+
+.ceo-image-wrapper {
+
+    // width: 270px;
+    svg {
+        position: absolute;
+        right: 0;
+        top: 8.143%;
+    }
+}
+
+
+// ======================Legacy================================
+.legacy {
+    position: relative;
+    border-radius: 10px 0px 0px 10px;
+    background: #E3E9FC;
+
+    &::before {
+        @extend .position;
+
+        width: 100%;
+        height: 18.634%;
+        bottom: 0;
+
+        right: 0;
+
+        background: #C2CEF4;
+
+        @include min(768) {
+            width: 38.634%;
+            height: 100%;
+            top: 0;
+        }
+
+    }
+
+    &-description {
+        width: 100%;
+        z-index: 1;
+
+        @include min(768) {
+            width: 39.806%;
+
+        }
+    }
+
+    picture {
+        position: relative;
+        border-radius: 20px;
+        overflow: hidden;
+        width: 100%;
+
+        @include min(768) {
+            width: 55.632%;
+
+        }
+
+        img {
+            border-radius: 20px;
+            border: 12px solid #E3E9FC;
+            width: 100%;
+            object-fit: cover;
+            height: auto;
+
+            @include min(768) {
+                height: 100%;
+            }
+        }
+
+        &::after {
+            @extend .position;
+            width: 100%;
+            height: 100%;
+            border: 12px solid #E3E9FC;
+            left: 0;
+            border-radius: 20px;
+
+            top: 0;
+            z-index: 1;
+        }
+    }
+}
+
+// ========================Regional===============================
+.regional {
+    padding-top: 66px;
+    @include max(575){
+        padding-bottom: 0;
+    }
+
+    @include min(768) {
+        padding-top: 70px;
+    }
+
+    @include min(1200) {
+        padding-top: 90px;
+    }
+
+    @include min(1360) {
+        padding-top: 100px;
+    }
+
+    @include min(1440) {
+        padding-top: 116px;
+    }
+
+    .container-center {
+        border-radius: 20px 0;
+        background-color: $secondaryColor;
+
+        picture {
+            margin-top: -11.056%;
+            margin-left: -2.237%;
+            width: 100%;
+
+            @include min(768) {
+                margin-top: -5.056%;
+                margin-left: -2.237%;
+                width: 51.82%;
+
+            }
+
+            img {
+                width: 100%;
+                height: auto;
+            }
+        }
+
+    }
+
+    &-description {
+        overflow-y: auto;
+        direction: rtl;
+        text-align: left;
+        width: 100%;
+        padding: 20px 20px 20px 20px;
+
+        @include min(768) {
+            width: 45.112%;
+            height: 190px;
+            padding: 0px 10px 0px 25px;
+        }
+
+        @include min(992) {
+            height: 250px;
+            padding: 0px 10px 0px 36px;
+        }
+
+    }
+}
+
+
+// ======================companies=========================
+.companies {
+    background-image: url(../images/about/vector.png);
+    background-repeat: no-repeat;
+    background-position: 0% 40%;
+    background-size: 25%;
+    padding-bottom: 92px;
+    .slick-nav
+
+    {
+        position: initial;
+        margin-right: auto;
+        margin-left: 0;
+    }
+
+    .heading {
+        width:93%;
+        @include max(767){
+            margin-bottom: 20px;
+            margin-left: auto;
+        }
+        @include min(768){
+            width: 30%;
+        }
+        @include min(992){
+            width: 20.075%;
+        }
+    }
+
+    &-slider {
+        margin-bottom: 30px;
+        picture{
+            margin-bottom: 12.45px;
+        }
+        h3{
+            margin-bottom: 7px;
+        }
+    
+    }
+    &-item {
+        img{
+            height: auto;
+        }
+        width: 250px;
+        @include min(768){
+            width:350px;
+        }
+
+        @include min(1200){
+            width: 306px;
+        }
+        @include min(1600){
+            width: 356px;
+        }
+        @include min(1900){
+            width: 428px;
+        }
+    }
+    &-slider-container {
+        padding-top: 50px;
+        width: 90%;
+        @include max(767){
+            margin-left: auto;
+        }
+        @include min(768){
+              width: 68.989%;
+        }
+            &::before{
+            content: '';
+            position: absolute;
+            width: 70%;
+            height: 100%;
+            border-radius: 10px 0 0 10px;
+            background: $secondaryColor;
+            border-radius: 10px 0 0 10px;
+            right: -8px;
+            top: 0;
+            @include min(768){
+                        right: 0;
+                          width: 81.652%;  
+            }
+
+        }
+    }
+
+    h2 {
+      
+        @include min(1200){
+            gap: 8px;
+        }
+        @include min(1440){
+            gap: 9px;
+        }
+        span {
+            line-height: 112.5%;
+            font-size: 22px;
+            @include min(576){
+                font-size: 24px;
+            }
+            @include min(768){
+                font-size: 26px;
+            }
+            @include min(992){
+                font-size: 24px;
+            }
+            @include min(1200){
+                font-size: 30px;
+            }
+            @include min(1440){
+                font-size: 32px;
+            }
+
+        }
+
+        font-size: 20x;
+        @include min(576){
+            font-size: 26px;
+        }
+        @include min(768){
+            font-size: 24px;
+        }
+        @include min(992){
+            font-size: 28px;
+        }
+        @include min(1200){
+            font-size: 34px;
+        }
+        @include min(1440){
+            font-size: 36px;
+        }
+    }
+
+    .slick-slide {
+        border-radius: 10px;
+        border: 1px solid $lavender;
+        background: #FFF;
+        margin: 0px 9px;
+        padding: 18px;
+        @include min(768){
+            padding: 20px;
+        }
+        @include min(992){
+            padding: 22px;
+        }
+        @include min(1200){
+            padding: 26px;
+        }
+        @include min(1440){
+            padding: 30px;
+        }
+    }
+
+    .slick-list {
+        margin: 0px -9px;
+    }
+
+    .slick-nav {
+        div {
+            border: 0.65px solid #D9D9D9;
+            background: #FFF;
+
+            &:hover {
+                background-color: $primaryLight;
+
+                path {
+                    fill: $primaryColor;
+                }
+            }
+        }
+
+        right: unset;
+        left: 0;
+
+        div {
+            border-radius: 50%;
+            border: 0.65px solid #D9D9D9;
+            background: #FFF;
+        }
+    }
+}

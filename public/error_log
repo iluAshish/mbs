@@ -1,0 +1,164 @@
+[15-May-2023 14:26:26 UTC] PHP Warning:  require(/home3/ewqsvwdn/demo.pentacodesdemos.com/public/../vendor/autoload.php): Failed to open stream: No such file or directory in /home3/ewqsvwdn/demo.pentacodesdemos.com/public/index.php on line 34
+[15-May-2023 14:26:26 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/home3/ewqsvwdn/demo.pentacodesdemos.com/public/../vendor/autoload.php' (include_path='.:/opt/alt/php81/usr/share/pear:/opt/alt/php81/usr/share/php:/usr/share/pear:/usr/share/php') in /home3/ewqsvwdn/demo.pentacodesdemos.com/public/index.php:34
+Stack trace:
+#0 {main}
+  thrown in /home3/ewqsvwdn/demo.pentacodesdemos.com/public/index.php on line 34
+[18-May-2023 10:43:15 UTC] PHP Notice:  include(): Read of 38628 bytes failed with errno=12 Cannot allocate memory in /home3/ewqsvwdn/demo.pentacodesdemos.com/vendor/composer/ClassLoader.php on line 571
+[18-May-2023 10:43:15 UTC] PHP Warning:  include(): Failed opening '/home3/ewqsvwdn/demo.pentacodesdemos.com/vendor/composer/../laravel/framework/src/Illuminate/Foundation/Application.php' for inclusion (include_path='.:/opt/alt/php81/usr/share/pear:/opt/alt/php81/usr/share/php:/usr/share/pear:/usr/share/php') in /home3/ewqsvwdn/demo.pentacodesdemos.com/vendor/composer/ClassLoader.php on line 571
+[18-May-2023 10:43:15 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Foundation\Application" not found in /home3/ewqsvwdn/demo.pentacodesdemos.com/bootstrap/app.php:14
+Stack trace:
+#0 /home3/ewqsvwdn/demo.pentacodesdemos.com/public/index.php(47): require_once()
+#1 {main}
+  thrown in /home3/ewqsvwdn/demo.pentacodesdemos.com/bootstrap/app.php on line 14
+[18-May-2023 11:18:08 UTC] PHP Notice:  require(): Read of 4625 bytes failed with errno=12 Cannot allocate memory in /home3/ewqsvwdn/demo.pentacodesdemos.com/vendor/composer/autoload_real.php on line 55
+[18-May-2023 11:18:08 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/home3/ewqsvwdn/demo.pentacodesdemos.com/vendor/composer/../symfony/polyfill-intl-idn/bootstrap.php' (include_path='.:/opt/alt/php81/usr/share/pear:/opt/alt/php81/usr/share/php:/usr/share/pear:/usr/share/php') in /home3/ewqsvwdn/demo.pentacodesdemos.com/vendor/composer/autoload_real.php:55
+Stack trace:
+#0 /home3/ewqsvwdn/demo.pentacodesdemos.com/vendor/composer/autoload_real.php(38): composerRequire13241f4e9b6eafa304eafa2a1f17c104()
+#1 /home3/ewqsvwdn/demo.pentacodesdemos.com/vendor/autoload.php(25): ComposerAutoloaderInit13241f4e9b6eafa304eafa2a1f17c104::getLoader()
+#2 /home3/ewqsvwdn/demo.pentacodesdemos.com/public/index.php(34): require('/home3/ewqsvwdn...')
+#3 {main}
+  thrown in /home3/ewqsvwdn/demo.pentacodesdemos.com/vendor/composer/autoload_real.php on line 55
+[18-May-2023 12:13:06 UTC] PHP Fatal error:  During class fetch: Uncaught ErrorException: include(): Read of 7389 bytes failed with errno=12 Cannot allocate memory in /home3/ewqsvwdn/demo.pentacodesdemos.com/vendor/composer/ClassLoader.php:571
+Stack trace:
+#0 /home3/ewqsvwdn/demo.pentacodesdemos.com/vendor/composer/ClassLoader.php(571): Illuminate\Foundation\Bootstrap\HandleExceptions->handleError()
+#1 /home3/ewqsvwdn/demo.pentacodesdemos.com/vendor/composer/ClassLoader.php(571): include()
+#2 /home3/ewqsvwdn/demo.pentacodesdemos.com/vendor/composer/ClassLoader.php(428): Composer\Autoload\includeFile()
+#3 /home3/ewqsvwdn/demo.pentacodesdemos.com/vendor/nesbot/carbon/src/Carbon/Traits/Date.php(527): Composer\Autoload\ClassLoader->loadClass()
+#4 /home3/ewqsvwdn/demo.pentacodesdemos.com/vendor/composer/ClassLoader.php(571): include('/home3/ewqsvwdn...')
+#5 /home3/ewqsvwdn/demo.pentacodesdemos.com/vendor/composer/ClassLoader.php(428): Composer\Autoload\includeFile()
+#6 /home3/ewqsvwdn/demo.pentacodesdemos.com/vendor/nesbot/carbon/src/Carbon/Carbon.php(510): Composer\Autoload\ClassLoader->loadClass()
+#7 /home3/ewqsvwdn/demo.pentacodesdemos.com/vendor/composer/ClassLoader.php(571): include('/home3/ewqsvwdn...')
+#8 /home3/ewqsvwdn/demo.pentacodesdemos.com/vendor/composer/ClassLoader.php(428): Composer\Autoload\includeFile()
+#9 /home3/ewqsvwdn/demo.pentacodesdemos.com/vendor/nesbot/carbon/src/Carbon/Laravel/ServiceProvider.php(69): Composer\Autoload\ClassLoader->loadClass()
+#10 /home3/ewqsvwdn/demo.pentacodesdemos.com/vendor/nesbot/carbon/src/Carbon/Laravel/ServiceProvider.php(45): Carbon\Laravel\ServiceProvider->updateLocale()
+#11 /home3/ewqsvwdn/demo.pentacodesdemos.com/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(36): Carbon\Laravel\ServiceProvider->boot()
+#12 /home3/ewqsvwdn/demo.pentacodesdemos.com/vendor/laravel/framework/src/Illuminate/Container/Util.php(40): Illuminate\Container\BoundMethod::Illuminate\Container\{closure}()
+#13 /home3/ewqsvwdn/demo.pentacodesdemos.com/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(93): Illuminate\Container\Util::unwrapIfClosure()
+#14 /home3/ewqsvwdn/demo.pentacodesdemos.com/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(37): Illuminate\Container\BoundMethod::callBoundMethod()
+#15 /home3/ewqsvwdn/demo.pentacodesdemos.com/vendor/laravel/framework/src/Illuminate/Container/Container.php(653): Illuminate\Container\BoundMethod::call()
+#16 /home3/ewqsvwdn/demo.pentacodesdemos.com/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(924): Illuminate\Container\Container->call()
+#17 /home3/ewqsvwdn/demo.pentacodesdemos.com/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(905): Illuminate\Foundation\Application->bootProvider()
+#18 [internal function]: Illuminate\Foundation\Application->Illuminate\Foundation\{closure}()
+#19 /home3/ewqsvwdn/demo.pentacodesdemos.com/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(906): array_walk()
+#20 /home3/ewqsvwdn/demo.pentacodesdemos.com/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/BootProviders.php(17): Illuminate\Foundation\Application->boot()
+#21 /home3/ewqsvwdn/demo.pentacodesdemos.com/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(237): Illuminate\Foundation\Bootstrap\BootProviders->bootstrap()
+#22 /home3/ewqsvwdn/demo.pentacodesdemos.com/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(153): Illuminate\Foundation\Application->bootstrapWith()
+#23 /home3/ewqsvwdn/demo.pentacodesdemos.com/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(137): Illuminate\Foundation\Http\Kernel->bootstrap()
+#24 /home3/ewqsvwdn/demo.pentacodesdemos.com/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(111): Illuminate\Foundation\Http\Kernel->sendRequestThroughRouter()
+#25 /home3/ewqsvwdn/demo.pentacodesdemos.com/public/index.php(52): Illuminate\Foundation\Http\Kernel->handle()
+#26 {main} in /home3/ewqsvwdn/demo.pentacodesdemos.com/vendor/nesbot/carbon/src/Carbon/Traits/Date.php on line 527
+[18-May-2023 12:13:06 UTC] PHP Fatal error:  During class fetch: Uncaught ErrorException: include(): Read of 7389 bytes failed with errno=12 Cannot allocate memory in /home3/ewqsvwdn/demo.pentacodesdemos.com/vendor/composer/ClassLoader.php:571
+Stack trace:
+#0 /home3/ewqsvwdn/demo.pentacodesdemos.com/vendor/composer/ClassLoader.php(571): Illuminate\Foundation\Bootstrap\HandleExceptions->handleError()
+#1 /home3/ewqsvwdn/demo.pentacodesdemos.com/vendor/composer/ClassLoader.php(571): include()
+#2 /home3/ewqsvwdn/demo.pentacodesdemos.com/vendor/composer/ClassLoader.php(428): Composer\Autoload\includeFile()
+#3 /home3/ewqsvwdn/demo.pentacodesdemos.com/vendor/nesbot/carbon/src/Carbon/Traits/Date.php(527): Composer\Autoload\ClassLoader->loadClass()
+#4 /home3/ewqsvwdn/demo.pentacodesdemos.com/vendor/composer/ClassLoader.php(571): include('/home3/ewqsvwdn...')
+#5 /home3/ewqsvwdn/demo.pentacodesdemos.com/vendor/composer/ClassLoader.php(428): Composer\Autoload\includeFile()
+#6 /home3/ewqsvwdn/demo.pentacodesdemos.com/vendor/nesbot/carbon/src/Carbon/Carbon.php(510): Composer\Autoload\ClassLoader->loadClass()
+#7 /home3/ewqsvwdn/demo.pentacodesdemos.com/vendor/composer/ClassLoader.php(571): include('/home3/ewqsvwdn...')
+#8 /home3/ewqsvwdn/demo.pentacodesdemos.com/vendor/composer/ClassLoader.php(428): Composer\Autoload\includeFile()
+#9 /home3/ewqsvwdn/demo.pentacodesdemos.com/vendor/nesbot/carbon/src/Carbon/Laravel/ServiceProvider.php(69): Composer\Autoload\ClassLoader->loadClass()
+#10 /home3/ewqsvwdn/demo.pentacodesdemos.com/vendor/nesbot/carbon/src/Carbon/Laravel/ServiceProvider.php(45): Carbon\Laravel\ServiceProvider->updateLocale()
+#11 /home3/ewqsvwdn/demo.pentacodesdemos.com/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(36): Carbon\Laravel\ServiceProvider->boot()
+#12 /home3/ewqsvwdn/demo.pentacodesdemos.com/vendor/laravel/framework/src/Illuminate/Container/Util.php(40): Illuminate\Container\BoundMethod::Illuminate\Container\{closure}()
+#13 /home3/ewqsvwdn/demo.pentacodesdemos.com/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(93): Illuminate\Container\Util::unwrapIfClosure()
+#14 /home3/ewqsvwdn/demo.pentacodesdemos.com/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(37): Illuminate\Container\BoundMethod::callBoundMethod()
+#15 /home3/ewqsvwdn/demo.pentacodesdemos.com/vendor/laravel/framework/src/Illuminate/Container/Container.php(653): Illuminate\Container\BoundMethod::call()
+#16 /home3/ewqsvwdn/demo.pentacodesdemos.com/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(924): Illuminate\Container\Container->call()
+#17 /home3/ewqsvwdn/demo.pentacodesdemos.com/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(905): Illuminate\Foundation\Application->bootProvider()
+#18 [internal function]: Illuminate\Foundation\Application->Illuminate\Foundation\{closure}()
+#19 /home3/ewqsvwdn/demo.pentacodesdemos.com/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(906): array_walk()
+#20 /home3/ewqsvwdn/demo.pentacodesdemos.com/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/BootProviders.php(17): Illuminate\Foundation\Application->boot()
+#21 /home3/ewqsvwdn/demo.pentacodesdemos.com/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(237): Illuminate\Foundation\Bootstrap\BootProviders->bootstrap()
+#22 /home3/ewqsvwdn/demo.pentacodesdemos.com/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(153): Illuminate\Foundation\Application->bootstrapWith()
+#23 /home3/ewqsvwdn/demo.pentacodesdemos.com/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(137): Illuminate\Foundation\Http\Kernel->bootstrap()
+#24 /home3/ewqsvwdn/demo.pentacodesdemos.com/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(111): Illuminate\Foundation\Http\Kernel->sendRequestThroughRouter()
+#25 /home3/ewqsvwdn/demo.pentacodesdemos.com/public/index.php(52): Illuminate\Foundation\Http\Kernel->handle()
+#26 {main} in /home3/ewqsvwdn/demo.pentacodesdemos.com/vendor/nesbot/carbon/src/Carbon/Traits/Date.php on line 527
+[18-May-2023 12:14:11 UTC] PHP Fatal error:  During class fetch: Uncaught ErrorException: include(): Read of 10633 bytes failed with errno=12 Cannot allocate memory in /home3/ewqsvwdn/demo.pentacodesdemos.com/vendor/composer/ClassLoader.php:571
+Stack trace:
+#0 /home3/ewqsvwdn/demo.pentacodesdemos.com/vendor/composer/ClassLoader.php(571): Illuminate\Foundation\Bootstrap\HandleExceptions->handleError()
+#1 /home3/ewqsvwdn/demo.pentacodesdemos.com/vendor/composer/ClassLoader.php(571): include()
+#2 /home3/ewqsvwdn/demo.pentacodesdemos.com/vendor/composer/ClassLoader.php(428): Composer\Autoload\includeFile()
+#3 /home3/ewqsvwdn/demo.pentacodesdemos.com/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php(26): Composer\Autoload\ClassLoader->loadClass()
+#4 /home3/ewqsvwdn/demo.pentacodesdemos.com/vendor/composer/ClassLoader.php(571): include('/home3/ewqsvwdn...')
+#5 /home3/ewqsvwdn/demo.pentacodesdemos.com/vendor/composer/ClassLoader.php(428): Composer\Autoload\includeFile()
+#6 /home3/ewqsvwdn/demo.pentacodesdemos.com/vendor/laravel/framework/src/Illuminate/Database/DatabaseServiceProvider.php(41): Composer\Autoload\ClassLoader->loadClass()
+#7 /home3/ewqsvwdn/demo.pentacodesdemos.com/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(682): Illuminate\Database\DatabaseServiceProvider->register()
+#8 /home3/ewqsvwdn/demo.pentacodesdemos.com/vendor/laravel/framework/src/Illuminate/Foundation/ProviderRepository.php(75): Illuminate\Foundation\Application->register()
+#9 /home3/ewqsvwdn/demo.pentacodesdemos.com/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(659): Illuminate\Foundation\ProviderRepository->load()
+#10 /home3/ewqsvwdn/demo.pentacodesdemos.com/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/RegisterProviders.php(17): Illuminate\Foundation\Application->registerConfiguredProviders()
+#11 /home3/ewqsvwdn/demo.pentacodesdemos.com/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(237): Illuminate\Foundation\Bootstrap\RegisterProviders->bootstrap()
+#12 /home3/ewqsvwdn/demo.pentacodesdemos.com/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(153): Illuminate\Foundation\Application->bootstrapWith()
+#13 /home3/ewqsvwdn/demo.pentacodesdemos.com/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(137): Illuminate\Foundation\Http\Kernel->bootstrap()
+#14 /home3/ewqsvwdn/demo.pentacodesdemos.com/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(111): Illuminate\Foundation\Http\Kernel->sendRequestThroughRouter()
+#15 /home3/ewqsvwdn/demo.pentacodesdemos.com/public/index.php(52): Illuminate\Foundation\Http\Kernel->handle()
+#16 {main} in /home3/ewqsvwdn/demo.pentacodesdemos.com/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php on line 26
+[18-May-2023 12:14:11 UTC] PHP Fatal error:  During class fetch: Uncaught ErrorException: include(): Read of 10633 bytes failed with errno=12 Cannot allocate memory in /home3/ewqsvwdn/demo.pentacodesdemos.com/vendor/composer/ClassLoader.php:571
+Stack trace:
+#0 /home3/ewqsvwdn/demo.pentacodesdemos.com/vendor/composer/ClassLoader.php(571): Illuminate\Foundation\Bootstrap\HandleExceptions->handleError()
+#1 /home3/ewqsvwdn/demo.pentacodesdemos.com/vendor/composer/ClassLoader.php(571): include()
+#2 /home3/ewqsvwdn/demo.pentacodesdemos.com/vendor/composer/ClassLoader.php(428): Composer\Autoload\includeFile()
+#3 /home3/ewqsvwdn/demo.pentacodesdemos.com/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php(26): Composer\Autoload\ClassLoader->loadClass()
+#4 /home3/ewqsvwdn/demo.pentacodesdemos.com/vendor/composer/ClassLoader.php(571): include('/home3/ewqsvwdn...')
+#5 /home3/ewqsvwdn/demo.pentacodesdemos.com/vendor/composer/ClassLoader.php(428): Composer\Autoload\includeFile()
+#6 /home3/ewqsvwdn/demo.pentacodesdemos.com/vendor/laravel/framework/src/Illuminate/Database/DatabaseServiceProvider.php(41): Composer\Autoload\ClassLoader->loadClass()
+#7 /home3/ewqsvwdn/demo.pentacodesdemos.com/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(682): Illuminate\Database\DatabaseServiceProvider->register()
+#8 /home3/ewqsvwdn/demo.pentacodesdemos.com/vendor/laravel/framework/src/Illuminate/Foundation/ProviderRepository.php(75): Illuminate\Foundation\Application->register()
+#9 /home3/ewqsvwdn/demo.pentacodesdemos.com/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(659): Illuminate\Foundation\ProviderRepository->load()
+#10 /home3/ewqsvwdn/demo.pentacodesdemos.com/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/RegisterProviders.php(17): Illuminate\Foundation\Application->registerConfiguredProviders()
+#11 /home3/ewqsvwdn/demo.pentacodesdemos.com/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(237): Illuminate\Foundation\Bootstrap\RegisterProviders->bootstrap()
+#12 /home3/ewqsvwdn/demo.pentacodesdemos.com/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(153): Illuminate\Foundation\Application->bootstrapWith()
+#13 /home3/ewqsvwdn/demo.pentacodesdemos.com/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(137): Illuminate\Foundation\Http\Kernel->bootstrap()
+#14 /home3/ewqsvwdn/demo.pentacodesdemos.com/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(111): Illuminate\Foundation\Http\Kernel->sendRequestThroughRouter()
+#15 /home3/ewqsvwdn/demo.pentacodesdemos.com/public/index.php(52): Illuminate\Foundation\Http\Kernel->handle()
+#16 {main} in /home3/ewqsvwdn/demo.pentacodesdemos.com/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php on line 26
+[19-May-2023 05:20:52 UTC] PHP Notice:  include(): Read of 7503 bytes failed with errno=12 Cannot allocate memory in /home3/ewqsvwdn/demo.pentacodesdemos.com/vendor/composer/ClassLoader.php on line 571
+[19-May-2023 05:20:53 UTC] PHP Warning:  include(): Failed opening '/home3/ewqsvwdn/demo.pentacodesdemos.com/vendor/composer/../symfony/http-foundation/HeaderBag.php' for inclusion (include_path='.:/opt/alt/php81/usr/share/pear:/opt/alt/php81/usr/share/php:/usr/share/pear:/usr/share/php') in /home3/ewqsvwdn/demo.pentacodesdemos.com/vendor/composer/ClassLoader.php on line 571
+[24-May-2023 04:32:27 UTC] PHP Notice:  require(): Read of 632 bytes failed with errno=12 Cannot allocate memory in /home3/ewqsvwdn/demo.pentacodesdemos.com/vendor/composer/autoload_real.php on line 55
+[24-May-2023 04:32:28 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/home3/ewqsvwdn/demo.pentacodesdemos.com/vendor/composer/../swiftmailer/swiftmailer/lib/swift_required.php' (include_path='.:/opt/alt/php81/usr/share/pear:/opt/alt/php81/usr/share/php:/usr/share/pear:/usr/share/php') in /home3/ewqsvwdn/demo.pentacodesdemos.com/vendor/composer/autoload_real.php:55
+Stack trace:
+#0 /home3/ewqsvwdn/demo.pentacodesdemos.com/vendor/composer/autoload_real.php(38): composerRequire13241f4e9b6eafa304eafa2a1f17c104()
+#1 /home3/ewqsvwdn/demo.pentacodesdemos.com/vendor/autoload.php(25): ComposerAutoloaderInit13241f4e9b6eafa304eafa2a1f17c104::getLoader()
+#2 /home3/ewqsvwdn/demo.pentacodesdemos.com/public/index.php(34): require('/home3/ewqsvwdn...')
+#3 {main}
+  thrown in /home3/ewqsvwdn/demo.pentacodesdemos.com/vendor/composer/autoload_real.php on line 55
+[05-Jun-2023 12:01:25 UTC] PHP Notice:  require(): Read of 725274 bytes failed with errno=14 Bad address in /home3/ewqsvwdn/demo.pentacodesdemos.com/vendor/composer/autoload_real.php on line 31
+[05-Jun-2023 12:25:31 UTC] PHP Fatal error:  During class fetch: Uncaught ErrorException: include(): Read of 1268 bytes failed with errno=12 Cannot allocate memory in /home3/ewqsvwdn/demo.pentacodesdemos.com/vendor/composer/ClassLoader.php:571
+Stack trace:
+#0 /home3/ewqsvwdn/demo.pentacodesdemos.com/vendor/composer/ClassLoader.php(571): Illuminate\Foundation\Bootstrap\HandleExceptions->handleError()
+#1 /home3/ewqsvwdn/demo.pentacodesdemos.com/vendor/composer/ClassLoader.php(571): include()
+#2 /home3/ewqsvwdn/demo.pentacodesdemos.com/vendor/composer/ClassLoader.php(428): Composer\Autoload\includeFile()
+#3 /home3/ewqsvwdn/demo.pentacodesdemos.com/vendor/laravel/framework/src/Illuminate/View/Compilers/BladeCompiler.php(15): Composer\Autoload\ClassLoader->loadClass()
+#4 /home3/ewqsvwdn/demo.pentacodesdemos.com/vendor/composer/ClassLoader.php(571): include('/home3/ewqsvwdn...')
+#5 /home3/ewqsvwdn/demo.pentacodesdemos.com/vendor/composer/ClassLoader.php(428): Composer\Autoload\includeFile()
+#6 /home3/ewqsvwdn/demo.pentacodesdemos.com/vendor/laravel/framework/src/Illuminate/View/ViewServiceProvider.php(88): Composer\Autoload\ClassLoader->loadClass()
+#7 /home3/ewqsvwdn/demo.pentacodesdemos.com/vendor/laravel/framework/src/Illuminate/Container/Container.php(873): Illuminate\View\ViewServiceProvider->Illuminate\View\{closure}()
+#8 /home3/ewqsvwdn/demo.pentacodesdemos.com/vendor/laravel/framework/src/Illuminate/Container/Container.php(758): Illuminate\Container\Container->build()
+#9 /home3/ewqsvwdn/demo.pentacodesdemos.com/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(851): Illuminate\Container\Container->resolve()
+#10 /home3/ewqsvwdn/demo.pentacodesdemos.com/vendor/laravel/framework/src/Illuminate/Container/Container.php(694): Illuminate\Foundation\Application->resolve()
+#11 /home3/ewqsvwdn/demo.pentacodesdemos.com/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(836): Illuminate\Container\Container->make()
+#12 /home3/ewqsvwdn/demo.pentacodesdemos.com/vendor/laravel/framework/src/Illuminate/Container/Container.php(1419): Illuminate\Foundation\Application->make()
+#13 /home3/ewqsvwdn/demo.pentacodesdemos.com/vendor/laravel/framework/src/Illuminate/View/ViewServiceProvider.php(150): Illuminate\Container\Container->offsetGet()
+#14 [internal function]: Illuminate\View\ViewServiceProvider->Illuminate\View\{closure}()
+#15 /home3/ewqsvwdn/demo.pentacodesdemos.com/vendor/laravel/framework/src/Illuminate/View/Engines/EngineResolver.php(55): call_user_func()
+#16 /home3/ewqsvwdn/demo.pentacodesdemos.com/vendor/facade/ignition/src/IgnitionServiceProvider.php(467): Illuminate\View\Engines\EngineResolver->resolve()
+#17 /home3/ewqsvwdn/demo.pentacodesdemos.com/vendor/facade/ignition/src/IgnitionServiceProvider.php(158): Facade\Ignition\IgnitionServiceProvider->hasCustomViewEnginesRegistered()
+#18 /home3/ewqsvwdn/demo.pentacodesdemos.com/vendor/facade/ignition/src/IgnitionServiceProvider.php(101): Facade\Ignition\IgnitionServiceProvider->registerViewEngines()
+#19 /home3/ewqsvwdn/demo.pentacodesdemos.com/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(36): Facade\Ignition\IgnitionServiceProvider->boot()
+#20 /home3/ewqsvwdn/demo.pentacodesdemos.com/vendor/laravel/framework/src/Illuminate/Container/Util.php(40): Illuminate\Container\BoundMethod::Illuminate\Container\{closure}()
+#21 /home3/ewqsvwdn/demo.pentacodesdemos.com/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(93): Illuminate\Container\Util::unwrapIfClosure()
+#22 /home3/ewqsvwdn/demo.pentacodesdemos.com/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(37): Illuminate\Container\BoundMethod::callBoundMethod()
+#23 /home3/ewqsvwdn/demo.pentacodesdemos.com/vendor/laravel/framework/src/Illuminate/Container/Container.php(653): Illuminate\Container\BoundMethod::call()
+#24 /home3/ewqsvwdn/demo.pentacodesdemos.com/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(924): Illuminate\Container\Container->call()
+#25 /home3/ewqsvwdn/demo.pentacodesdemos.com/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(905): Illuminate\Foundation\Application->bootProvider()
+#26 [internal function]: Illuminate\Foundation\Application->Illuminate\Foundation\{closure}()
+#27 /home3/ewqsvwdn/demo.pentacodesdemos.com/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(906): array_walk()
+#28 /home3/ewqsvwdn/demo.pentacodesdemos.com/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/BootProviders.php(17): Illuminate\Foundation\Application->boot()
+#29 /home3/ewqsvwdn/demo.pentacodesdemos.com/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(237): Illuminate\Foundation\Bootstrap\BootProviders->bootstrap()
+#30 /home3/ewqsvwdn/demo.pentacodesdemos.com/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(153): Illuminate\Foundation\Application->bootstrapWith()
+#31 /home3/ewqsvwdn/demo.pentacodesdemos.com/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(137): Illuminate\Foundation\Http\Kernel->bootstrap()
+#32 /home3/ewqsvwdn/demo.pentacodesdemos.com/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(111): Illuminate\Foundation\Http\Kernel->sendRequestThroughRouter()
+#33 /home3/ewqsvwdn/demo.pentacodesdemos.com/public/index.php(52): Illuminate\Foundation\Http\Kernel->handle()
+#34 {main} in /home3/ewqsvwdn/demo.pentacodesdemos.com/vendor/laravel/framework/src/Illuminate/View/Compilers/BladeCompiler.php on line 15

@@ -1,0 +1,632 @@
+.brandPartner {
+
+  picture {
+    margin-left: auto;
+    margin-right: auto;
+
+    margin-bottom: 0px;
+
+    @include min(768) {
+      width: 145px;
+    }
+
+    @include min(1200) {
+      width: 150.2px;
+      margin-bottom: 11px;
+    }
+
+    @include min(1440) {
+      width: 163.2px;
+      margin-bottom: 13px;
+    }
+
+    @include min(1600) {
+      width: 173.2px;
+      margin-bottom: 16px;
+    }
+
+    @include min(1900) {
+      width: 183.2px;
+      margin-bottom: 18px;
+    }
+  }
+
+  &-row {
+    gap: 16.26px 4%;
+
+    @include min(992) {
+      gap: 25.26px 1.55%;
+    }
+  }
+
+  &-card {
+    text-align: center;
+    border: 1px solid rgba(111, 106, 106, 0.23);
+    background: #FFF;
+    border-radius: 10px;
+    width: 47.9%;
+    padding: 15px;
+
+    @include min(576) {
+      width: 32.3%;
+      padding: 20px;
+    }
+
+    @include min(992) {
+      padding: 23px;
+      width: 23.826%;
+    }
+
+    @include min(1280) {
+      padding: 25px;
+    }
+
+    @include min(1440) {
+      padding: 27px;
+    }
+
+    @include min(1600) {
+      padding: 29px;
+    }
+
+    @include min(1900) {
+      padding: 33px;
+    }
+
+    a {
+      justify-content: center;
+    }
+
+    &:hover {
+      i {
+        background-color: $primaryColor;
+
+        svg {
+          animation: arrowExitEnter 0.5s ease-in-out;
+        }
+      }
+    }
+  }
+
+  .product-btn {
+    i {
+      width: 28px;
+      height: 28px;
+
+      @include min(1200) {
+        width: 32px;
+        height: 32px;
+      }
+
+      @include min(1440) {
+        width: 34px;
+        height: 34px;
+      }
+    }
+  }
+}
+
+// ==================Brand Details===================================
+
+
+.brand-logo {
+  width: 50.51%;
+  margin-bottom: 20px;
+  @include min(992){
+      margin-bottom: 35px;
+  }
+  @include min(1200){
+      margin-bottom: 40px;
+  }
+  @include min(1440){
+      margin-bottom: 44px;
+  }
+
+  img {
+    width: 100%;
+    height: auto;
+  }
+}
+
+.brand-details {
+  p {
+    font-weight: 400;
+
+  }
+
+  .gallery {
+    @include min(992) {
+      width: 40.797%;
+    }
+  }
+
+  .content {
+    @include min(992) {
+      width: 54.859%;
+    }
+    h1{
+      @include max(575){
+        white-space: normal;
+      }
+    }
+    h1 {
+
+      +p,
+      +strong {
+
+        margin-top: 8px;
+        @include min(1200){
+           margin-top: 16px;
+        }
+        @include min(1440){
+           margin-top: 20px;
+        }
+      }
+
+      span {
+        font-weight: 400;
+        display: block;
+      }
+    }
+
+    strong {
+      display: block;
+    }
+
+    strong+p {
+      margin-top: 8px;
+    }
+
+    p+p {
+      margin-top: 15px;
+    }
+
+  }
+}
+
+.highlights {
+  margin-top: 20px;
+  margin-bottom: 21px;
+  gap: 8px;
+  @include min(768){
+    margin-top: 39px;
+  margin-bottom: 21px;
+  }
+
+  div {
+
+
+    display: flex;
+    align-items: center;
+    gap: 11px;
+    border-radius: 5px;
+    border: 1px solid #D6DFFA;
+    background: #FFF;
+    padding: 8px;
+    width: 48.6%;
+    @include min(768){
+          padding: 12px;
+          width: 32.3%;
+
+    }
+    picture {
+      border-radius: 4.2px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 27px;
+      width: 27px;
+      @include min(768){
+        height: 35px;
+        width: 35px;
+
+      }
+        img {
+        height: auto;
+        width:18px;
+        @include min(768){
+          width: 22px;
+
+        }
+      }
+
+    }
+
+    p {
+      
+      font-size: 11px;
+      line-height: normal;
+      width: 104px;
+      white-space: pre-line;
+      font-weight: 600;
+      color: $headingColor;
+      @include min(768){
+        width: 74%;
+        font-size: 12px; 
+      }
+    }
+
+    &:nth-child(1) {
+      picture {
+        background: rgba(255, 18, 19, 0.17);
+      }
+    }
+
+    &:nth-child(2) {
+      picture {
+        background: rgba(255, 195, 0, 0.22);
+      }
+    }
+
+    &:nth-child(3) {
+      picture {
+        background: rgba(165, 165, 223, 0.28);
+      }
+    }
+  }
+}
+
+.header-slider {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  @include min(768){
+      width: 87%;
+  }
+  @include max(1199){
+    gap: 0!important;
+    margin-bottom: 15px;
+  }
+
+  p {
+    font-weight: 400;
+
+  }
+}
+
+.slider-container {
+
+  width: 70%;
+  margin-left: auto;
+  margin-right: auto;
+  @include min(768){
+      width: 85.2%;
+  }
+}
+
+.slider-container-services {
+  position: relative;
+
+  padding: 4.252% 5.32% 0 5.32%;
+
+  &:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 76.459%;
+    border-radius: 10px;
+    background: rgba(255, 18, 19, 0.04);
+    z-index: -1;
+    @include min(768){
+          height: 83.459%;
+    }
+  }
+}
+
+.brands-other-products,
+.our-services {
+  .title {
+    @include min(1200){
+      margin-bottom: 38px;
+    }
+
+    h2 {
+      display: flex;
+      gap: 15px;
+
+      span {
+        font-weight: 400;
+      }
+    }
+  }
+
+}
+
+.brands-other-products {
+
+  background: linear-gradient(180deg, rgba(226, 226, 240, 0.59) 79.81%, rgba(254, 254, 255, 0.59) 100%);
+  margin-top: 30px;
+padding-top: 30px;
+padding-bottom: 30px;
+  @include min(768){
+    margin-top: 33px;
+  padding-top: 33px;
+  padding-bottom: 50.54px;
+  }
+  @include min(992){
+    margin-top: 35px;
+  padding-top: 35px;
+  padding-bottom: 52.54px;
+  }
+  @include min(1200){
+    margin-top: 38px;
+  padding-top: 38px;
+  padding-bottom: 55.54px;
+  }
+  @include min(1440){
+    margin-top: 40px;
+  padding-top: 40px;
+  padding-bottom: 57.54px;
+  }
+  .slick-nav {
+    z-index: 0;
+    width: 100%;
+    right: 0;
+    display: flex;
+    top: 54%;
+    @include min(992){
+      top: 44%;
+
+    }
+
+    div {
+      border: 0.65px solid #D9D9D9;
+      background: #FFF;
+
+      &:hover {
+        background-color: $primaryLight;
+
+        path {
+          fill: $primaryColor;
+        }
+      }
+    }
+  }
+
+
+
+  .slick-list {
+    margin: 0px -14.34px;
+    @include min(1350){
+      margin: 0px -12.34px;
+  
+    }
+    @include min(1440){
+      margin: 0px -14.34px;
+  
+    }
+  }
+
+  .slick-slide {
+    margin: 0px 14.34px;
+    @include min(1350){
+      margin: 0px 12.34px;
+    }
+    @include min(1440){
+      margin: 0px 14.34px;
+    }
+  }
+
+  picture {
+    border-radius: 10px;
+
+    img {
+      border-radius: 10px;
+      border: 1px solid rgba(165, 165, 223, 0.55);
+      width: 100%;
+      height: auto;
+    }
+  }
+
+}
+
+.other-product-details {
+
+  overflow: hidden;
+  border-radius: 10px;
+
+  width: 88.58%;
+  background: #fff;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: -50px;
+  z-index: 1;
+  position: relative;
+  padding: 12px;
+  @include min(1200){
+    padding: 15px;
+
+  }
+  @include min(1440){
+    padding: 17px;
+
+  }
+  @include min(1600){
+    padding: 19px;
+  }
+  @include min(1900){
+    padding: 21px;
+  }
+
+  h3 {
+    font-weight: 600;
+    margin-bottom: 6.68px;
+    font-size: 16px;
+    @include min(1600){
+      margin-bottom: 7.68px;
+      font-size: 18px;
+    }
+    @include min(1900){
+      margin-bottom: 8.68px;
+      font-size: 20px;
+    }
+  }
+
+  p {
+    font-size: 12px;
+    line-height: 183.333%;
+    @include min(1600){
+      font-size: 14px;
+
+    }
+    @include min(1900){
+      font-size: 16px;
+
+    }
+
+
+  }
+}
+
+
+
+.our-services {
+  margin-bottom: 40px;
+  @include min(768){
+      margin-bottom: 50px;
+  }
+  @include min(992){
+      margin-bottom: 60px;
+  }
+  @include min(1200){
+      margin-bottom: 70px;
+  }
+  @include min(1440){
+      margin-bottom: 77px;
+  }
+  .col-left {
+
+    @include min(1200){
+          width: 44.04%;
+    }
+  }
+
+  .col-right {
+    @include min(1200){
+      width: 49.995%;
+    }
+  }
+
+  img {
+    width: 100%;
+    height: auto;
+  }
+
+  .slick-slide {
+
+    margin: 0px 10px;
+    @include min(1200){
+      margin: 0px 10px;
+    }
+    @include min(1350){
+      margin: 0px 13px;
+    }
+    @include min(1440){
+      margin: 0px 17px;
+    }
+  }
+
+  .slick-list {
+     margin: 0px -10px;
+    @include min(1200){
+      margin: 0px -10px;
+    }
+    @include min(1350){
+      margin: 0px -13px;
+    }
+    @include min(1440){
+      margin: 0px -17px;
+    }
+  }
+  &-slider{
+
+    z-index: 3;
+  }
+  
+  &-card {
+    border-radius: 10px;
+    border: 1px solid #A5A5DF;
+
+
+    border-bottom: 4px solid #FF1213;
+    background: #FFF;
+    padding: 12px 12px 21px;
+
+    picture {
+      margin-bottom: 12px;
+
+      img {
+        border-radius: 10px;
+      }
+    }
+
+    h3 {
+      font-weight: 600;
+
+      margin-bottom: 7px;
+      font-size: 14px;
+      @include min(1200){
+        font-size: 12px;
+      }
+      @include min(1440){
+        font-size: 14px;
+      }
+      @include min(1600){
+        font-size: 16px;
+      }
+      @include min(1900){
+        font-size: 18px;
+      }
+    }
+
+    p {
+      line-height: 183.333% ;
+              font-size: 12px;
+
+      @include min(1200){
+        font-size: 10px;
+      }
+      @include min(1350){
+        font-size: 11px;
+      }
+      @include min(1440){
+        font-size: 12px;
+      }
+      @include min(1600){
+        font-size: 14px;
+ 
+      }
+      @include min(1900){
+        font-size: 16px;
+      }
+
+    }
+  }
+
+  .slick-nav {
+    z-index: 0;
+    width: 92%;
+    display: flex
+;
+    right:0;
+    left: 0;
+    top: 50%;
+    transform:translate(0%, -79%);
+    margin: auto;
+     div {
+            border: 0.65px solid #D9D9D9;
+            background: #FFF;
+ 
+
+            &:hover {
+                background-color: $primaryLight;
+
+                path {
+                    fill: $primaryColor;
+                }
+            }
+        }
+  }
+}

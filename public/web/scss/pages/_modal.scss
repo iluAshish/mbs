@@ -1,0 +1,107 @@
+.enquiryForm {
+  .modal-dialog{
+    margin: auto;
+    max-width: 95%;
+    @include min(992){
+      max-width: 58.96%;
+
+    }
+  }
+
+  .modal-content{
+    border-radius: 20px;
+  background: #FFF;
+  box-shadow: 0px 0px 10px 10px rgba(54, 54, 54, 0.11);
+    padding: 42px 32px 32px 32px;
+  }
+  .formGroup {
+    padding: 0;
+  }
+  .row{
+    gap: 12px;
+    @include min(768){
+      gap: 8px;
+    }
+    @include min(992){
+      gap: 10px;
+    }
+    @include min(1200){
+      gap: 13px;
+    }
+    @include min(1280){
+      gap: 14px;
+    }
+    @include min(1360){
+      gap: 15px;
+    }
+    @include min(1440){
+      gap: 16px;
+    }
+  }
+  .col--6{
+    width: 100%;
+    @include min(768){
+      width: 49%;
+
+    }
+  }
+  .col--4{
+    width: 100%;
+    @include min(768){
+      width: 32%;
+
+    }
+  }
+  .title{
+    font-weight: 600;
+    color: $headingColor;
+    font-size: 18px;
+    margin-bottom: 30px;
+  }
+  .btn-close
+ {
+    position: absolute;
+    right: 20px;
+    background-color: #DEDEF6;
+    border-radius: 50%;
+    width: 42px;
+    height: 42px;
+    top: 32px;
+        z-index: 2;
+        &:focus{
+          outline: unset;
+          box-shadow: unset;
+        }
+}
+.buttonGroup {
+  gap: 12px;
+  button{
+    min-width: 119px;
+    min-height: 46px;
+  }
+  .btn-cancel{
+    // font-size: 0;
+    &:hover{
+      background-color: $secondaryColor;
+      color: $primaryColor;
+    }
+  }
+}
+}
+
+  input,textarea{
+        line-height: normal;
+          width: 100%;
+          border-radius: 5px;
+      border: 1px solid #DADDE4;
+      background: #FFF;
+      padding: 13.5px 12px;
+      &:focus{
+              border: 1px solid #DADDE4;
+
+      }
+  }
+  textarea{
+    height: 150px;
+
+  }

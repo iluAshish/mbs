@@ -1,0 +1,206 @@
+@extends('web.layouts.main')
+@section('content')
+@if(@$banner)
+        @include('web.includes.banner',['type'=>'Contact'])
+    @endif
+    <section class="contactSection">
+        <div class="container">
+            <div class="row">
+                @foreach ($locations as $location)
+                
+                <div class="col-lg-4 mt-4">
+                    @if ($location->google_map)
+                    <div class="map">
+                        <iframe src="{{ $location->google_map }}" style="border: 0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" width="100%" height="290px"></iframe>
+                    </div>
+                    
+                    @endif
+                    <div class="contactInfo">
+                        <ul>
+                            <li>
+                                <svg width="29" height="29" viewBox="0 0 29 29" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <rect width="29" height="29" fill="#E2251D"/>
+                                    <g clip-path="url(#clip0_224_505)">
+                                        <path d="M21.9375 21.4061V12.9927C21.9375 12.3589 21.4222 11.8436 20.7884 11.8436H17.6875V7.98458C17.6875 7.93889 17.6774 7.36461 17.178 7.02992C16.6787 6.69577 16.1437 6.90508 16.1012 6.92208L8.30509 10.1324C7.87319 10.3104 7.59375 10.7269 7.59375 11.1949V21.4061H7.0625C6.76925 21.4061 6.53125 21.6441 6.53125 21.9373C6.53125 22.2306 6.76925 22.4686 7.0625 22.4686H8.125H17.1562H21.4062H21.9375C22.2308 22.4686 22.4688 22.2306 22.4688 21.9373C22.4688 21.6441 22.2308 21.4061 21.9375 21.4061ZM8.65625 11.1949C8.65625 11.1599 8.6775 11.1285 8.70991 11.1152L16.506 7.90542C16.5352 7.89374 16.5618 7.89639 16.5868 7.91339C16.6122 7.92986 16.625 7.95377 16.625 7.98458V12.3748V21.4061H8.65625V11.1949ZM17.6875 21.4061V12.9061H20.7884C20.8362 12.9061 20.875 12.9449 20.875 12.9927V21.4061H17.6875Z" fill="white"/>
+                                        <path d="M13.9688 18.75H11.3125C11.0193 18.75 10.7812 18.988 10.7812 19.2812C10.7812 19.5745 11.0193 19.8125 11.3125 19.8125H13.9688C14.262 19.8125 14.5 19.5745 14.5 19.2812C14.5 18.988 14.262 18.75 13.9688 18.75Z" fill="white"/>
+                                        <path d="M13.9688 16.625H11.3125C11.0193 16.625 10.7812 16.863 10.7812 17.1562C10.7812 17.4495 11.0193 17.6875 11.3125 17.6875H13.9688C14.262 17.6875 14.5 17.4495 14.5 17.1562C14.5 16.863 14.262 16.625 13.9688 16.625Z" fill="white"/>
+                                        <path d="M13.9688 14.5H11.3125C11.0193 14.5 10.7812 14.738 10.7812 15.0312C10.7812 15.3245 11.0193 15.5625 11.3125 15.5625H13.9688C14.262 15.5625 14.5 15.3245 14.5 15.0312C14.5 14.738 14.262 14.5 13.9688 14.5Z" fill="white"/>
+                                        <path d="M13.9688 12.375H11.3125C11.0193 12.375 10.7812 12.613 10.7812 12.9062C10.7812 13.1995 11.0193 13.4375 11.3125 13.4375H13.9688C14.262 13.4375 14.5 13.1995 14.5 12.9062C14.5 12.613 14.262 12.375 13.9688 12.375Z" fill="white"/>
+                                    </g>
+                                    <defs>
+                                        <clipPath id="clip0_224_505">
+                                            <rect width="17" height="17" fill="white" transform="translate(6 6)"/>
+                                        </clipPath>
+                                    </defs>
+                                </svg>
+                                <div>
+                                    <p>
+                                        <b>{{ $location->location }}</b><br>
+                                        @if ($location->office_address)
+                                        {{ $location->office_address }}
+                                        @endif
+                                    </p>
+                                </div>
+                            </li>
+                            @if ($location->phone_number)
+                            <li>
+                                <svg width="29" height="29" viewBox="0 0 29 29" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <rect width="29" height="29" fill="#E2251D"/>
+                                    <g clip-path="url(#clip0_224_519)">
+                                        <path d="M19.4357 16.531C19.0877 16.1686 18.6679 15.9748 18.223 15.9748C17.7816 15.9748 17.3583 16.165 16.9959 16.5274L15.8621 17.6576C15.7688 17.6074 15.6755 17.5607 15.5858 17.5141C15.4566 17.4495 15.3346 17.3885 15.2306 17.3239C14.1686 16.6494 13.2034 15.7703 12.2777 14.6329C11.8292 14.066 11.5278 13.5888 11.3089 13.1045C11.6032 12.8354 11.8758 12.5555 12.1414 12.2864C12.2418 12.1859 12.3423 12.0819 12.4427 11.9814C13.1962 11.228 13.1962 10.252 12.4427 9.49856L11.4632 8.51905C11.352 8.40782 11.2372 8.29301 11.1295 8.17819C10.9143 7.95574 10.6882 7.72611 10.455 7.51083C10.107 7.16638 9.69077 6.9834 9.25304 6.9834C8.81531 6.9834 8.39193 7.16638 8.03313 7.51083C8.02954 7.51442 8.02954 7.51442 8.02596 7.51801L6.80605 8.74868C6.34679 9.20794 6.08487 9.76766 6.02746 10.4171C5.94135 11.4648 6.24991 12.4407 6.48672 13.0794C7.06797 14.6473 7.93626 16.1004 9.23151 17.6576C10.803 19.5341 12.6939 21.0159 14.8539 22.06C15.6791 22.4511 16.7806 22.914 18.0113 22.9929C18.0866 22.9965 18.1655 23.0001 18.2373 23.0001C19.0661 23.0001 19.7622 22.7023 20.3076 22.1103C20.3112 22.1031 20.3183 22.0995 20.3219 22.0923C20.5085 21.8663 20.7238 21.6618 20.9498 21.4429C21.1041 21.2958 21.262 21.1415 21.4162 20.9801C21.7715 20.6105 21.958 20.1799 21.958 19.7386C21.958 19.2937 21.7679 18.8667 21.4055 18.5079L19.4357 16.531ZM20.7202 20.3091C20.7166 20.3091 20.7166 20.3127 20.7202 20.3091C20.5803 20.4598 20.4367 20.5961 20.2824 20.7468C20.0492 20.9693 19.8124 21.2025 19.59 21.4644C19.2276 21.8519 18.8006 22.0349 18.2409 22.0349C18.1871 22.0349 18.1297 22.0349 18.0759 22.0313C17.0102 21.9632 16.0199 21.547 15.2772 21.1917C13.2464 20.2086 11.4632 18.8129 9.9814 17.0441C8.7579 15.5694 7.93985 14.206 7.39806 12.7421C7.06438 11.8487 6.94239 11.1526 6.99621 10.496C7.03209 10.0762 7.19355 9.72819 7.49135 9.43039L8.71485 8.20689C8.89066 8.04185 9.07723 7.95215 9.26022 7.95215C9.48626 7.95215 9.66925 8.08849 9.78406 8.20331C9.78765 8.20689 9.79124 8.21048 9.79482 8.21407C10.0137 8.41859 10.2218 8.63028 10.4407 8.85632C10.5519 8.97113 10.6667 9.08595 10.7815 9.20435L11.761 10.1839C12.1414 10.5642 12.1414 10.9158 11.761 11.2961C11.657 11.4002 11.5565 11.5042 11.4525 11.6047C11.1511 11.9133 10.864 12.2003 10.5519 12.4802C10.5447 12.4873 10.5375 12.4909 10.5339 12.4981C10.2254 12.8067 10.2828 13.1081 10.3474 13.3126C10.351 13.3233 10.3545 13.3341 10.3581 13.3449C10.6129 13.962 10.9717 14.5432 11.517 15.2357L11.5206 15.2393C12.5109 16.4592 13.555 17.41 14.7067 18.1384C14.8539 18.2317 15.0046 18.307 15.1481 18.3788C15.2772 18.4434 15.3992 18.5044 15.5033 18.5689C15.5176 18.5761 15.532 18.5869 15.5463 18.5941C15.6683 18.6551 15.7831 18.6838 15.9015 18.6838C16.1993 18.6838 16.3859 18.4972 16.4469 18.4362L17.674 17.2091C17.796 17.0871 17.9897 16.94 18.2158 16.94C18.4382 16.94 18.6212 17.0799 18.7324 17.2019C18.736 17.2055 18.736 17.2055 18.7396 17.2091L20.7166 19.1861C21.0862 19.552 21.0862 19.9288 20.7202 20.3091Z" fill="white"/>
+                                        <path d="M15.1878 10.0439C16.1278 10.2018 16.9817 10.6467 17.6635 11.3284C18.3452 12.0101 18.7865 12.864 18.948 13.8041C18.9874 14.0409 19.1919 14.2059 19.4252 14.2059C19.4539 14.2059 19.479 14.2023 19.5077 14.1988C19.7732 14.1557 19.949 13.9045 19.9059 13.639C19.7122 12.5016 19.174 11.4647 18.3524 10.6431C17.5307 9.82144 16.4938 9.28324 15.3564 9.08949C15.0909 9.04644 14.8433 9.22225 14.7967 9.48417C14.75 9.74609 14.9223 10.0008 15.1878 10.0439Z" fill="white"/>
+                                        <path d="M22.981 13.4991C22.6617 11.6261 21.7791 9.92186 20.4228 8.5656C19.0666 7.20935 17.3623 6.32671 15.4894 6.00738C15.2275 5.96074 14.9799 6.14014 14.9332 6.40206C14.8902 6.66757 15.066 6.91514 15.3315 6.96178C17.0035 7.24523 18.5284 8.03817 19.7411 9.24732C20.9538 10.4601 21.7432 11.9849 22.0266 13.6569C22.0661 13.8937 22.2706 14.0588 22.5038 14.0588C22.5326 14.0588 22.5577 14.0552 22.5864 14.0516C22.8483 14.0121 23.0277 13.761 22.981 13.4991Z" fill="white"/>
+                                    </g>
+                                    <defs>
+                                        <clipPath id="clip0_224_519">
+                                            <rect width="17" height="17" fill="white" transform="translate(6 6)"/>
+                                        </clipPath>
+                                    </defs>
+                                </svg>
+                                <div>
+                                    <p>
+                                        <a href="tel:{{ $location->phone_number }}">{{ $location->phone_number }}</a>
+                                    </p>
+                                </div>
+                            </li>
+                            @endif
+                            @if ($location->email)
+                            <li>
+                                <svg width="29" height="29" viewBox="0 0 29 29" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <rect width="29" height="29" fill="#E2251D"/>
+                                    <path d="M21.5059 8.52344H7.49414C6.66861 8.52344 6 9.1962 6 10.0176V18.9824C6 19.8087 6.67353 20.4766 7.49414 20.4766H21.5059C22.3245 20.4766 23 19.8115 23 18.9824V10.0176C23 9.19766 22.334 8.52344 21.5059 8.52344ZM21.2966 9.51953C20.9913 9.82317 15.7379 15.0489 15.5565 15.2294C15.2743 15.5116 14.8991 15.667 14.5 15.667C14.1009 15.667 13.7257 15.5116 13.4425 15.2284C13.3206 15.1071 8.1251 9.93902 7.70339 9.51953H21.2966ZM6.99609 18.7797V10.2209L11.3005 14.5027L6.99609 18.7797ZM7.70402 19.4805L12.0067 15.2051L12.7391 15.9337C13.2095 16.4041 13.8348 16.6631 14.5 16.6631C15.1652 16.6631 15.7905 16.4041 16.2599 15.9346L16.9933 15.2051L21.296 19.4805H7.70402ZM22.0039 18.7797L17.6995 14.5027L22.0039 10.2209V18.7797Z" fill="white"/>
+                                </svg>
+                                <div>
+                                    <p>
+                                        <a href="mailto:{{ $location->email }}">{{ $location->email }}</a>
+                                    </p>
+                                </div>
+                            </li>
+                            @endif
+                        </ul>
+                    </div>
+                </div>
+                @endforeach
+            </div>
+        </div>
+    </section>
+    <section class="getInTouch">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-12 text-center">
+                    <h2>Get In Touch</h2>
+                </div>
+                <div class="col-lg-8 text-center mt-30">
+                    <p>Proin ornare urna diam, non tincidunt lacus aliquam eget. Integer rhoncus suscipit mi, sed porttitor nibh mollis non. Proin in sapien viverra, pellentesque sapien nec, aliquet justo. </p>
+                </div>
+                <div class="col-lg-10">
+                    <div class="formWrapper">
+                        <form id="contact_form" method="POST" action="{{ url('/') }}/enquiry">
+                            {{csrf_field()}}
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <div class="form-group">
+                                        <label for="fname">Name <sapn>*</sapn></label>
+                                        <input type="text" class="form-control"name="name" id="fname" placeholder="Enter Name">
+                                        <div id="error-name" class="medicom_error">Please enter Name</div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="form-group">
+                                        <label for="email">Email <sapn>*</sapn></label>
+                                        <input type="email" class="form-control" name="email" id="email" placeholder="Enter Email">
+                                        <div id="error-email" class="medicom_error">Please enter Email</div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="form-group">
+                                        <label for="">Phone Number <sapn>*</sapn></label>
+                                        <input type="text" class="form-control phone_tel" name="phone" id="number" placeholder="Phone Number">
+                                        <div id="error-number" class="medicom_error">Invalid phone number.</div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="form-group">
+                                        <label for="company">Company Name <span>*</span></label>
+                                        <input type="text" class="form-control" name="company" id="company" placeholder="Enter Company Name">
+                                        <div id="error-company" class="medicom_error">Please enter company.</div>
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-12">
+                                    <div class="form-group">
+                                        <label for="msg">Message <sapn>*</sapn></label>
+                                        <textarea name="message" id="msg" class="form-control" placeholder="Message"></textarea>
+                                        <div id="error-msg" class="medicom_error">Please enter message.</div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-12">
+                                    <div class="form-group ">
+                                        <button href="#" class="primary_btn">
+                                            <span>Send Request</span>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script>
+        document.getElementById('contact_form').addEventListener('submit', function(event) {
+
+
+            event.preventDefault();
+
+            const nameInput = document.getElementById('fname');
+            const emailInput = document.getElementById('email');
+            const numberInput = document.getElementById('number');
+            const messageInput = document.getElementById('msg');
+            const companyInput = document.getElementById('company');
+            let formValid = true;
+
+            if (nameInput.value.trim() === '') {
+                document.getElementById('error-name').style.display = 'block';
+                formValid = false;
+            } else {
+                document.getElementById('error-name').style.display = 'none';
+            }
+            const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+            if (emailInput.value.trim() === '' || !emailPattern.test(emailInput.value.trim())) {
+                document.getElementById('error-email').style.display = 'block';
+                formValid = false;
+            } else {
+                document.getElementById('error-email').style.display = 'none';
+            }
+
+            const phonePattern = /^(\+?\d{1,4})?\s?-?\d{9,15}$/;
+            if (numberInput.value.trim() === '' || !phonePattern.test(numberInput.value.trim())) {
+                document.getElementById('error-number').style.display = 'block';
+                formValid = false;
+            } else {
+                document.getElementById('error-number').style.display = 'none';
+            }
+
+            if (messageInput.value.trim() === '') {
+                document.getElementById('error-msg').style.display = 'block';
+                formValid = false;
+            } else {
+                document.getElementById('error-msg').style.display = 'none';
+            }
+
+            if (companyInput.value.trim() === '') {
+                document.getElementById('error-company').style.display = 'block';
+                formValid = false;
+            } else {
+                document.getElementById('error-company').style.display = 'none';
+            }
+
+            if (formValid) {
+                this.submit();
+            }
+        });
+
+    </script>
+@endsection

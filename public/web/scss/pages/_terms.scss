@@ -1,0 +1,185 @@
+.terms-content{
+    margin-top: 20px;
+    @include min(768){
+        margin-top: 24px;
+    }
+    @include min(992){
+        margin-top: 28px;
+    }
+    @include min(1200){
+        margin-top: 30px;
+    }
+    @include min(1440){
+        margin-top: 34px;
+    }
+    p{
+        font-weight: 400;
+    }
+    p + p, p + strong{
+        display: block;
+        margin-top: 34px;
+    }
+    strong{
+        font-size: 18px;
+        margin-bottom: 8px;
+    }
+    p + ul{
+       margin-top: 14px;
+
+    }
+
+}
+
+
+
+
+
+
+
+
+
+// ========================THANK YOU=====================
+.pulse-background {
+	position: relative;
+
+	margin-left:  auto;
+	margin-right:  auto;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+    width: 115px;
+    height: 115px;
+    @include min(768){
+        	width: 165px;
+	        height: 165px;
+    }
+    @include min(992){
+        	width: 170px;
+	        height: 170px;
+    }
+    @include min(1200){
+        	width: 180px;
+	        height: 180px;
+    }
+    @include min(1350){
+        	width: 190px;
+	        height: 190px;
+    }
+    @include min(1440){
+        	width: 200px;
+	        height: 200px;
+    }
+}
+.pulse-circle {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	border-radius: 50%;
+	background: rgba(214, 223, 250, 0.35);
+	animation: pulseRing 2.5s infinite ease-out;
+	&:nth-child(1) {
+		animation-delay: 0.4s;
+		background: rgba(214, 223, 250, 0.81);
+	}
+	&:nth-child(2) {
+		animation-delay: 0.8s;
+	}
+	&:nth-child(3) {
+		animation-delay: 1.2s;
+	}
+	&:nth-child(4) {
+		animation-delay: 1.6s;
+	}
+}
+.icon-wrapper {
+	width:80px;
+	height: 80px;
+	position: relative;
+	z-index: 1;
+	border-radius: 50%;
+    @include min(768){
+        	width: 100px;
+	        height: 100px;
+    }
+    @include min(992){
+        	width: 115px;
+	        height: 115px;
+    }
+    @include min(1200){
+        	width: 125px;
+	        height: 125px;
+    }
+    @include min(1280){
+        	width: 135px;
+	        height: 135px;
+    }
+    @include min(1280){
+        	width: 135px;
+	        height: 135px;
+    }
+    @include min(1350){
+        	width: 140px;
+	        height: 140px;
+    }
+    @include min(1440){
+        	width: 148px;
+	        height: 148px;
+    }
+    SVG{
+        width: 100%;
+        height: auto;
+    }
+}
+@keyframes pulseRing {
+  0% {
+    transform: scale(0.6);
+    opacity: 0.8;
+  }
+  70% {
+    transform: scale(1.2 );
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1.7);
+    opacity: 0;
+  }
+}
+
+
+
+.thank-you{
+    margin: 30px 0px 50px;
+    @include min(992){
+        margin: 50px 0px 135px;
+    }
+    @include min(1200){
+        margin: 55px 0px 140px;
+    }
+    @include min(1280){
+        margin: 60px 0px 150px;
+    }
+    @include min(1350){
+        margin: 63px 0px 160px;
+    }
+    @include min(1440){
+        margin: 68px 0px 170px;
+    }
+    .btn-theme{
+        margin-top: 20px;
+        @include min(768){
+            margin-top: 26px;
+        }
+        @include min(992){
+            margin-top: 28px;
+        }
+        @include min(1200){
+            margin-top: 30px;
+        }
+        @include min(1350){
+            margin-top: 32px;
+        }
+        @include min(1440){
+            margin-top: 34px;
+        }
+    }
+}

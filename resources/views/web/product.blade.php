@@ -1,0 +1,72 @@
+@extends('web.layouts.main')
+@section('content')
+<picture>
+    <img src="{{asset('web/images/inner/bg.webp')}}" alt="">
+</picture>
+<section class="banner inner-banner position-relative">
+
+    <div class="container-ctn position-relative">
+
+        <div class="banner-image-slider " id="fadeSection">
+            <picture>
+                <img src="{{asset('web/images/inner/inner.webp')}}" class="img-fluid w-100" width="1366" height="335"
+                    alt="MBS Products">
+            </picture>
+        </div>
+    </div>
+    <div class="container-short">
+        <ul class="breadcrumb d-flex align-items-center">
+            <li>
+                <a href="{{url('/')}}">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none">
+                        <path
+                            d="M6 14.2496H12M10.0556 1.55964C12.7688 2.76377 14.8252 4.34589 15.8884 5.25977C16.4257 5.72177 16.7254 6.38664 16.7621 7.09427C16.8135 8.06589 16.875 9.58652 16.875 11.2496C16.875 12.5291 16.8386 13.7644 16.7985 14.7345C16.7779 15.2747 16.553 15.7868 16.1693 16.1676C15.7856 16.5483 15.2718 16.7693 14.7315 16.7858C13.434 16.8308 11.5084 16.8746 9 16.8746C6.49162 16.8746 4.56637 16.8304 3.2685 16.7861C2.72823 16.7696 2.21435 16.5487 1.83068 16.1679C1.44702 15.7872 1.22215 15.275 1.2015 14.7349C1.15252 13.5738 1.12702 12.4118 1.125 11.2496C1.125 9.58652 1.18687 8.06589 1.2375 7.09427C1.275 6.38664 1.57425 5.72177 2.11163 5.25977C3.17475 4.34552 5.23162 2.76377 7.94437 1.55964C8.27676 1.41214 8.63636 1.33594 9 1.33594C9.36364 1.33594 9.72324 1.41214 10.0556 1.55964Z"
+                            stroke="white" stroke-width="1.125" stroke-linecap="round" stroke-linejoin="round" /> </svg>
+                </a>
+            </li>
+            <li>
+                Products
+            </li>
+        </ul>
+    </div>
+</section>
+
+<section class="product-sort mission-vision why-choose inner-padding position-relative">
+    <div class="container-short">
+        <div class="d-flex flex-wrap justify-content-between align-items-center">
+            <div class="col-left title">
+                <h2><span>Our</span>Products</h2>
+                <div class="mobile-menu d-md-none">
+                    <button class="button" type="button" data-bs-toggle="offcanvas"
+                                data-bs-target="#productSidebar" aria-controls="productSidebar">
+                                Filter
+                                
+                        <svg fill="none" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><linearGradient id="paint0_linear_1_811" gradientUnits="userSpaceOnUse" x1="12" x2="12" y1="5.25" y2="18.75"><stop offset="0" stop-color="#a1a1ff"/><stop offset="1" stop-color="#22f"/></linearGradient><g clip-rule="evenodd" fill="url(#paint0_linear_1_811)" fill-rule="evenodd"><path d="m13.3535 8.75h-9.3535c-.41421 0-.75-.33579-.75-.75s.33579-.75.75-.75h9.3535c.3265-1.15425 1.3877-2 2.6465-2s2.32.84575 2.6465 2h1.3535c.4142 0 .75.33579.75.75s-.3358.75-.75.75h-1.3535c-.3265 1.15425-1.3877 2-2.6465 2s-2.32-.84575-2.6465-2zm1.3965-.75c0-.69036.5596-1.25 1.25-1.25s1.25.55964 1.25 1.25-.5596 1.25-1.25 1.25-1.25-.55964-1.25-1.25z"/><path d="m10.6465 16.75h9.3535c.4142 0 .75-.3358.75-.75s-.3358-.75-.75-.75h-9.3535c-.3265-1.1543-1.38772-2-2.6465-2s-2.32002.8457-2.64648 2h-1.35352c-.41421 0-.75.3358-.75.75s.33579.75.75.75h1.35352c.32646 1.1543 1.3877 2 2.64648 2s2.32-.8457 2.6465-2zm-3.8965-.75c0-.6904.55964-1.25 1.25-1.25s1.25.5596 1.25 1.25-.55964 1.25-1.25 1.25-1.25-.5596-1.25-1.25z"/></g>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+<section class="product-list">
+    
+    <div class="container-short">
+        <!--  Trigger for mobile only -->
+        <div class="d-flex flex-wrap justify-content-between">
+
+            @include('web.components._side_filter')
+            <article>
+                @if($products->isNotEmpty())
+                    @include('web.components._list_products_list', ['products' => $products])
+                @endif
+            </article>
+
+        </div>
+    </div>
+</section>
+
+@endsection

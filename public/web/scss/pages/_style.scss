@@ -1,0 +1,105 @@
+.inner-banner{
+     picture {
+                    position: relative;
+            right: -1px;
+            @include max(767) {
+                border-radius: 50% 0% 0% 0px;
+                overflow: hidden;
+            }
+    
+            @include min(768) {
+                mask-image: url(../images/inner/inner-bg-mask.png);
+                mask-size: 100%;
+                mask-repeat: no-repeat;
+            }
+    
+
+    
+            &::after {
+                @extend .position;
+                width: 100%;
+                height: 100%;
+                bottom: 0;
+                left: 0;
+                border-radius: 0px 0px 50px 50px;
+                background: rgba(46, 49, 146, 0.51);
+                // backdrop-filter: blur(15px);                
+                filter: blur(15px);
+                z-index: 0;
+            }
+    
+            img {
+        
+    
+                @include max(767) {
+                    height: 290px;
+                    object-fit: cover;
+                    border-radius: 10px;
+                }
+            }
+    
+        }
+}
+.breadcrumb {
+    position: absolute;
+    bottom: 18px;
+    z-index: 1;
+    gap: 12px;
+    margin: 0 0 0 15px;
+    @include min(768){
+        margin: 0 0 0 51px;
+
+    }
+    @include min(1200){
+        margin: 0 0 0 11px;
+
+    }
+    svg{
+        width: 18px;
+        height: 18px;
+        @include min(1600){
+            width: 20px;
+             height: 20px;
+        }
+        @include min(1900){
+            width: 22px;
+             height: 22px;
+        }
+    }
+    li,a{
+        color: #D0D2FF;
+  
+        line-height: normal;
+
+    }
+    li {
+        position: relative;
+        &:last-child{
+        
+                  font-weight: 600;
+        }
+        +li{
+            padding-left: 30px;
+
+            &::before{
+                @extend .position;
+                background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M7.5 5.25L11.25 9L7.5 12.75" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>');
+                width: 18px;
+                height: 18px;
+                left: 0;
+                top: 50%;
+                background-size: contain;
+                transform: translateY(-50%);
+                @include min(1600){
+                    width: 20px;
+                    height: 20px;
+                }
+                @include min(1900){
+                    width: 22px;
+                    height: 22px;
+                }
+            }
+
+        }
+    }
+}

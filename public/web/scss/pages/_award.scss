@@ -1,0 +1,248 @@
+.award-list{
+  padding-bottom:80px;
+  @include min(992){
+    padding-bottom: 6.944%;
+  }
+  .d-flex{
+    gap: 25px 0%;
+    @include min(576){
+        gap: 7.82px 2.4%;
+        
+    }
+    @include min(992){
+      gap: 24.82px 2.4%;
+    }
+    @include min(1200){
+      gap: 26.82px 2.4%;
+    }
+    @include min(1360){
+      gap: 28.82px 2.4%;
+    }
+    @include min(1440){
+      gap: 30.82px 2.4%;
+    }
+    @include min(1600){
+      gap: 34.82px 2.6%;
+    }
+  }
+}
+.award-box{
+  h2,h3{
+    color: $primaryColor;
+    font-weight: 500;
+    line-height: 125%;
+    margin-bottom: 7.47%;
+    font-size: 20px;
+    @include min(768){
+      font-size: 21px;
+    }
+    @include min(992){
+      font-size: 16px;
+    }
+    @include min(1200){
+      font-size: 17px;
+    }
+    @include min(1360){
+      font-size: 18px;
+    }
+    @include min(1440){
+      font-size: 20px;
+    }
+    @include min(1600){
+      font-size: 22px;
+    }
+    @include min(1900){
+      font-size: 24px;
+    }
+  }
+  picture{
+    margin-bottom: 10.98%;
+    img{
+      width: 100%;
+      height: auto;
+    }
+  }
+  a{
+    color: #575757;
+    font-weight: 500;
+    line-height: 180%;
+    &:hover{
+      color: $secondaryColor;
+    }
+  }
+  border: 1px solid rgba(138, 12, 225, 0.20);
+  background: linear-gradient(0deg, #EBE8F0 0%, #FFF 100%);
+  width: 100%;
+  padding: 15px;
+  @include  min(576){
+    width: 48.5%;
+    padding: 15px;
+  }
+  @include  min(768){
+    width: 48.2%;
+    padding: 25px;
+  }
+  @include  min(992){
+    width: 23.05%;
+    padding: 20px;
+  }
+  @include min(1200){
+    padding: 29px 24px 40px 24px;
+  }
+  @include min(1360){
+    padding: 31.25px 26.51px 42.12px 26.52px;
+  }
+  @include min(1440){
+    padding: 33.25px 28.51px 44.12px 28.52px;
+  }
+  @include min(1600){
+    padding: 35.25px 30.51px 46.12px 30.52px;
+  }
+  @include min(1900){
+    padding: 37.25px 32.51px 48.12px 32.52px;
+  }
+}
+
+// =================join=======================================
+.join{
+  padding-top:40px;
+  padding-bottom: 40px;
+  @include min(992){
+    padding-top: 7.528%;
+    padding-bottom: 6.535%;
+  }
+  .container-ctn{
+    background: #FFF;
+    box-shadow: 0px 0px 100px 50px rgba(50, 0, 100, 0.10);
+    padding: 25px;
+    @include min(768){
+      padding: 30px;
+    }
+    @include min(992){
+      padding: 50px;
+    }
+    @include min(1200){
+      padding: 50px 90px 50px 40px;
+    }
+    @include min(1360){
+      padding: 70px 90px 70px 55px;
+    }
+    @include min(1440){
+      padding: 80px 100px 80px 60px;
+    }
+    @include min(1600){
+      padding: 96px 125px 96px 75px;
+    }
+    @include min(1900){
+      padding: 106px 145px 106px 95px;
+    }
+  }
+  .btn{
+    padding: 12px 50px;
+    @include min(992){
+      padding: 13px 45px;
+    }
+    @include min(1200){
+      padding: 14px 48px;
+    }
+    @include min(1360){
+      padding: 15px 57px;
+    }
+    @include min(1440){
+      padding: 16px 59px;
+    }
+    @include min(1600){
+      padding: 17px 61px;
+    }
+    @include min(1900){
+      padding: 18.74px 63.1px;
+    }
+  }
+  picture{
+    width: 50%;
+    @include max(767){
+      margin-bottom: 20px;
+    }
+    @include min(768){
+      width: 11.39%;
+      margin-right: 10px;
+    }
+    @include min(992){
+      margin-right: 37px;
+    }
+    @include min(1200){
+      margin-right: 30px;
+    }
+    @include min(1360){
+      margin-right: 30px;
+    }
+    @include min(1440){
+      margin-right: 40px;
+    }
+    @include min(1600){
+      margin-right: 45px;
+    }
+    @include min(1900){
+      margin-right: 53px;
+    }
+    img{
+      width: 100%;
+      height: auto;
+    }
+  }
+ .d-flex div{
+    width: 100%;
+    @include max(767){
+      margin-bottom: 25px;
+    }
+    @include min(768){
+      margin-right: 20px;
+
+      width: 55%;
+    }
+    @include min(992){
+      width: 59.006%;
+      margin-right: 33px;
+    }
+    @include min(1200){
+      margin-right: 55px;
+    }
+    @include min(1360){
+      margin-right: 68px;
+    }
+    @include min(1440){
+      margin-right: 60px;
+    }
+    @include min(1600){
+      margin-right: 70px;
+    }
+    @include min(1900){
+      margin-right: 110px;
+    }
+  }
+  h2{
+    color: $primaryColor;
+    margin-bottom: 10px;
+    @include min(992){
+      margin-bottom: 13px;
+    }
+    @include min(1200){
+      margin-bottom: 15px;
+    }
+    @include min(1360){
+      margin-bottom: 17px;
+    }
+    @include min(1440){
+      margin-bottom: 19px;
+    }
+    @include min(1600){
+      margin-bottom: 21px;
+    }
+    @include min(1900){
+      margin-bottom: 23.74px;
+    }
+  }
+  p{
+    @extend .p-26;
+  }
+}

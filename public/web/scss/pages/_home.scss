@@ -1,0 +1,1831 @@
+.banner {
+    .slick-nav {
+        bottom: 10px;
+
+        @include min(768) {
+            bottom: 0;
+            right: 5px;
+
+        }
+
+        @include min(992) {
+
+            right: 16px;
+        }
+
+        @include min(1440) {
+            right: 36px;
+
+        }
+
+        div {
+            border: 0.65px solid #D9D9D9;
+            background: #FFF;
+
+            &:hover {
+                background-color: $primaryLight;
+
+                path {
+                    fill: $primaryColor;
+                }
+            }
+        }
+    }
+
+    @include max(767) {
+        margin-top: 55px;
+    }
+    &.home-banner{
+        
+        picture {
+            z-index: 0!important;
+            @include max(767) {
+                border-radius: 50% 0% 0% 0px;
+                overflow: hidden;
+            }
+    
+            @include min(768) {
+mask-image: url(../images/home/banner-mask.webp);
+                mask-size: 100%;
+                mask-repeat: no-repeat;
+            }
+    
+            position: relative;
+            right: -1px;
+    
+            &::after {
+                @extend .position;
+                width: 100%;
+                height: 251.056px;
+                bottom: 0;
+                border-radius: 0px 0px 50px 50px;
+                background: linear-gradient(180deg, rgb(217 217 217 / 65%) -122.5%, rgba(0, 0, 0, 0.74) 100%);
+                
+                filter: blur(20px);
+                z-index: 0;
+            }
+    
+            img {
+                height: auto;
+                width: 100%;
+    
+                @include max(767) {
+                    height: 400px;
+                    object-fit: cover;
+                    border-radius: 10px;
+                }
+            }
+    
+        }
+    }
+
+}
+
+
+.banner-text-slider {
+
+    position: absolute;
+
+    left: 10px;
+    bottom: 30px;
+    width: 70%;
+
+    @include min(768) {
+        left: 58px;
+        bottom: 73.89px;
+        width: 50.015%;
+
+    }
+    @include min(1900){
+        left: 69px;
+        bottom: 84.89px;
+    }
+
+    h1 {
+        color: $white;
+        font-weight: 600;
+        line-height: normal;
+    }
+}
+
+// ======================== About section================== 
+.about-home {
+    padding: 69px 0px;
+
+
+    img {
+        border-radius: 30px;
+    }
+}
+
+.about-image {
+    height: fit-content;
+    width: 100%;
+    position: relative;
+
+    @include min(992) {
+        width: 47.26%;
+        padding-right:4.962%;
+    }
+
+    @include min(1280) {
+        width: 38.26%;
+    }
+
+    img {
+        border-radius: 30px;
+        width: 100%;
+        height: auto;
+
+    }
+
+    &-text {
+        display: flex;
+        align-items: center;
+        border-radius: 20px;
+        background-color: #FFF;
+        background-image: url(../images/icons/dots.webp);
+        background-position: 115% 100%;
+        background-repeat: no-repeat;
+        box-shadow: 0px 4px 20px 5px rgba(46, 49, 146, 0.14);
+        position: absolute;
+        right: 8px;
+        bottom: 10px;
+        gap: 16px;
+        width: 235px;
+        padding-left: 15px;
+        padding-right: 15px;
+
+        @include max(767) {
+            padding-top: 5px;
+            padding-bottom: 5px;
+        }
+
+        @include min(768) {
+            padding-left: 22.53px;
+            padding-right: 27.34px;
+
+        }
+
+        @include min(992) {
+            width: 67.192%;
+            bottom: 85.42px;
+        }
+        @include min(1900){
+            background-position: 110% -4%;
+            bottom: 115.42px;
+            width: 66.192%;
+            padding-left: 36.53px;
+        }
+        strong {
+            font-weight: 600;
+
+            color: $primaryColor;
+            font-size: 55px;
+            line-height: normal;
+
+            @include min(992) {
+                right: 0px;
+                font-size: 69px;
+
+            }
+
+            @include min(1200) {
+                font-size: 90px;
+            }
+
+            @include min(1440) {
+                font-size: 96px;
+
+            }
+            @include min(1900){
+                font-size: 125px;
+            }
+        }
+
+        p {
+
+            font-size: 12px;
+            line-height: normal;
+            font-weight: 600;
+            margin: 0;
+            color: $accentColor;
+            white-space: pre-line;
+
+            @include min(992) {
+                font-size: 12px;
+            }
+
+            @include min(1200) {
+                font-size: 14px;
+            }
+
+            @include min(1440) {
+                font-size: 16px;
+            }
+            @include min(1900){
+                font-size: 23px;
+            }
+        }
+    }
+}
+
+.about {
+  
+        // overflow-x: hidden;
+    .d-flex {
+        gap: 2%;
+      
+
+
+        @include min(992) {
+            padding-left: 29px;
+        }
+
+        @include min(1200) {
+            gap: 4.7%;
+
+        }
+       
+    }
+
+    &-description {
+        width: 100%;
+
+        @include max(991) {
+            margin-top: 20px;
+        }
+
+        @include min(992) {
+            width: 50.21%;
+        }
+
+        @include min(1200) {
+            width: 45.21%;
+        }
+
+        h2 {
+            // color: $headingColor;
+        }
+
+        strong {
+            line-height: normal;
+
+            display: block;
+            font-size: 16px;
+            font-weight: 600;
+
+            @include min(1900){
+                font-size: 21.6px;
+            }
+        }
+
+        p {
+            margin-bottom: 0;
+
+        }
+
+        p+p {
+            margin-top: 12px;
+
+            @include min(1280) {
+                margin-top: 15px;
+            }
+
+            @include min(1440) {
+                margin-top: 19px;
+            }
+            @include min(1600) {
+                margin-top: 22px;
+            }
+            @include min(1900) {
+                margin-top: 25px;
+            }
+        }
+
+        .btn-theme {
+            margin-top: 20px;
+
+            @include min(1200) {
+                margin-top: 40px;
+            }
+
+            @include min(1440) {
+                margin-top: 52px;
+            }
+        }
+
+    }
+
+    .service {
+        .slick-dots{
+            bottom: -48px;
+        }
+        .slick-list{
+            margin: 0px -10px;
+        }
+
+        .slick-slide{
+            margin: 0px 10px;
+        }
+        position: relative;
+        z-index: 1;
+        background-color: $primaryLight;
+        // margin-top: 40px;
+        // max-width: 90.76%;
+        border-radius: 35px;
+        padding: 20px;
+        margin-left: auto;
+        margin-right: auto;
+
+        // @include max(767) {
+        //     gap: 20px;
+        // }
+
+        @include min(768) {
+            // max-width: 95.76%;
+        }
+
+        @include min(992) {
+
+            padding: 30px;
+        }
+
+        @include min(1200) {
+
+            padding: 34px;
+            border-radius: 50px;
+        }
+
+        @include min(1280) {
+
+            padding: 38px;
+        }
+
+        @include min(1440) {
+
+            padding: 42px;
+        }
+
+        &-col {
+            display: flex;
+            flex-direction: column;
+            background-color: $white;
+            border-radius: 20px;
+            width: 100%;
+            padding: 15px;
+
+            @include min(768) {
+                width: 31.5%;
+            }
+
+            @include min(1200) {
+                border-radius: 30px;
+                padding: 24px;
+
+            }
+
+            @include min(1280) {
+
+                padding: 28px;
+
+            }
+
+            @include min(1440) {
+                padding: 32px;
+
+            }
+
+        }
+
+        img {
+            width: 100%;
+            height: auto;
+        }
+
+        &-description {
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+
+            p {
+                flex-grow: 1;
+                
+
+            }
+        }
+
+        h3 {
+            // color: $headingColor;
+            margin-bottom: 15px;
+        }
+
+        picture {
+            margin-bottom: 20px;
+        }
+
+        img {
+            border-radius: 10px;
+        }
+
+        .btn-theme {
+            margin-top: 10px;
+
+            @include min(1200) {
+                margin-top: 18px;
+            }
+
+            @include min(1440) {
+                margin-top: 20px;
+            }
+        }
+    }
+}
+
+// ===================products========================
+.products {
+    margin-top: -190px;
+    @include min(1440){
+            margin-top: -220px;
+
+    }
+    .container-ctn {
+        background-color: $primaryColorDark;
+        border-radius: 20px;
+        padding: 250px 29px 29px 29px;
+        background-image: url(../images/home/logo.webp);
+        background-repeat: no-repeat;
+        background-position: bottom left;
+
+        @include min(768) {
+            border-radius: 50px;
+            padding: 208px 29px 43px 4.99%;
+        }
+        @include min(1440){
+            padding: 276px 72px 43px 72px;
+        }
+        @include min(1900){
+            padding: 290px 72px 46.08px 72px;
+        }
+    }
+
+    h2 {
+        font-weight: 400;
+        text-transform: capitalize;
+        width: 100%;
+
+        @include min(1200) {
+            width: 15.672%;
+        }
+
+        @include min(1280) {
+            width: 14.672%;
+        }
+
+        @include min(1440) {
+            width: 12.729%;
+        }
+
+        strong {
+            font-size: inherit;
+            font-weight: 600;
+            line-height: 100%;
+        }
+    }
+
+    h3,
+    h2,
+    p,
+    strong,
+    div {
+        color: #fff;
+    }
+}
+
+.products-wrapper {
+    width: 100%;
+
+    @include min(1200) {
+        width: 84.3%;
+    }
+
+    @include min(1280) {
+        width: 85.3%;
+
+    }
+
+    @include min(1440) {
+        width:84.99%;
+
+    }
+
+    .slick-nav {
+        top: 0;
+
+        @include max(767) {
+            position: initial;
+        }
+
+        div {
+            path {
+                fill: $white;
+            }
+
+            border: 0.65px solid #8888C7;
+            background: #2E3192;
+
+            &:hover {
+                background-color: $primaryLight;
+
+                path {
+                    fill: $primaryColor;
+                }
+            }
+        }
+    }
+}
+
+.products-main-description {
+    width: 100%;
+
+    @include min(768) {
+        width: 80%;
+    }
+
+    @include min(1200) {
+        width: 53.555%;
+    }
+
+}
+
+.products-slider {
+
+    img,
+    picture {
+        border-radius: 10px;
+    }
+
+    img {
+        width: 100%;
+        height: auto;
+    }
+
+    .slick-list {
+        margin: 0px -5px;
+
+        @include min(1280) {
+            margin: 0px -5px;
+        }
+    }
+
+    &-item {
+   margin-left: 5px;
+            margin-right: 5px;
+        margin-top: 20px;
+
+        @include min(768) {
+            margin-top: 41px;
+        }
+
+        @include min(1280) {
+         
+        }
+        @include min(1600){
+             margin-top: 51px;
+        }
+        @include min(1900){
+             margin-top: 60px;
+        }
+
+        transition: 0.5s ease all;
+
+        picture {
+            overflow: hidden;
+            position: relative;
+            width: 100%;
+
+            &:after {
+                transition: 0.5s ease all;
+                @extend .position;
+                width: 100%;
+                height: 100%;
+                left: 0;
+                top: 0;
+                background: linear-gradient(0deg, rgba(46, 49, 146, 0.91) 19.91%, rgba(111, 106, 106, 0.00) 100%);
+            }
+        }
+
+        position: relative;
+
+        &:hover {
+            transform: translateY(-10px);
+            transition: 0.5s ease all;
+
+            picture {
+                &::after {
+                    transform: translateY(50%);
+                    transition: 0.5s ease all;
+                }
+            }
+        }
+
+        .btn {
+            position: absolute;
+        }
+    }
+
+
+}
+
+.product-description {
+    position: absolute;
+    bottom: 19.52px;
+    margin-left: 13.02px;
+    width: 74.84%;
+    @include min(1900){
+        width: 79.84%;
+    }
+
+    p {
+        font-size: 13px;
+        @include min(1900){
+            font-size: 18px;
+        }
+    }
+
+}
+
+// ======================Why choose us==========================
+
+.why-choose {
+    background: $grey;
+
+    .col-left {
+        width: 100%;
+        &.title{
+          span{
+            line-height: normal;
+            font-weight: 400;
+
+          }
+        }
+        span{
+                display: block;
+        }
+      >  span{
+        
+            line-height: normal;
+            font-size: 18px;
+            @include min(992){
+                font-size: 20px;
+            }
+            @include min(1200){
+                font-size: 22px;
+            }
+            @include min(1440){
+                font-size: 24px;
+            }
+            @include min(1440){
+                font-size: 26px;
+            }
+            @include min(1440){
+                font-size: 28px;
+            }
+
+        }
+        h2{
+            margin-top: 14px;
+                white-space: pre-line;
+        }
+        p{
+
+            @include min(1200){
+                            font-size: 15px;
+            }
+
+            @include min(1440){
+                            font-size: 16px;
+            }
+            @include min(1600){
+                            font-size: 18px;
+            }
+            @include min(1900){
+                            font-size: 20px;
+            }
+        }
+
+        @include min(992) {
+            width: 30.965%;
+        }
+
+        picture {
+            width: 90%;
+
+            @include max(991) {
+
+                margin-bottom: 70px;
+            }
+
+            @include min(992) {
+                width: 91.28%;
+
+            }
+        }
+
+        img {
+            width: 100%;
+        }
+
+        picture {
+            position: relative;
+            margin-left: 32px;
+
+            // padding-bottom: 32.67px;
+            @include min(992) {
+                margin-left: 51.5px;
+
+            }
+
+            img {
+                height: auto;
+                border-radius: 10px 180px 10px 10px;
+
+            }
+
+            &::before {
+                @extend .position;
+                z-index: -1;
+
+                background-color: $secondaryColor;
+                left: -33.01px;
+                bottom: -32.67px;
+                width: 100%;
+                height: 100%;
+                border-radius: 10px 180px 10px 10px;
+
+            }
+        }
+    }
+
+    .col-right {
+        width: 100%;
+        p + p{
+            margin-top:16px;
+            @include min(768){
+                margin-top: 18px;
+            }
+            @include min(992){
+                margin-top: 20px;
+            }
+            @include min(1200){
+                margin-top: 22px;
+            }
+            @include min(1280){
+                margin-top: 23px;
+            }
+            @include min(1440){
+                margin-top: 25px;
+            }
+            @include min(1600){
+                margin-top: 27px;
+            }
+            @include min(1900){
+                margin-top: 29px;
+            }
+        }
+
+        @include min(992) {
+            width: 59.478%;
+
+        }
+
+    }
+
+    .btn-theme {
+        margin-top: 19px;
+    }
+
+    .d-flex {
+        &:first-child {
+            @include max(991) {
+                gap: 15px;
+            }
+        }
+
+        +.d-flex {
+            margin-top: 20px;
+
+            @include min(992) {
+                margin-top: 46.3px;
+
+            }
+        }
+    }
+
+    ul {
+        counter-reset: css-counter 0;
+
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+
+        @include min(1200) {
+            gap: 26px;
+            padding-right: 21.98%;
+        }
+
+        li {
+            counter-increment: css-counter 1;
+            position: relative;
+            padding-left: 68px;
+
+            @include min(992) {
+                padding-left: 73.24px;
+
+            }
+            @include min(1600){
+                padding-left: 83.24px;
+            }
+            @include min(1900){
+                padding-left: 93.24px;
+            }
+
+            &::after {
+                content: " 0"counter(css-counter);
+                position: absolute;
+                color: $headingColor;
+                font-weight: 600;
+                left: 20px;
+                top: 3px;
+                font-size: 30px;
+
+                @include min(1200) {
+                    top: 7px;
+                    font-size: 34px;
+
+                }
+                @include min(1600){
+                    font-size: 40px;
+                }
+                @include min(1900){
+                    font-size: 45px;
+                }
+            }
+
+            &::before {
+                content: '';
+                position: absolute;
+                background-color: $lavender;
+                left: 0;
+                border-radius: 0px 20px;
+                top: 12px;
+                width: 36px;
+                height: 36px;
+
+                @include min(1200) {
+                    width: 40px;
+                    height: 40px;
+                }
+                @include min(1600) {
+                    width: 45px;
+                    height: 45px;
+                           top: 16px;
+                                            border-radius: 0px 25px;
+                }
+                @include min(1900) {
+                        top: 16px;
+                          border-radius: 0px 30px;
+                    width: 50px;
+                    height: 50px;
+                }
+            }
+        }
+
+        strong {
+            display: block;
+            line-height: 150%;
+            margin-bottom: 7px;
+            font-weight: 600;
+            font-size: 16px;
+            @include min(1600){
+                font-size: 18px;
+                    margin-bottom: 8px;
+            }
+            @include min(1900){
+                font-size: 20px;
+                    margin-bottom: 9px;
+            }
+
+        }
+    }
+}
+
+// ==================partners===========================
+.partners {
+
+
+    .container-short {
+        background-color: $secondaryColor;
+        border-radius: 30px;
+        padding: 30px;
+
+        @include min(1200) {
+            padding:64px 92px;
+        }
+        @include min(1600){
+            padding: 74px 102px;
+                   border-radius: 35px;
+        }
+        @include min(1900){
+            padding: 84px 112px;
+                   border-radius: 40px;
+        }
+    }
+
+    &-description {
+        // padding-right: 38.96px;
+        width: 100%;
+
+        @include min(992) {
+            width: 48.618%;
+
+        }
+
+        h2 {
+            margin-bottom: 10px;
+
+            @include min(992) {
+                margin-bottom: 20px;
+            }
+
+            @include min(1200) {
+                margin-bottom: 26px;
+            }
+        }
+    }
+
+    &-logos {
+        gap: 17px 0px;
+        width: 100%;
+
+        @include max(991) {
+            margin-top: 20px;
+        }
+
+        @include min(992) {
+            gap: 22.5px 0px;
+            width: 47.5%;
+
+        }
+
+        picture {
+            width: 32%;
+
+            @include min(992) {
+                height: 100px;
+                width: 47.73%;
+            }
+
+            background: #fff;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+        }
+
+        img {
+            border-radius: 10px;
+            width: 100%;
+            height: auto;
+        }
+    }
+}
+
+
+// ===============industries=======================/
+.industries {
+    padding: 40px 0px 61px 0px;
+
+    @include min(768) {
+        padding: 30px 0px 90px 0px;
+    }
+
+    @include min(1200) {
+        padding: 48.58px 0px 121.52px 0px;
+    }
+
+    &::before {
+        @extend .position;
+        width: 50%;
+        height: 100%;
+        background: rgba(217, 217, 217, 0.26);
+        right: 0;
+        top: 0;
+        z-index: -1;
+        border-radius: 0px 0px 0px 30px;
+
+    }
+
+    &::after {
+        @extend .position;
+        background-image: url(../images/icons/radial.webp);
+        width: 100%;
+        height: 100%;
+        top: 0;
+        background-repeat: no-repeat;
+        background-position: 0px -250px;
+        background-size: 200px;
+        z-index: -1;
+
+        @include min(992) {
+            background-position: 0px -40px;
+            background-size: 510px;
+        }
+        @include min(1900){
+            background-position: -30px -120px;
+        background-size: 500px;
+        }
+    }
+
+    .head {
+        width: 100%;
+
+        @include min(768) {
+            width: 50%;
+        }
+
+        @include min(992) {
+            width: 35.445%;
+
+        }
+    }
+
+    &-list {
+        gap: 16px;
+        width: 100%;
+
+        @include max(991) {
+            margin-top: 20px;
+        }
+
+        @include min(768) {
+            gap: 23px;
+
+        }
+
+        @include min(992) {
+            width: 61.847%;
+        }
+
+        li {
+            border-radius: 10px;
+            border: 1px solid #8888C7;
+            background: #FFF;
+            width: 30%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 85px;
+
+            @include min(1200) {
+                height: 90px;
+            }
+
+            @include min(1280) {
+                height: 95px;
+            }
+
+            @include min(1440) {
+                height: 107px;
+            }
+            @include min(1600){
+                height: 117px;
+            }
+            @include min(1900){
+                height: 127px;
+            }
+
+            img {
+                height: auto;
+                margin-bottom: 5px;
+                width: 33px;
+
+                @include min(992) {
+                    width: 33px;
+
+                }
+
+                @include min(1200) {
+                    width: 40px;
+                }
+
+                @include min(1440) {
+                    width: 42px;
+                }
+                @include min(1600) {
+                    width: 44px;
+                }
+                @include min(1900) {
+                         margin-bottom:10px;
+                    width: 47px;
+                }
+            }
+        }
+        p{
+            @include min(1900){
+                font-size: 20px;
+            }
+        }
+    }
+}
+
+
+
+// ==============casestudies=====================
+.caseStudies {
+    overflow-x: hidden;
+    .slick-nav{
+        
+        div {
+            border: 0.65px solid #D9D9D9;
+            background: #FFF;
+
+            &:hover {
+                background-color: $primaryLight;
+
+                path {
+                    fill: $primaryColor;
+                }
+            }
+        }
+    }
+
+    &-slider {
+        margin-top: 36.95px;
+
+        &-item {
+            position: relative;
+            padding-bottom: 35px;
+            width: 300px;
+
+            @include min(768) {
+                width: 346.357px;
+            }
+
+            @include min(1280) {
+                width: 335.357px;
+            }
+
+            @include min(1440) {
+                width: 346.357px;
+            }
+            @include min(1600){
+                width: 400.357px;
+            }
+            @include min(1900){
+                width: 474.357px;
+            }
+
+        }
+
+        &-item-title {
+            width: 81.47%;
+            position: absolute;
+            bottom: 0;
+            border-radius: 20px;
+            background: #DEDEF6;
+            left: 50%;
+            transform: translateX(-50%);
+            padding: 16.5px 10px 16.5px 16.66px;
+            @include min(1600){
+                padding: 19.5px 11px 19.5px 19.5px;
+            }
+            @include min(1900){
+                padding: 21.5px 12px 21.5px 21.5px;
+            }
+
+            i {
+                position: absolute;
+                bottom: 9.77px;
+            }
+
+            a {
+                display: flex;
+                justify-content: space-between;
+
+
+            }
+
+            h3 {
+                width: 78.28%;
+                line-height: normal;
+                margin: 0;
+                font-size: 15px;
+
+                @include min(768) {
+                    font-size: 16px;
+                }
+
+                @include min(1200) {
+                    font-size: 17px;
+                }
+
+                @include min(1280) {
+                    font-size: 18px;
+                }
+                @include min(1600){
+                    font-size: 21px;
+                }
+                @include min(1900){
+                    font-size: 23px;
+                }
+            }
+
+            &:hover {
+                h3 {
+                    color: $primaryColor;
+                }
+
+                .arrow-btn {
+                    background-color: $white;
+
+                    path {
+                        fill: $primaryColor;
+                    }
+                }
+            }
+        }
+    }
+
+    .container-short {
+        margin-bottom: 37.75px;
+    }
+
+    .slick-nav {
+        position: initial;
+        gap: 14.79px;
+
+        div {
+            border: 0.65px solid #D9D9D9;
+            background: #FFF;
+
+        }
+    }
+
+    picture {
+        img {
+            border-radius: 20px;
+            width: 100%;
+            height: auto;
+        }
+    }
+
+    .slick-list {
+        margin: 0px -11.82px;
+    }
+
+    .slick-slide {
+        margin: 0px 11.82px;
+    }
+}
+
+
+
+// ==============testimonial==========================
+.testimonial {
+    background: rgba(217, 217, 217, 0.26);
+    padding: 40px 0px 40px 0px;
+    @include min(768){
+        padding: 58px 0px 75.85px 0px;
+
+    }
+
+    >svg {
+        position: absolute;
+        top: 10.05px;
+        left: 5.66px;
+        height: auto;
+        width: 17.726%;
+       
+      
+    }
+
+    &-profile {
+
+        gap: 16px;
+        display: flex;
+        align-items: flex-end;
+
+        p {
+            line-height: normal;
+        }
+    }
+
+    &-head {
+        width: 100%;
+        @include min(992){
+            width: 27.916%;
+
+        }
+        
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        justify-content: end;
+
+
+    }
+
+    img {
+        border-radius: 50%;
+    }
+    picture{
+            width: 58px;
+            @include min(576){
+                       width: 50px;
+            }
+            @include min(768){
+                       width: 48px;
+            }
+            @include min(1200){
+                       width: 52px;
+            }
+            @include min(1280){
+                       width: 55px;
+            }
+            @include min(1440){
+                       width: 58px;
+            }
+            @include min(1900){
+                       width: 65px;
+            }
+            img{
+                width: 100%;
+                height: auto;
+            }
+        }
+
+    .slider-for {
+        border-radius: 30px;
+        background-color: $primaryColor;
+                 padding: 18px 15px 18px 15px;  
+                         width: 100%;
+        @include min(576){
+                    width:49.7622%;
+ 
+        }
+                         @include min(992){
+                    width: 32.7622%;
+                  padding: 20px 25px 20px 25px;  
+        }
+        @include min(1280){
+                  padding: 23px 29px 23px 29px;  
+        }
+        @include min(1440){
+                  padding: 26.16px 32px 26.16px 32px;  
+        }
+        @include min(1900){
+                  padding: 30.16px 36px 30.16px 36px;  
+                  width: 30.7622%;
+        }
+
+        p {
+            color: #B3C4F7;
+        }
+
+        svg {
+
+              height: auto;
+                          margin-bottom: 10.32px;
+                          width: 25px;
+        @include min(768){
+            width: 35px;
+                        margin-bottom: 14.32px;
+        }
+ 
+        @include min(1200){
+                        margin-bottom: 20.32px;
+            width: 44px;
+        }
+        @include min(1280){
+                        margin-bottom: 22.32px;
+            width: 46px;
+        }
+        @include min(1440){
+                        margin-bottom: 24.32px;
+            width: 48px;
+        }
+        @include min(1900){
+                        margin-bottom: 28.32px;
+            width: 52px;
+        }
+        }
+
+        .testimonial-profile-details {
+            margin-top: 30px;
+            @include min(768){
+                margin-top: 25px;
+            }
+            @include min(992){
+                margin-top: 27px;
+            }
+            @include min(1200){
+                margin-top: 46.7px;
+            }
+            @include min(1280){
+                margin-top: 48.7px;
+            }
+            @include min(1440){
+                margin-top: 50.7px;
+            }
+            @include min(1900){
+                margin-top: 54.7px;
+            }
+
+            p {
+                color: #A5A5DF;
+                font-size: 16px;
+
+
+                @include min(992) {
+                    font-size: 15px;
+                }
+                @include min(1200) {
+                    font-size: 16px;
+                }
+
+                @include min(1350) {
+                    font-size: 17px;
+                }
+
+                @include min(1440) {
+                    font-size: 18px;
+                }
+                @include min(1900) {
+                    font-size: 22px;
+                }
+
+            }
+
+            span {
+                color: #D6DFFA;
+               
+
+            }
+        }
+    }
+    span{
+         font-size: 12px;
+                @include min(992){
+                    font-size: 13px;
+                }
+                @include min(1200){
+                    font-size: 14px;
+                }
+                @include min(1280){
+                    font-size: 15px;
+                }
+                @include min(1440){
+                    font-size: 16px;
+                }
+                @include min(1900){
+                    font-size: 20px;
+                }
+    }
+    .slider-nav {
+        width: 100%;
+        @include max(575){
+            margin-top: 20px;
+        }
+        @include min(576){
+            width: 46.266%;
+
+        }
+        @include min(992){
+               width: 35.266%;
+        }
+        .slick-slide{
+            >p{
+                @include max(575){
+                    font-size: 0;
+                }
+            }
+        }
+        p{
+            @include min-max(576,991){
+                font-size: 14px;
+            }
+            @include min-max(992,1199){
+                font-size: 14px;
+            }
+        }
+
+        .slick-current {
+            display: none;
+        }
+
+        .slick-list {
+           
+            margin: -5px 0px;
+            @include min(576){
+                 margin: -15.74px 0px;
+            }
+
+            @include min(1200) {
+                margin: -11.74px 0px;
+            }
+
+            @include min(1350) {
+                margin: -13.74px 0px;
+            }
+
+            @include min(1350) {
+                margin: -13.74px 0px;
+            }
+
+            @include min(1440) {
+                margin: -15.74px 0px;
+            }
+            @include min(1900) {
+                margin: -19.74px 0px;
+            }
+        }
+
+        .slick-slide {
+            margin: 5px 0px;
+            background-color: $white;
+            border-radius: 30px;
+
+            padding: 15px;
+              
+            @include min(576){
+                 margin: -15.74px 0px;
+            }
+            @include min(992){
+                padding: 18px;
+
+            }
+            @include min(1200) {
+                margin: 11.74px 0px;
+                            padding:22px;
+            }
+
+            @include min(1280) {
+                padding: 24px;
+
+            }
+
+            @include min(1350) {
+                padding: 30px;
+                margin: 13.74px 0px;
+
+
+            }
+
+            @include min(1440) {
+                padding: 34px;
+                margin: 15.74px 0px;
+
+            }
+
+            @include min(1900) {
+                padding: 38px;
+                margin: 19.74px 0px;
+
+            }
+
+        }
+
+        .testimonial-profile {
+            @include min(576){
+                margin-top: 12px;
+
+            }
+        }
+        
+
+    }
+
+    .slick-nav {
+        position: initial;
+        gap: 11px;
+
+        margin-top: 20px;
+        @include max(991){
+            margin-bottom: 20px;
+            margin-right: auto;
+
+        }
+        @include min(992){
+                    margin-right: 0px !important;
+            margin-top: 37.4px;
+        }
+
+        div {
+            border: 0.65px solid #D9D9D9;
+            background: #FFF;
+
+
+            &:hover {
+                background-color: $primaryLight;
+
+                path {
+                    fill: $primaryColor;
+                }
+            }
+        }
+
+    }
+}
+
+
+// =======================
+.clients{
+    padding: 35px 0px;
+    overflow-x: hidden;
+    picture{
+        border: 1px solid #f8f8f8;
+        padding: 10px 25px;
+    }
+    .slick-slide{
+        margin: 0px 10px;
+       @include min(768){
+           margin: 0px 25px;
+       }
+       @include min(992){
+           margin: 0px 30px;
+       }
+       @include min(1200){
+           margin: 0px 25px;
+       }
+       @include min(1280){
+           margin: 0px 35px;
+       }
+       @include min(1440){
+           margin: 0px 45px;
+       }
+       @include min(1600){
+           margin: 0px 55px;
+       }
+       @include min(1900){
+           margin: 0px 60px;
+       }
+    }
+    .slick-list{
+       margin: 0px -10px;
+       @include min(768){
+           margin: 0px -35px;
+       }
+       @include min(992){
+           margin: 0px -40px;
+       }
+       @include min(1200){
+           margin: 0px -45px;
+       }
+       @include min(1280){
+           margin: 0px -50px;
+       }
+       @include min(1440){
+           margin: 0px -60px;
+       }
+       @include min(1600){
+           margin: 0px -65px;
+       }
+       @include min(1900){
+           margin: 0px -70px;
+       }
+    }
+    img{
+        width: 100%;
+        height: auto;
+    }
+}
+
+// ===================Article===========================
+.articles{
+    background: linear-gradient(180deg, rgba(226, 226, 240, 0.59) 79.81%, rgba(254, 254, 255, 0.59) 100%);
+    @include max(575){
+        padding-bottom: 0;
+    }
+    .slick-nav{
+        position: initial;
+        gap: 11px;
+         div {
+            border: 0.65px solid #D9D9D9;
+            background: #FFF;
+
+
+            &:hover {
+                background-color: $primaryLight;
+
+                path {
+                    fill: $primaryColor;
+                }
+            }
+        }
+    }
+    .d-flex{
+    }
+    &-slider{
+        margin-top: 23px;
+        .slick-list{
+            margin: 0px -9.40px;
+            @include min(1440){
+                margin: 0px -9.40px;
+            }
+            @include min(1600){
+                margin: 0px -12.40px;
+            }
+            @include min(1900){
+                margin: 0px -15.40px;
+            }
+
+        }
+        &-item{
+        
+            border-radius: 20px;
+            border: 1px solid #A5A5DF;
+            background: #FFF;
+            padding: 15px 15px 23px 15px;
+              margin: 0px 9.40px;
+            @include min(1440){
+                margin: 0px 9.40px;
+            }
+            @include min(1600){
+                margin: 0px 12.40px;
+            }
+            @include min(1900){
+                        margin: 0px 15.40px;
+            }
+        }
+        &-info{
+            gap: 7.52px;
+            div{
+                border: 1px solid #DEDEF6;
+                background: #DEDEF6;
+                display: flex;
+                align-items: center;
+                line-height: normal;
+                padding: 5px 10px;
+                border-radius: 80px;
+                gap: 8px;
+                font-size: 11px;
+                @include min(1440){
+                    font-size: 11px;
+                }
+                @include min(1600){
+                    font-size: 13px;
+                }
+                @include min(1900){
+                    font-size: 15px;
+                }
+                
+                + div{
+                    background-color: $white;
+                }
+            }
+            svg{
+                height: auto;
+                @include min(1900){
+                    width: 22px;
+                    width: 22px;
+                }
+            }
+        }
+        &-content{
+            margin-top: 14.4px;
+            p{
+                line-height: 169.231%;
+                font-size: 13px;
+                @include min(1440){
+                    font-size: 13px;
+                }
+                @include min(1600){
+                    font-size: 15px;
+                }
+                @include min(1900){
+                    font-size: 22px;
+                }
+            }
+            h3{
+                font-size: 18px;
+                @include min(1600){
+                    font-size: 20px;
+                }
+                @include min(1900){
+                    font-size: 22px;
+                }
+            }
+        }
+        img{
+            width: 100%;
+            height: auto;
+border-radius: 20px;
+
+        }
+        picture{
+            margin-bottom: 16.19px;
+        }
+
+    }
+}

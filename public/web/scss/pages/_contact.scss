@@ -1,0 +1,540 @@
+.location {
+    .title {
+        margin-bottom: 30px;
+        @include min(1200){
+            margin-bottom: 35px;
+        }
+        @include min(1350){
+            margin-bottom: 40px;
+        }
+        @include min(1440){
+            margin-bottom: 45px;
+        }
+        @include min(1600){
+            margin-bottom: 50px;
+        }
+        @include min(1900){
+            margin-bottom: 55px;
+        }
+    }
+}
+
+.location-row {
+    gap: 15px;
+    @include min(768){
+        gap: 20px 2%;
+    }
+    @include min(1200){
+        gap: 2%;
+    }
+    @include min(1350){
+        gap: 5.2%;
+
+    }
+}
+
+.location-box {
+    border-radius: 10px;
+    border: 1px solid #D9D9D9;
+    background: #FFF;
+       width: 100%;
+    padding: 15px;
+    @include min(768){
+      width:   49%;
+    }
+    @include min(992){
+        padding: 18px;
+
+    }
+    @include min(1200){
+        padding: 20px;
+            width: 32%;
+    }
+    @include min(1350){
+        padding: 22px;
+            width: 29.842%;
+
+    }
+    @include min(1440){
+        padding: 24px;
+
+    }
+    @include min(1600){
+        padding: 26px;
+
+    }
+    @include min(1900){
+        padding: 28px;
+
+    }
+
+    ul {
+        margin-top: 20px;
+        @include min(1200){
+            margin-top: 22px;
+        }
+        @include min(1440){
+            margin-top: 25px;
+        }
+        @include min(1600){
+            margin-top: 28px;
+        }
+        @include min(1900){
+            margin-top: 31px;
+        }
+    }
+
+    li {
+        display: flex;
+        justify-content: space-between;
+        border-radius: 10px;
+        background: rgba(217, 217, 217, 0.25);
+        padding: 15px 12px;
+        @include min(768){
+                padding: 21px 18px;
+        }
+        @include min(1200){
+              padding: 11px 8px;
+        }
+        @include min(1280){
+              padding: 12px 9px;
+        }
+        @include min(1350){
+              padding: 19px 16px;
+        }
+        @include min(1440){
+              padding: 21px 18px;
+        }
+        @include min(1600){
+            padding: 23px 20px;
+        }
+        @include min(1900){
+            padding: 25px 22px;
+        }
+
+        +li {
+            margin-top:6px;
+            @include min(1200){
+                margin-top: 9px;
+            }
+            @include min(1280){
+                margin-top: 11px;
+            }
+            @include min(1440){
+                margin-top: 12px;
+            }
+            @include min(1600){
+                margin-top: 14px;
+            }
+            @include min(1900){
+                margin-top: 16px;
+            }
+
+        }
+
+        i {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 3.75px;
+            background: #8888C7;
+            width: 36px;
+            height: 36px;
+            @include min(1200){
+                width: 29px;
+                height: 29px;
+            }
+            @include min(1350){
+                  width: 33px;
+            height: 33px;
+            }
+            @include min(1440){
+                  width: 36px;
+            height: 36px;
+            }
+            @include min(1600){
+                    width: 38px;
+            height: 38px;
+            }
+            @include min(1900){
+                    width: 50px;
+            height: 50px;
+            }
+
+            svg {
+                width: 28.5px;
+                height: 28.5px;
+                @include min(1200){
+                    width: 24px;
+                    height: 24px;
+                }
+                @include min(1350){
+                              width: 26.5px;
+                height: 26.5px;
+                }
+                @include min(1440){
+                              width: 28.5px;
+                height: 28.5px;
+                }
+                @include min(1600){
+                    width: 30.5px;
+                    height: 30.5px;
+                }
+                @include min(1900){
+                    width: 33.5px;
+                    height: 33.5px;
+                }
+            }
+        }
+
+        div {
+            display: flex;
+            flex-wrap: wrap;
+            width: 82.57%;
+            @include min(1350){
+                width: 80.57%;
+
+            }
+            @include min(1440){
+                width: 79.57%;
+            }
+
+            strong {
+                width: 100%;
+            }
+
+            a+a {
+                padding-left: 5px;
+
+                &::before {
+                    content: '|';
+                    position: relative;
+                    left: -2.5px;
+                }
+            }
+        }
+    }
+
+    strong,
+    p,
+    a {
+        line-height: 142.857%;
+        color: $headingColor;
+    }
+
+    p,
+    a {
+        font-weight: 400;
+
+    }
+
+    .map {
+        margin-top: 16px;
+        border-radius: 10px;
+        padding: 10px;
+        border: 1px solid #E5E4E4;
+        background: #FFF;
+
+        iframe {
+            border-radius: 10px;
+            margin-bottom: -9px;
+            width: 100%;
+            height: 81px;
+            @include min(1440){
+                height: 81px;
+                margin-bottom: -9px;
+            }
+            @include min(1600){
+                margin-bottom: -11px;
+                height: 90px;
+            }
+            @include min(1900){
+                margin-bottom: -12px;
+                height: 100px;
+            }
+
+        }
+    }
+
+}
+
+.location-address {
+    justify-content: space-between;
+
+    strong {
+        display: block;
+        line-height: normal;
+        width: 100%;
+    }
+
+    p {
+        font-weight: 400;
+    }
+
+    picture {
+        width: 24px;
+        @include min(1200){
+            width: 26px;
+        }
+        @include min(1280){
+            width: 27px;
+        }
+        @include min(1350){
+            width: 29px;
+        }
+        @include min(1440){
+            width: 30px;
+        }
+        @include min(1600){
+            width: 35px;
+        }
+        @include min(1900){
+            width: 38px;
+        }
+
+        img {
+            width: 100%;
+            height: auto;
+        }
+    }
+
+    div {
+        width: 89.036%;
+        @include min(768){
+            width: 86.036%;
+
+        }
+    }
+}
+
+
+
+// ==========================Contact Form======================================
+.get-in-touch {
+
+   
+    h3,h3 span,h3 strong{
+        line-height: normal;
+        font-size: 24px;
+        @include min(1440){
+            font-size: 24px;
+        }
+        @include min(1600){
+            font-size: 28px;
+        }
+        @include min(1900){
+            font-size: 32px;
+        }
+    }
+    h3{
+        display: flex;
+        flex-wrap:wrap;
+        span{
+            font-weight: 400;
+            width: 100%;
+            margin-bottom: 8px;
+
+        }
+    }    .container-short{
+         > svg{
+        position: absolute;
+            z-index: 0;
+        right: 0;
+        top: 0;
+    }
+        background: #EEEEF6;
+            position: relative;
+        padding: 25px 18px;
+        border-radius: 20px;
+        @include min(768){
+                border-radius: 30px;
+              padding: 30px 40px;
+
+            }
+            @include min(992){
+              padding: 32px 42px;
+
+            }
+            @include min(1200){
+                padding: 35px 45px;
+
+            }
+            @include min(1350){
+                padding: 38px 48px;
+
+            }
+            @include min(1440){
+                padding: 40px 50px;
+
+            }
+            @include min(1600){
+                padding: 45px 55px;
+
+            }
+            @include min(1900){
+                padding: 50px 60px;
+
+            }
+    }
+}
+
+.form-wrapper {
+        z-index: 1;
+    position: relative;
+    margin-top: 15px;
+    background: #FFF;
+    padding: 20px;
+    border-radius: 10px;
+    @include min(768){
+        border-radius: 20px;
+    padding: 18px;
+    }
+    @include min(992){
+    padding: 20px;
+    }
+    @include min(1200){
+    padding: 22px;
+    }
+    @include min(1350){
+    padding: 26px;
+    }
+    @include min(1440){
+    padding: 28px;
+    }
+form{
+    .error-message{
+        padding: 0;
+        position: relative;
+        z-index: 2;
+        bottom: -10px;
+    }
+    .d-flex {
+
+        gap: 24px 0px;
+        > div{
+            position: relative;
+        }
+    }
+    button{
+        height: 46px;
+        width: 100%;
+        @include min(768){
+            width: 183px;
+
+        }
+        @include min(1200){
+            margin-top: 8px;
+            
+        }
+
+
+    }
+}
+    .col--4{
+
+        width: 100%;
+        @include min(992){
+            width: 31.955%;
+
+        }
+    }
+    .hours {
+        align-items: center;
+        gap: 15px;
+        @include max(767){
+            width: 100%;
+        }
+        div{
+                display: flex
+;
+    flex-direction: column;
+        }
+        strong, p,  a {
+    line-height: 142.857%;
+    color: #414A66;
+}
+p,a{
+        font-weight: 400;
+}
+        i {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 5px;
+            background: #8888C7;
+            width: 48px;
+            height: 48px;
+            @include min(1440){
+                        width: 48px;
+            height: 48px; 
+            }
+            @include min(1600){
+                        width: 56px;
+            height: 56px; 
+            }
+            @include min(1900){
+                        width: 65px;
+            height: 65px; 
+            }
+
+            svg {
+                width: 38px;
+                @include min(1600){
+                    width: 45px;
+
+                }
+                @include min(1900){
+                    width: 550px;
+
+                }
+
+            }
+        }
+    }
+
+    .socials {
+        @include max(767){
+            width: 100% ;
+        }
+        a{
+            &:hover{
+                path{
+                    stroke: $primaryColor;
+                }
+            }
+        }
+        strong {
+            line-height: normal;
+            display: block;
+            width: 100%;
+            margin-bottom: 8.49px;
+            font-size: 16px;
+
+        }
+
+        ul,
+        li,
+        a {
+            display: flex;
+            height: fit-content;
+        }
+        ul{
+            gap: 14px;
+        }
+    }
+}
+
+.follow-and-working{
+    border-radius: 10px;
+background: rgba(217, 217, 217, 0.21);
+padding:15px 20px;
+margin-top: 30px;
+@include max(767){
+    gap: 20px;
+}
+@include min(768){
+    margin-top: 49px;
+    padding: 25px 20px;
+
+}
+}

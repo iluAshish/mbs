@@ -1,0 +1,154 @@
+.mt-10 {
+  margin-top: 10px !important;
+}
+
+.mt-20 {
+  margin-top: 20px !important;
+}
+
+.mt-30 {
+  margin-top: 30px !important;
+}
+
+.mt-40 {
+  margin-top: 40px !important;
+}
+
+.mt-50 {
+  margin-top: 50px !important;
+}
+
+.mb-10 {
+  margin-bottom: 10px !important;
+}
+
+.mb-20 {
+  margin-bottom: 20px !important;
+}
+
+.mb-30 {
+  margin-bottom: 30px !important;
+}
+
+.mb-40 {
+  margin-bottom: 40px !important;
+}
+
+.mb-50 {
+  margin-bottom: 50px !important;
+}
+
+.pt-100 {
+  padding-top: 100px !important;
+}
+
+.pt-90 {
+  padding-top: 90px !important;
+}
+
+.pt-80 {
+  padding-top: 80px !important;
+}
+
+.pt-70 {
+  padding-top: 70px !important;
+}
+
+.pt-60 {
+  padding-top: 60px !important;
+}
+
+.pt-50 {
+  padding-top: 50px !important;
+}
+
+.pb-100 {
+  padding-bottom: 100px !important;
+}
+
+.pb-90 {
+  padding-bottom: 90px !important;
+}
+
+.pb-80 {
+  padding-bottom: 80px !important;
+}
+
+.pb-70 {
+  padding-bottom: 70px !important;
+}
+
+.pb-60 {
+  padding-bottom: 60px !important;
+}
+
+.pb-50 {
+  padding-bottom: 50px !important;
+}
+
+@media (max-width: 1199.98px) {
+  .pt-100 {
+    padding-top: 70px !important;
+  }
+  .pt-90 {
+    padding-top: 60px !important;
+  }
+  .pt-80 {
+    padding-top: 50px !important;
+  }
+  .pt-70 {
+    padding-top: 40px !important;
+  }
+  .pb-100 {
+    padding-bottom: 70px !important;
+  }
+  .pb-90 {
+    padding-bottom: 60px !important;
+  }
+  .pb-80 {
+    padding-bottom: 50px !important;
+  }
+  .pb-70 {
+    padding-bottom: 40px !important;
+  }
+}
+@media (max-width: 991.98px) {
+  .pt-100 {
+    padding-top: 50px !important;
+  }
+  .pt-90 {
+    padding-top: 40px !important;
+  }
+  .pt-80 {
+    padding-top: 30px !important;
+  }
+  .pb-100 {
+    padding-bottom: 50px !important;
+  }
+  .pb-90 {
+    padding-bottom: 40px !important;
+  }
+  .pb-80 {
+    padding-bottom: 30px !important;
+  }
+  .mt-30 {
+    margin-top: 25px !important;
+  }
+  .mt-40 {
+    margin-top: 30px !important;
+  }
+  .mt-50 {
+    margin-top: 40px !important;
+  }
+  .mb-30 {
+    margin-bottom: 25px !important;
+  }
+  .mb-40 {
+    margin-bottom: 30px !important;
+  }
+  .mb-50 {
+    margin-bottom: 40px !important;
+  }
+}
+
+/*# sourceMappingURL=space.css.map */

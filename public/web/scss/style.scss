@@ -1,0 +1,44 @@
+
+// Helpers
+@import "../scss/helpers/variables";
+@import "../scss/helpers/media-queries";
+@import "../scss/helpers/mixins";
+@import "../scss/helpers/font-kit";
+
+
+//Layout
+@import "../scss/layout/reset";
+@import "../scss/layout/header";
+@import "../scss/layout/footer";
+@import "../scss/layout/offcanvas-menu";
+// Components
+@import "../scss/components/animations";
+@import "../scss/pages/modal";
+@import "../scss/components/floatingbutton.scss";
+
+//pages
+@import "../scss/pages/style";
+@import "../scss/pages/home";
+@import "../scss/pages/about-us";
+@import "../scss/pages/products";
+@import "../scss/pages/services";
+@import "../scss/pages/sectors";
+@import "../scss/pages/brands";
+@import "../scss/pages/terms";
+@import "../scss/pages/blog";
+@import "../scss/pages/project";
+@import "../scss/pages/contact";
+@import "../scss/pages/media";
+
+@import "../scss/pages/404";
+
+
+// @import "../scss/components/custom-cursor";
+@import "../scss/components/floatingbutton";
+@import "../scss/components/star-rating-svg";
+@import "../scss/components/animations";
+
+// Base 
+@import "../scss/base/buttons";
+@import "../scss/base/font-settings";
+@import "../scss/base/forms";
