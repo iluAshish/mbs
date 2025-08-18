@@ -367,7 +367,7 @@
         <div class="container-short">
             <div class="d-flex">
                 <div class="head">
-                    <h2>xxyy</h2>
+                    <h2>Recent Articles</h2>
                     <p>The way we see it, every project</p>
                 </div>
                 <div class="slick-nav d-flex justify-content-center">
