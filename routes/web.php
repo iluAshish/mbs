@@ -270,6 +270,7 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function () {
     Route::post('status-change', [HomeController::class, 'status_change']);
     Route::post('change-bool-status', [HomeController::class, 'display_to_home']);
     Route::post('featured-bool-status', [HomeController::class, 'featured_to_home']);
+    Route::post('case-bool-status', [HomeController::class, 'case_study_status']);
     
     
      Route::group(['prefix' => 'companies'], function () {
@@ -316,6 +317,7 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function () {
         Route::get('/why-choose-us-index', [HomeController::class, 'home_why_choose_us_index']);
         Route::post('/why-choose-us', [HomeController::class, 'home_why_choose_us_store']);
         Route::post('/why-choose-us-delete', [HomeController::class, 'delete_why_choose_us']);
+        Route::post('/common-content', [HomeController::class, 'common_content']);
        
 
 
@@ -360,6 +362,17 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function () {
             Route::post('delete', [HomeController::class, 'delete_key_feature']);
             Route::get('/image', [HomeController::class, 'key_feature_image']);
             Route::post('image/create', [HomeController::class, 'key_feature_create_image']);
+        });
+
+        Route::group(['prefix' => 'features'], function () {
+            Route::get('/', [HomeController::class, 'feature']);
+            Route::get('create', [HomeController::class, 'feature_create']);
+            Route::post('create', [HomeController::class, 'feature_store']);
+            Route::get('edit/{id}', [HomeController::class, 'feature_edit']);
+            Route::post('edit/{id}', [HomeController::class, 'feature_update']);
+            Route::post('delete', [HomeController::class, 'delete_feature']);
+            Route::get('/image', [HomeController::class, 'feature_image']);
+            Route::post('image/create', [HomeController::class, 'feature_create_image']);
         });
 
         /************************ Testimonial starts ************************************/

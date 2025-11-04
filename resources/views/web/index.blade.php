@@ -7,9 +7,15 @@
 
             <div class="banner-image-slider" id="fadeSection">
                 @foreach($homeBanners as $banner)
-                    <picture>
-                        <img src="{{ asset($banner->bg_image) }}" width="1367" height="676" alt="MBSGroup">
-                    </picture>
+                    <div class="slide">
+                        <a href="{{ $banner->button_url ?? '#' }}" class="slide-link" aria-label="MBSGroup banner">
+                            <picture>
+                                <img src="{{ asset($banner->bg_image) }}"
+                                    width="1367" height="676"
+                                    alt="MBSGroup">
+                            </picture>
+                        </a>
+                    </div>
                 @endforeach
             </div>
 
@@ -57,36 +63,15 @@
                 <div class="about-description">
                     <h2>{{$homeAbout->sub_title}}</h2>
                     <h3>{!!$homeAbout->short_description!!}</h3>
-                    <a href="" class="btn-theme btnDark">Read More</a>
+                    <a href="{{ $homeAbout->button_url ?? '#' }}" class="btn-theme btnDark">Read More</a>
                 </div>
             </div>
 
-            <div class="d-md-flex flex-wrap service justify-content-between container-box">
-                <div class="service-col">
-                    <picture><img src="{{asset('web/images/home/service-1.jpg')}}" width="321" height="226" alt=""></picture>
-                    <div class="service-description">
-                        <h3>Storage Solutions</h3>
-                        <p>Tower Storage Machines are often used in the production for intermediate storage </p>
-                        <a href="" class="btn-theme btnDark">Read More</a>
-                    </div>
+            @if($features->isNotEmpty())
+                <div class="d-md-flex flex-wrap service justify-content-between container-box">
+                    @include('web.components._feature', ['features' => $features])
                 </div>
-                <div class="service-col">
-                    <picture><img src="{{asset('web/images/home/service-2.jpg')}}" width="321" height="226" alt=""></picture>
-                    <div class="service-description">
-                        <h3>Storage Solutions</h3>
-                        <p>Tower Storage Machines are often used in the production for intermediate storage </p>
-                        <a href="" class="btn-theme btnDark">Read More</a>
-                    </div>
-                </div>
-                <div class="service-col">
-                    <picture><img src="{{asset('web/images/home/service-3.jpg')}}" width="321" height="226" alt=""></picture>
-                    <div class="service-description">
-                        <h3>Storage Solutions</h3>
-                        <p>Tower Storage Machines are often used in the production for intermediate storage </p>
-                        <a href="" class="btn-theme btnDark">Read More</a>
-                    </div>
-                </div>
-            </div>
+            @endif
         </div>
     </section>
 
@@ -127,10 +112,11 @@
 
                     </div>
                     <div class="col-right">
-                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been
-                        the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley
-                        of type and scrambled it to make a type specimen book. It has survived not only five centuries,
-                        but also the leap into electronic typesetting, remaining essentially unchanged
+                        @php
+                            $content = \App\Models\CommonContent::where('type', 'why_choose_us')->first(['content_description']);
+                        @endphp
+
+                        <p>{!! $content->content_description ?? '' !!}</p>
                     </div>
                 </div>
                 <div class="d-flex flex-wrap  justify-content-between">
@@ -240,12 +226,12 @@
                 @foreach($caseStudies as $caseStudy)
                     <div class="caseStudies-slider-item">
                         <picture>
-                            <img src="{{asset($caseStudy->image_webp ?? $caseStudy->image)}}" width="346" height="346" {{$caseStudy->image_attribute}}>
+                            <img src="{{asset($caseStudy->webp_image ?? $caseStudy->image)}}" width="346" height="346" {{$caseStudy->image_attribute}}>
                         </picture>
                         <div class="caseStudies-slider-item-title">
 
 
-                            <a href="" tabindex="0">
+                            <a href="{{url('project-detail', ['short_url' => $caseStudy->short_url])}}" tabindex="0">
                                 <h3>{{$caseStudy->title}}</h3>
                                 <i class="arrow-btn btn"> <svg xmlns="http://www.w3.org/2000/svg" width="14" height="13"
                                         viewBox="0 0 14 13" fill="none">

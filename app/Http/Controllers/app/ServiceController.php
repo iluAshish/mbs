@@ -49,7 +49,7 @@ class ServiceController extends Controller
         $validatedData = $request->validate([
             'title' => 'required|min:2|max:255',
             'category' => 'nullable|min:2|max:255',
-            'short_description' => 'nullable|string|min:2',
+            // 'short_description' => 'nullable|string|min:2',
             'description' => 'nullable|min:2',
             'alternate_description' => 'nullable|min:2',
             'image' => 'required',
@@ -81,6 +81,8 @@ class ServiceController extends Controller
         $service->image_attribute = $request->image_attribute ?? '';
        $service->alternate_image_attribute = $request->alternate_image_attribute ?? '';
        $service->sub_title = $request->sub_title ?? '';
+       $service->highlight_box_one = $request->highlight_box_one ?? '';
+       $service->highlight_box_two = $request->highlight_box_two ?? '';
 //        $service->list_image_attribute = $request->list_image_attribute ?? '';
 
         $service->title = $validatedData['title'];
@@ -133,7 +135,7 @@ class ServiceController extends Controller
             'title' => 'required|min:2|max:255',
             'category' => 'nullable|min:2|max:255',
 
-            'short_description' => 'nullable|string|min:2',
+            // 'short_description' => 'nullable|string|min:2',
             'description' => 'nullable|min:2',
             'alternate_description' => 'nullable|min:2',
 
@@ -182,6 +184,8 @@ class ServiceController extends Controller
         $service->short_description = $request->short_description ?? '';
         $service->description = $request->description ?? '';
         $service->alternate_description = $request->alternate_description ?? '';
+        $service->highlight_box_one = $request->highlight_box_one ?? '';
+        $service->highlight_box_two = $request->highlight_box_two ?? '';
 
         $service->meta_title = $request->meta_title ?? $validatedData['title'];
         $service->meta_description = $request->meta_description ?? $validatedData['title'];

@@ -52,7 +52,7 @@
                             <div class="invalid-feedback">{{ $message }}</div>
                             @enderror
                         </div>
-                        <div class="form-group col-md-6">
+                        <!-- <div class="form-group col-md-6">
                             <label for="title">Sub Title</label>
                             <input type="text" name="sub_title" id="sub_title" placeholder="Sub Title" class="form-control"
                                     autocomplete="off" value="{{old('sub_title',isset($slider)?$slider->sub_title:'')}}">
@@ -60,7 +60,7 @@
                             @error('sub_title')
                             <div class="invalid-feedback">{{ $message }}</div>
                             @enderror
-                        </div>
+                        </div> -->
                     </div>
 
                     <!-- <div class="form-row">
@@ -110,14 +110,14 @@
                         </div>
                     </div>
                     <div class="form-row">
-                        <div class="form-group col-md-6">
+                        <!-- <div class="form-group col-md-6">
                             <label>Button Text </label>
                             <input type="text" class="form-control" id="button_text" name="button_text" placeholder="Button Text"
                                     value="{{ old('button_text',isset($slider)?$slider->button_txt:'') }}" maxlength="255">
                             @error('button_text')
                             <div class="invalid-feedback">{{ $message }}</div>
                             @enderror
-                        </div>
+                        </div> -->
                         <div class="form-group col-md-6">
                             <label> URL </label>
                             <input type="text" class="form-control" id="button_url" name="button_url" placeholder="Redirect URL"

@@ -53,7 +53,7 @@
                                         {{-- <th>Specification</th> --}}
                                         <th>Gallery</th>
                                         <th>Status</th>
-                                       <th>Display to Home</th>
+                                       <th>Case study</th>
                                         <th class="not-sortable">Actions</th>
                                     </tr>
                                     </thead>

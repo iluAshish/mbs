@@ -31,8 +31,8 @@ class AboutController extends Controller
         $validatedData = $request->validate([
             'title' => 'required|min:2|max:230',
             'description' => 'nullable|min:2',
-            'image' => 'image|mimes:jpeg,png,jpg|max:512',
-            'image_attribute' => 'nullable|min:2|max:230',
+            // 'image' => 'image|mimes:jpeg,png,jpg|max:512',
+            // 'image_attribute' => 'nullable|min:2|max:230',
         ]);
 
         if ($request->id == 0) {

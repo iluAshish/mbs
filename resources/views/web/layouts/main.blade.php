@@ -5,7 +5,7 @@
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="icon" type="image/x-icon" href="{{ asset('web/images/svg/favicon.svg') }}" />
+    <link rel="icon" type="image/x-icon" href="{{asset(@$siteInformation->logo)}}" />
     <meta name="title" content="{!! isset($meta_data) ? $meta_data->meta_title : '' !!}" />
     <meta name="description" content="{!! isset($meta_data) ? $meta_data->meta_description : '' !!}" />
     <meta name="keywords" content="{!! isset($meta_data) ? $meta_data->meta_keyword : '' !!}" />
@@ -90,7 +90,7 @@
                 <div class="d-flex header-row justify-content-between align-items-md-center">
                     <a href="{{ url('/') }}" class="brand">
                         <picture>
-                            <img src="{{ asset('web/images/logo.png') }}" width="156" height="152" alt="MBS Group">
+                            <img src="{{asset(@$siteInformation->logo)}}" width="156" height="152" {{$siteInformation->logo_attribute ?? ''}}>
                         </picture>
                     </a>
                     <nav>

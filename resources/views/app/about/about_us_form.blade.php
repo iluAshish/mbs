@@ -55,7 +55,7 @@
                                     <div class="invalid-feedback">{{ $message }}</div>
                                     @enderror
                                 </div>
-                                <div class="form-group col-md-6">
+                                <!-- <div class="form-group col-md-6">
                                     <label> Sub Title</label>
                                     <input type="text" name="sub_title" id="sub_title"
                                            placeholder="Sub Title"
@@ -66,7 +66,7 @@
                                     @error('sub_title')
                                     <div class="invalid-feedback">{{ $message }}</div>
                                     @enderror
-                                </div>
+                                </div> -->
                             </div>
                             
                             
@@ -95,7 +95,7 @@
                                     @enderror
                                 </div>
                             </div>
-                            <div class="form-row">
+                            <!-- <div class="form-row">
                                 <div class="form-group col-md-6">
                                     <label> Image*</label>
                                     <div class="file-loading">
@@ -133,7 +133,7 @@
                                     <div class="invalid-feedback">{{ $message }}</div>
                                     @enderror
                                 </div>
-                            </div>
+                            </div> -->
 
                             <!-- // mission and vision section -->
                             <div class="form-row">
@@ -428,34 +428,34 @@
         </section>
     </div>
     <script type="text/javascript">
-        $(document).ready(function () {
-            $("#image").fileinput({
-                'theme': 'explorer-fas',
-                validateInitialCount: true,
-                overwriteInitial: false,
-                autoReplace: true,
-                layoutTemplates: {actionDelete: ''},
-                removeLabel: "Remove",
-                initialPreviewAsData: true,
-                dropZoneEnabled: false,
-                required: false,
-                allowedFileTypes: ['image'],
-                // minImageWidth: 786,
-                // minImageHeight: 612,
-                // maxImageWidth: 786,
-                // maxImageHeight: 612,
-                // maxFileSize: 512,
-                showRemove: true,
-                @if(isset($about) && $about->image!=NULL)
-                initialPreview: ["{{asset($about->image)}}",],
-                initialPreviewConfig: [{
-                    caption: "{{last(explode('/',$about->image))}}",
-                    width: "120px",
-                    key: "{{'AboutUs/image/'.$about->id.'/webp_image' }}",
-                }]
-                @endif
-            });
-        });
+        // $(document).ready(function () {
+        //     $("#image").fileinput({
+        //         'theme': 'explorer-fas',
+        //         validateInitialCount: true,
+        //         overwriteInitial: false,
+        //         autoReplace: true,
+        //         layoutTemplates: {actionDelete: ''},
+        //         removeLabel: "Remove",
+        //         initialPreviewAsData: true,
+        //         dropZoneEnabled: false,
+        //         required: false,
+        //         allowedFileTypes: ['image'],
+        //         // minImageWidth: 786,
+        //         // minImageHeight: 612,
+        //         // maxImageWidth: 786,
+        //         // maxImageHeight: 612,
+        //         // maxFileSize: 512,
+        //         showRemove: true,
+        //         @if(isset($about) && $about->image!=NULL)
+        //         initialPreview: ["{{asset($about->image)}}",],
+        //         initialPreviewConfig: [{
+        //             caption: "{{last(explode('/',$about->image))}}",
+        //             width: "120px",
+        //             key: "{{'AboutUs/image/'.$about->id.'/webp_image' }}",
+        //         }]
+        //         @endif
+        //     });
+        // });
 
         $(document).ready(function () {
             $("#regional_image").fileinput({

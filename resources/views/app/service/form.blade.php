@@ -63,14 +63,14 @@
                                 @enderror
                             </div>
 
-                            <div class="form-group col-md-6">
+                            <!-- <div class="form-group col-md-6">
                                 <label for="sub_title">Sub Title *</label>
                                 <input type="text" name="sub_title" id="sub_title" placeholder="sub title " class="form-control required" autocomplete="off" value="{{ old('sub_title',isset($service)?@$service->sub_title:'') }}" maxlength="230" >
                                 <div class="help-block with-errors" id="sub_title_error"></div>
                                 @error('sub_title')
                                 <div class="invalid-feedback">{{ $message }}</div>
                                 @enderror
-                            </div>
+                            </div> -->
 
                         </div>
                         
@@ -99,21 +99,26 @@
                         </div>
                         <!-- Service image -->
 
-                        
+                        <!-- SHort Content-->
+                         <div class="form-row">
+                            <div class="col-md-6">
+                                <label for="highlight_box_one">Highlight box one</label>
+                                <textarea class="form-control tinyeditor" id="highlight_box_one" name="highlight_box_one" placeholder="Highlight box one " maxlength="500">{{ old('highlight_box_one',isset($service)?$service->highlight_box_one:'') }}</textarea>
+                                <div class="help-block with-errors" id="highlight_box_one_error"></div>
+                                @error('highlight_box_one')
+                                <div class="invalid-feedback">{{ $message }}</div>
+                                @enderror
+                            </div>
 
-                    
-                       {{-- <div class="form-row">
-                            <div class="col-md-12">
-                                <label for="short_description">Short Description*</label>
-                                <textarea class="form-control required" id="short_description" name="short_description" placeholder="Short Description " maxlength="500">{{ old('short_description',isset($service)?$service->short_description:'') }}</textarea>
-                                <div class="help-block with-errors" id="short_description_error"></div>
-                                @error('short_description')
+                            <div class="col-md-6">
+                                <label for="highlight_box_two">Highlight box two</label>
+                                <textarea class="form-control tinyeditor" id="highlight_box_two" name="highlight_box_two" placeholder="Highlight box two " maxlength="500">{{ old('highlight_box_two',isset($service)?$service->highlight_box_two:'') }}</textarea>
+                                <div class="help-block with-errors" id="highlight_box_two_error"></div>
+                                @error('highlight_box_two')
                                 <div class="invalid-feedback">{{ $message }}</div>
                                 @enderror
                             </div>
                         </div>
-                        --}}
-                        <!-- SHort Content-->
                        
                         <!-- Service Description -->
                        <div class="form-row">
@@ -127,6 +132,17 @@
                                 @enderror
                             </div>
                         </div> 
+
+                        <div class="form-row">
+                            <div class="col-md-12">
+                                <label for="short_description">Short Description</label>
+                                <textarea class="form-control tinyeditor" id="short_description" name="short_description" placeholder="Short Description " maxlength="500">{{ old('short_description',isset($service)?$service->short_description:'') }}</textarea>
+                                <div class="help-block with-errors" id="short_description_error"></div>
+                                @error('short_description')
+                                <div class="invalid-feedback">{{ $message }}</div>
+                                @enderror
+                            </div>
+                        </div>
 
                         <div class="form-row">
                             <div class="col-md-12">

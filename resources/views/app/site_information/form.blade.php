@@ -121,7 +121,7 @@
                                     <div class="file-loading">
                                         <input id="logo" name="logo" type="file" accept="image/*">
                                     </div>
-                                    <span class="caption_note">Note: Image size must be 202 X 81 size will be no more than
+                                    <span class="caption_note">Note: Image size must be 156x152 size will be no more than
                                         100KB</span>
                                 </div>
                                 <div class="form-group col-md-6">
@@ -141,7 +141,7 @@
                                         <input id="dashboard_logo" name="dashboard_logo" type="file"
                                             accept="image/*">
                                     </div>
-                                    <span class="caption_note">Note: Image size must be 202 X 81 size will be no more than
+                                    <span class="caption_note">Note: Image size must be 156x152 size will be no more than
                                         100KB</span>
                                 </div>
                                 <div class="form-group col-md-6">
@@ -160,7 +160,7 @@
                                     <div class="file-loading">
                                         <input id="footer_logo" name="footer_logo" type="file" accept="image/*">
                                     </div>
-                                    <span class="caption_note">Note: Image size must be 202 X 81 size will be no more than
+                                    <span class="caption_note">Note: Image size must be 156x152 size will be no more than
                                         100KB</span>
                                 </div>
                                 <div class="form-group col-md-6">
@@ -297,10 +297,11 @@
                 },
                 required: true,
                 allowedFileTypes: ['image'],
-                minImageWidth: 202,
-                minImageHeight: 81,
-                maxImageWidth: 202,
-                maxImageHeight: 81,
+                // 156x152
+                minImageWidth: 156,
+                minImageHeight: 152,
+                maxImageWidth: 156,
+                maxImageHeight: 152,
                 maxFileSize: 100,
                 showRemove: true,
                 @if (isset($siteInformation) && $siteInformation->logo != null)
@@ -325,10 +326,10 @@
                 },
                 required: true,
                 allowedFileTypes: ['image'],
-                minImageWidth: 202,
-                minImageHeight: 81,
-                maxImageWidth: 202,
-                maxImageHeight: 81,
+                minImageWidth: 156,
+                minImageHeight: 152,
+                maxImageWidth: 156,
+                maxImageHeight: 152,
                 maxFileSize: 100,
                 showRemove: true,
                 @if (isset($siteInformation) && $siteInformation->dashboard_logo != null)
@@ -354,10 +355,10 @@
                 dropZoneEnabled: false,
                 required: false,
                 allowedFileTypes: ['image'],
-                minImageWidth: 202,
-                minImageHeight: 81,
-                maxImageWidth: 202,
-                maxImageHeight: 81,
+                minImageWidth: 156,
+                minImageHeight: 152,
+                maxImageWidth: 156,
+                maxImageHeight: 152,
                 maxFileSize: 100,
                 showRemove: true,
                 @if (isset($siteInformation) && $siteInformation->footer_logo != null)

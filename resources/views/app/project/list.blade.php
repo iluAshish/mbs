@@ -51,6 +51,7 @@
                                          <th>Sort Order</th> 
                                         <th>Status</th>
                                        <th>Display to Home</th>
+                                       <th>Case Study</th>
                                        <th>Gallery</th>
                                         <th class="not-sortable">Actions</th>
                                     </tr>
@@ -86,6 +87,16 @@
                                                            data-url='/change-bool-status' data-table="Project"
                                                            data-id="{{$project->id}}" data-field="display_to_home" data-pk="{{ $project->id}}"
                                                         {{($project->display_to_home == "Yes")?'checked':''}}>
+                                                    <span class="slider"></span>
+                                                </label>
+                                            </td>
+
+                                            <td>
+                                                <label class="switch">
+                                                    <input type="checkbox" class="bool_status"
+                                                           data-url='/case-bool-status' data-table="Project"
+                                                           data-id="{{$project->id}}" data-field="case_study_status" data-pk="{{ $project->id}}"
+                                                        {{($project->case_study_status == "Yes")?'checked':''}}>
                                                     <span class="slider"></span>
                                                 </label>
                                             </td>

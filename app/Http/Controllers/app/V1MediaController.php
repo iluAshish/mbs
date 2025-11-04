@@ -42,8 +42,7 @@ class V1MediaController extends Controller
         $validateData = $request->validate([
             'title' => 'required',
             'description' => 'required',
-            'image' => 'required|image|mimes:jpeg,png,jpg,gif,
-            svg|max:2048',
+            // 'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
         ]);
 
         $media = new Media();
@@ -127,8 +126,7 @@ class V1MediaController extends Controller
         $validatedData = $request->validate([
             'title' => 'required',
             'description' => 'required',
-            'image' => 'required|image|mimes:jpeg,png,jpg,gif,
-            svg|max:2048',
+            // 'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
         ]);
         if ($request->hasFile('image')) {
             if (File::exists(public_path($media->image))) {
@@ -230,7 +228,6 @@ class V1MediaController extends Controller
 
     public function gallery_store(Request $request)
     {
-        // dd("i am here", $request);
         $request->validate([
             'image.*' => 'required|image|mimes:jpeg,png,jpg|max:10240',
             'image_attribute' => 'required',
@@ -271,7 +268,7 @@ class V1MediaController extends Controller
 
         if ($not_added_images == 0) {
             session()->flash('message', $added_images . " gallery images of media '" . $media->title . "' has been added successfully");
-            return redirect(Helper::sitePrefix() . 'medias/gallery/' . $request->media_id);
+            return redirect(Helper::sitePrefix() . 'media/gallery/' . $request->media_id);
         } else {
             return back()->with('message', 'Error while creating the media gallery');
         }

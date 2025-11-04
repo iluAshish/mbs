@@ -28,13 +28,19 @@
        <li class="nav-item">
             <a href="{{url(Helper::sitePrefix().'home/why-choose-us-index')}}" class="nav-link {{ (Request::segment(2)=='home' && Request::segment(3)=='why-choose-us-index')?'active':'' }}">
                 <i class="far fa-circle nav-icon"></i>
-                <p>Why Chose Us</p>
+                <p>Why Choose Us</p>
             </a>
         </li>
-        <li class="nav-item">
+        <!-- <li class="nav-item">
             <a href="{{url(Helper::sitePrefix().'home/key-feature')}}" class="nav-link {{ (Request::segment(2)=='home' && Request::segment(3)=='key-feature')?'active':'' }}">
                 <i class="far fa-circle nav-icon"></i>
                 <p>Key Feature</p>
+            </a>
+        </li> -->
+        <li class="nav-item">
+            <a href="{{url(Helper::sitePrefix().'home/features')}}" class="nav-link {{ (Request::segment(2)=='home' && Request::segment(3)=='features')?'active':'' }}">
+                <i class="far fa-circle nav-icon"></i>
+                <p>Features</p>
             </a>
         </li>
         <li class="nav-item">
@@ -44,12 +50,12 @@
             </a>
         </li>
 
-        <li class="nav-item">
+        {{-- <li class="nav-item">
             <a href="{{url(Helper::sitePrefix().'home/case-study')}}" class="nav-link {{ (Request::segment(2)=='home' && Request::segment(3)=='case-study')?'active':'' }}">
                 <i class="far fa-circle nav-icon"></i>
                 <p>case-study</p>
             </a>
-        </li>
+        </li>--}}
        {{-- <li class="nav-item">
             <a href="{{url(Helper::sitePrefix().'home/brands')}}" class="nav-link {{ (Request::segment(2)=='home' && Request::segment(3)=='brands')?'active':'' }}">
                 <i class="far fa-circle nav-icon"></i>
@@ -110,13 +116,13 @@
     </a>
 </li>
 
-<li class="nav-item {{ (Request::segment(2)=='success-stories')?'menu-is-opening menu-open':'' }}">
+<!-- <li class="nav-item {{ (Request::segment(2)=='success-stories')?'menu-is-opening menu-open':'' }}">
      <a href="{{url(Helper::sitePrefix().'success-stories')}}" class="nav-link {{ (Request::segment(2)=='success-stories')?'active':'' }}">
         <i class="nav-icon fas fa-award"></i>
         <p>Success Stories
         </p>
     </a>
-</li>
+</li> -->
 
 <li class="nav-item {{ (Request::segment(2)=='companies')?'menu-is-opening menu-open':'' }}">
      <a href="{{url(Helper::sitePrefix().'companies')}}" class="nav-link {{ (Request::segment(2)=='companies')?'active':'' }}">
@@ -126,13 +132,13 @@
     </a>
 </li>
 
-<li class="nav-item {{ (Request::segment(2)=='portfolio')?'menu-is-opening menu-open':'' }}">
+<!-- <li class="nav-item {{ (Request::segment(2)=='portfolio')?'menu-is-opening menu-open':'' }}">
     <a href="{{url(Helper::sitePrefix().'portfolio')}}" class="nav-link {{ (Request::segment(2)=='portfolio')?'active':'' }}">
         <i class="nav-icon fas fa-image"></i>
         <p>Gallery
         </p>
     </a>
-</li>
+</li> -->
 
 <li class="nav-item {{ (Request::segment(2)=='media')?'menu-is-opening menu-open':'' }}">
     <a href="{{url(Helper::sitePrefix().'media')}}" class="nav-link {{ (Request::segment(2)=='media')?'active':'' }}">
