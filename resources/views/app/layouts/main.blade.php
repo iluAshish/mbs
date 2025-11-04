@@ -7,7 +7,7 @@
 <head>
     <meta charset="utf-8">
 
-    <link rel="icon" type="image/x-icon" href="{{asset('app/images/favicon.svg')}}">
+    <link rel="icon" type="image/x-icon" href= {{asset(@$siteInformation->dashboard_logo)}}>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>{{@$siteInformation->brand_name}} | <?php echo isset($title) ? $title : 'Custom Page' ?></title>
     <meta name="csrf-token" content="{{ csrf_token() }}">

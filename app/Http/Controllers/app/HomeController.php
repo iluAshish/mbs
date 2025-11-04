@@ -16,6 +16,8 @@ use App\Models\KeyFeature;
 use App\Models\HowWeCanHelp;
 use App\Models\siteimages;
 use App\Models\Blog;
+use App\Models\CommonContent;
+use App\Models\Feature;
 use App\Models\ServiceFaq;
 use App\Models\PortfolioGallery;
 
@@ -62,7 +64,7 @@ class HomeController extends Controller
             // 'image' => 'image|mimes:jpeg,png,jpg,svg|max:2024',
             'image_attribute' => 'nullable|min:2',
             'button_url' => 'nullable|min:2',
-            'button_text' => 'nullable|min:2',
+            // 'button_text' => 'nullable|min:2',
         ]);
         $slider = new HomeBanner;
         if ($request->hasFile('image')) {
@@ -228,6 +230,31 @@ class HomeController extends Controller
             return back()->with('error', 'Error while updating the home-about content');
         }
     }
+
+    public function common_content(Request $request)
+    {
+        $validatedData = $request->validate([
+            'type' => 'required|min:2|max:225',
+            'content_description' => 'required|min:2',
+        ]);
+        // dd($request);
+
+        if ($request->id == 0) {
+            $common_contant = new CommonContent();
+        } else {
+            $common_contant = CommonContent::find($request->id);
+            $common_contant->updated_at = date('Y-m-d h:i:s');
+        }
+       
+    
+        $common_contant->type = $request->type ?? '';
+        $common_contant->content_description = $request->content_description ?? '';
+        if ($common_contant->save()) {
+            return back()->with('success', 'Content has been updated successfully');
+        } else {
+            return back()->with('error', 'Error while updating the home-about content');
+        }
+    }
     
     public function homevideobanner()
     {
@@ -349,8 +376,9 @@ class HomeController extends Controller
         $key = "List";
         $title = "Why Choose Us";
         $why_choose_us_list = WhyChooseUs::get();
+        $content = CommonContent::where('type','why_choose_us')->first();
         // dd('list',$why_choose_us_list);
-        return view('app.home.why_choose_us_index', compact('key', 'title', 'why_choose_us_list'));
+        return view('app.home.why_choose_us_index', compact('key', 'title', 'why_choose_us_list','content'));
     }
 
     public function home_why_choose_us_store(Request $request)
@@ -551,6 +579,32 @@ class HomeController extends Controller
             echo (json_encode(array('status' => true, 'message' => 'Display to Home status has been changed')));
         } else {
             echo (json_encode(array('status' => false, 'message' => 'Error while changing the Display to Home status')));
+        }
+    }
+
+    public function case_study_status(Request $request)
+    {
+        $table = $request->table;
+        $state = $request->state;
+        $primary_key = $request->primary_key;
+        if ($state == 'true') {
+            $case_study_status = "Yes";
+        } else {
+            $case_study_status = "No";
+        }
+        $field = $request->field ?? 'status';
+        $limit = $request->limit;
+        $limit_field = $request->limit_field;
+        $limit_field_value = $request->limit_field_value;
+        $appPrefix = 'App';
+        $model = $appPrefix . '\\Models\\' . $table;
+        $data = $model::find($primary_key);
+        $data->case_study_status = $case_study_status;
+        
+        if ($data->save()) {
+            echo (json_encode(array('status' => true, 'message' => 'Case study status has been changed')));
+        } else {
+            echo (json_encode(array('status' => false, 'message' => 'Error while changing the Case study status')));
         }
     }
 
@@ -796,6 +850,118 @@ class HomeController extends Controller
             return back()->withInput($request->input())->withErrors("Error while updating the content");
         }
     }
+
+    // features over here 
+    public function feature()
+    {
+        $title = "Feature List";
+        $featureList = Feature::get();
+        return view('app.home.feature.list', compact(
+            'featureList',
+            'title'
+        ));
+    }
+
+    public function feature_create()
+    {
+        $key = "Add";
+        $title = "Add Feature";
+        return view('app.home.feature.form', compact('key', 'title'));
+    }
+
+    public function feature_store(Request $request)
+    {
+        // dd($request);
+        $validatedData = $request->validate([
+            'title' => 'nullable|min:2|max:255',
+        ]);
+
+        $feature = new Feature();
+        if ($request->hasFile('image')) {
+            $feature->webp_image = Helper::uploadWebpImage($request->image, 'uploads/home/features/webp_image/', 'features');
+            $feature->image = Helper::uploadFile($request->image, 'uploads/home/features/image/', 'features');
+        }
+    
+        $feature->title = $validatedData['title'];
+        $feature->description = $request->description ?? '';
+        $feature->image_attribute = $request->image_attribute ?? '';
+        $feature->alternate_description = $request->alternate_description ?? '';
+        $feature->button_text = $request->button_text ?? '';
+        $feature->button_url = $request->button_url ?? '';
+
+
+        if ($feature->save()) {
+            session()->flash('success', 'Feature has been added successfully');
+            return redirect(Helper::sitePrefix() . 'home/features');
+        } else {
+            return back()->withInput($request->input())->withErrors("Error while updating the content");
+        }
+    }
+
+    public function feature_edit(Request $request, $id)
+    {
+        $key = "Update";
+        $title = "Update Feature";
+        $feature = Feature::find($id);
+        if ($feature) {
+            return view('app.home.feature.form', compact('feature', 'title', 'key'));
+        } else {
+            return view('app/errors/404');
+        }
+    }
+
+    public function feature_update(Request $request, $id)
+    {
+        $feature = Feature::find($id);
+        $validatedData = $request->validate([
+            'title' => 'nullable|min:2|max:255',
+        ]);
+        if ($request->hasFile('image')) {
+            Helper::deleteFile($feature, 'image');
+            Helper::deleteFile($feature, 'webp_image');
+            $feature->webp_image = Helper::uploadWebpImage($request->image, 'uploads/home/features/webp_image/', 'features');
+            $feature->image = Helper::uploadFile($request->image, 'uploads/home/features/image/', 'features');
+        }
+
+        $feature->title = $validatedData['title'];
+        $feature->description = $request->description ?? '';
+        $feature->image_attribute = $request->image_attribute ?? '';
+        $feature->alternate_description = $request->alternate_description ?? '';
+        $feature->button_text = $request->button_text ?? '';
+        $feature->button_url = $request->button_url ?? '';
+
+        $feature->updated_at = date('Y-m-d h:i:s');
+        if ($feature->save()) {
+            session()->flash('success', 'Feature has been updated successfully');
+            return redirect(Helper::sitePrefix() . 'home/features');
+        } else {
+            return back()->withInput($request->input())->withErrors("Error while updating the content");
+        }
+    }
+
+    public function delete_feature(Request $request)
+    {
+        if (isset($request->id) && $request->id != null) {
+            $key_feature = Feature::find($request->id);
+            if ($key_feature) {
+                Helper::deleteFile($key_feature, 'image');
+                Helper::deleteFile($key_feature, 'webp_image');
+
+                $deleted = $key_feature->delete();
+                if ($deleted == true) {
+                    echo (json_encode(array('status' => true)));
+                } else {
+                    echo (json_encode(array('status' => false, 'message' => 'Some error occured,please try after sometime')));
+                }
+            } else {
+                echo (json_encode(array('status' => false, 'message' => 'Model class not found')));
+            }
+        } else {
+            echo (json_encode(array('status' => false, 'message' => 'Empty value submitted')));
+        }
+    }
+
+
     public function section_heading()
     {
        $sectionheadings= SectionHeading::get();

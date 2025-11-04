@@ -17,6 +17,43 @@
                 </div>
             </div>
         </section>
+        <section class="content">
+            <div class="container-fluid">
+
+                <form role="form" id="formWizard" action="{{ url('admin/home/common-content') }}" class="form--wizard" enctype="multipart/form-data" method="post">
+                    {{csrf_field()}}
+                        @if (session('success'))
+                            <div class="alert alert-success" role="alert">
+                                <button type="button" class="close" data-dismiss="alert">×</button>
+                                {{ session('success') }}
+                            </div>
+                        @elseif(session('error'))
+                        <div class="alert alert-danger" role="alert">
+                            <button type="button" class="close" data-dismiss="alert">×</button>
+                            {{ session('error') }}
+                        </div>
+                        @endif
+                            
+                        <div class="form-row">
+                            <div class="form-group col-md-12">
+                                <label>Content Descriptionn*</label>
+                                <textarea name="content_description" id="content_description" placeholder="content description" class="required form-control tinyeditor" autocomplete="off">{{ old('content_description', @$content->content_description) }}</textarea>
+
+                                @error('content_description')
+                                <div class="invalid-feedback">{{ $message }}</div>
+                                @enderror
+                                <div class="help-block with-errors" id="content_description_error"></div>
+                            </div>
+                        </div>
+                        <div class="card_gloss-footer">
+                            <input type="hidden" name="id" id="id" value="{{isset($content)?$content->id:'0'}}">
+                            <input type="hidden" name="type" id="type" value="why_choose_us">
+                            <input type="submit" name="btn_save" value="Submit" class="btn btn-primary pull-left submitBtn">
+                        </div>
+
+                </form>
+            </div>
+        </section>
 
         <section class="content">
             <div class="container-fluid">
@@ -47,7 +84,7 @@
                                     <tr>
                                         <th>ID</th>
                                         <th>Title</th>
-                                        <th>Sub-Title</th>
+                                        <!-- <th>Sub-Title</th> -->
                                         
                                         <th>Status</th>
                                         <th>Display Home</th>
@@ -60,7 +97,7 @@
                                         <tr>
                                             <td>{{ $i }}</td>
                                             <td>{{ $list->title }}</td>
-                                            <td>{{ $list->subtitle }}</td>
+                                            <!-- <td>{{ $list->subtitle }}</td> -->
                                             <td>
                                                 <label class="switch">
                                                     <input id="switch-state" type="checkbox" class="status_check"

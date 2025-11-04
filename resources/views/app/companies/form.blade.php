@@ -73,9 +73,9 @@
                             </div>
                             <div class="form-row">
                                 <div class="form-group col-md-12">
-                                    <label for="link">Link *</label>
-                                    <input type="text" name="link" id="link" placeholder="Name "
-                                           class="form-control tinyeditor required" autocomplete="off"
+                                    <label for="link">Link </label>
+                                    <input type="text" name="link" id="link" placeholder="Enter your link "
+                                           class="form-control" autocomplete="off"
                                            value="{{ old('link',isset($brands)?$brands->link:'') }}"
                                            maxlength="100">
                                     <div class="help-block with-errors" id="link_error"></div>

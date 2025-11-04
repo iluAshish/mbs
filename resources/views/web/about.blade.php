@@ -29,7 +29,7 @@
             <div class="container-short">
                 <div class="d-flex flex-wrap justify-content-between align-items-center">
                     <div class="col-left title">
-                        <h2>{{$about->sub_title ?? $about->title}}</h2>
+                        <h2>{{ $about->title ?? ''}}</h2>
                         {!! $about->short_description !!}
                     </div>
                     <div class="col-right">
@@ -155,9 +155,12 @@
                                                 <img src="{{asset($company->image_webp ?? $company->image)}}" width="54" heigh="54" clas="img-fluid" {{$company->image_attribute}}>
                                             </picture>
                                             <div class="companies-description">
-                                                <h3>{{\Illuminate\Support\Str::words(strip_tags($company->title ?? ''), 3, '...')}}</h3>
+                                                <h3>{{\Illuminate\Support\Str::words(strip_tags($company->title ?? ''), 2, '...')}}</h3>
                                                 {!! \Illuminate\Support\Str::words(strip_tags($company->description ?? ''), 10, '...') !!}
                                             </div>
+                                            @if($company->link)
+                                            <a href="{{$company->link}}" class="btn-theme btnDark">Visit Us</a>
+                                            @endif
                                         </div>
                                     @endforeach
                                     

@@ -45,7 +45,7 @@
                         <div class="gloss_card-body">
                             <div class="form-row">
                                 <div class="form-group col-md-6">
-                                    <label> Title*</label>
+                                    <label> Experience*</label>
                                     <input type="text" name="title" id="title" placeholder="Title"
                                            class="form-control required" autocomplete="off"
                                            value="{{ old('title',isset($about)?$about->title:'') }}" maxlength="255">
@@ -55,7 +55,7 @@
                                     @enderror
                                 </div>
                                 <div class="form-group col-md-6">
-                                    <label> Sub Title*</label>
+                                    <label> Title*</label>
                                     <input type="text" name="sub_title" id="sub_title" placeholder="Title"
                                            class="form-control required" autocomplete="off"
                                            value="{{ old('sub_title',isset($about)?$about->sub_title:'') }}" maxlength="50">

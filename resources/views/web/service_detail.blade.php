@@ -48,7 +48,16 @@
             
             <div class="services-detail-right">
                 {!!$service_details->description ?? $service_details->short_description !!}
+
+                <div>
+                    {!!$service_details->highlight_box_one ?? '' !!}
+                </div>
+                <div>
+                    {!!$service_details->highlight_box_two ?? '' !!}
+                </div>
             </div>
+
+            
     
         </div>
         <strong>Benefits of AMC:</strong>

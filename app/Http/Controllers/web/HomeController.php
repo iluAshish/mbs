@@ -28,6 +28,7 @@ use App\Models\Banner;
 use App\Models\CaseStudy;
 use App\Models\HomeVideoBanner;
 use App\Models\Company;
+use App\Models\Feature;
 use App\Models\PortfolioGallery;
 use App\Models\Location;
 use App\Models\Media;
@@ -125,8 +126,9 @@ class HomeController extends Controller
         $portfolioLists = Portfolio::active()->latest()->take(6)->get();
         $blogs = Blog::active()->latest('posted_date')->take(4)->get();
         $sectors = OurSector::active()->get();
+        $features = Feature::where('status','Active')->where('display_to_home', 'Yes')->get();
 
-        $caseStudies = CaseStudy::active()->orderBy('sort_order')->get();
+        $caseStudies = Project::active()->orderBy('sort_order')->where('case_study_status','Yes')->get();
 
         $projects = Project::active()->select('id','title','short_url','image',
                                                 'image_attribute',
@@ -148,6 +150,7 @@ class HomeController extends Controller
             'categories_home',
             'why_choose_us',
             'keyFeatures',
+            'features',
             'clients',
             'partners',
             'group_companies',
