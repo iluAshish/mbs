@@ -159,7 +159,12 @@
                                                 {!! \Illuminate\Support\Str::words(strip_tags($company->description ?? ''), 10, '...') !!}
                                             </div>
                                             @if($company->link)
-                                            <a href="{{$company->link}}" class="btn-theme btnDark">Visit Us</a>
+                                            <a href="{{$company->link}}" target="_blank">
+                                                  <picture>
+                                                <img src="{{asset($company->image_webp ?? $company->image)}}" width="54" heigh="54" clas="img-fluid" {{$company->image_attribute}}>
+                                            </picture>
+                                                
+                                            Visit Website</a>
                                             @endif
                                         </div>
                                     @endforeach

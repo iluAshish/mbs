@@ -353,6 +353,10 @@ form .form-group .form-control {
 form .form-group .form-control:focus {
   box-shadow: none;
 }
+form .form-group .form-control::-moz-placeholder {
+  color: #343434;
+  opacity: 1;
+}
 form .form-group .form-control::placeholder {
   color: #343434;
   opacity: 1;
@@ -597,6 +601,7 @@ svg path {
   font-weight: 500;
   box-shadow: none;
   outline: none;
+  width: -moz-fit-content;
   width: fit-content;
   display: flex;
   align-items: center;
@@ -1693,8 +1698,10 @@ header .dropdown-menu[data-bs-popper] {
 }
 .homeBannerSlider .slider .sliderBgImage {
   height: 100%;
-  object-fit: cover;
-  object-position: center;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
   position: absolute;
   top: 0;
   left: 0;
@@ -1781,22 +1788,18 @@ header .dropdown-menu[data-bs-popper] {
 }
 .homeBannerSlider .slick-slide.slick-active .contentWrapper .contentArea h1 {
   opacity: 1;
-  -webkit-animation: fadeInUp 2500ms;
   animation: fadeInUp 2500ms;
 }
 .homeBannerSlider .slick-slide.slick-active .contentWrapper .contentArea p {
   opacity: 1;
-  -webkit-animation: fadeInUp 3000ms;
   animation: fadeInUp 3000ms;
 }
 .homeBannerSlider .slick-slide.slick-active .contentWrapper .contentArea .primary_btn {
   opacity: 1;
-  -webkit-animation: fadeInUp 3000ms;
   animation: fadeInUp 3000ms;
 }
 .homeBannerSlider .slick-slide.slick-active .contentWrapper .sliderSingleImg {
   opacity: 1;
-  -webkit-animation: fadeInUp 2100ms;
   animation: fadeInUp 2100ms;
 }
 .homeBannerSlider .slick-dots {
@@ -1947,8 +1950,10 @@ header .dropdown-menu[data-bs-popper] {
   position: relative;
   width: 100%;
   height: 100%;
-  object-position: center;
-  object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 .aboutUsHome .counter {
   font-weight: 700;
@@ -2181,21 +2186,26 @@ header .dropdown-menu[data-bs-popper] {
 @media (max-width: 766.98px) {
   .weDo .mapSection img {
     height: 280px;
-    object-fit: cover;
-    object-position: center;
+    -o-object-fit: cover;
+       object-fit: cover;
+    -o-object-position: center;
+       object-position: center;
   }
 }
 @media (max-width: 575px) {
   .weDo .mapSection img {
     height: 220px;
-    object-fit: cover;
-    object-position: center;
+    -o-object-fit: cover;
+       object-fit: cover;
+    -o-object-position: center;
+       object-position: center;
   }
   .weDo .slickSliderNav {
     justify-content: start;
   }
 }
 .moreBtn {
+  width: -moz-fit-content;
   width: fit-content;
   font-size: 16px;
   font-weight: 600;
@@ -2215,6 +2225,7 @@ header .dropdown-menu[data-bs-popper] {
 
 @media (max-width: 1199.98px) {
   .moreBtn {
+    width: -moz-fit-content;
     width: fit-content;
     font-size: 15px;
   }
@@ -2224,6 +2235,7 @@ header .dropdown-menu[data-bs-popper] {
 }
 @media (max-width: 991.98px) {
   .moreBtn {
+    width: -moz-fit-content;
     width: fit-content;
     font-size: 14px;
     padding-bottom: 7px;
@@ -2985,7 +2997,6 @@ footer .links ul li:last-child {
   padding-bottom: 100px;
 }
 .additionalContentAreaSection .additionalContentArea {
-  -webkit-column-count: 2;
   -moz-column-count: 2;
   column-count: 2;
   padding-top: 20px;
@@ -3005,7 +3016,6 @@ footer .links ul li:last-child {
 }
 @media (max-width: 991.98px) {
   .additionalContentAreaSection .additionalContentArea {
-    -webkit-column-count: 1;
     -moz-column-count: 1;
     column-count: 1;
   }
@@ -3236,8 +3246,10 @@ footer .links ul li:last-child {
 .newsBLogListDetails .newPost ul li a .imgBox img {
   width: 80px;
   height: 80px;
-  object-position: center;
-  object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 .newsBLogListDetails .newPost ul li:last-child {
   margin-bottom: 0;
@@ -3488,6 +3500,7 @@ footer .links ul li:last-child {
   display: flex;
   align-items: center;
   grid-gap: 15px;
+  width: -moz-fit-content;
   width: fit-content;
   padding: 10px 25px;
   outline: none;
@@ -3865,7 +3878,8 @@ footer .links ul li:last-child {
 }
 .modal {
   background: rgba(0, 0, 0, 0.5);
-  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+          backdrop-filter: blur(5px);
 }
 
 .enquiryModal .modal-content {
@@ -4079,6 +4093,4 @@ footer .links ul li:last-child {
   .brochureFixed img {
     width: 25px;
   }
-}
-
-/*# sourceMappingURL=style.css.map */
+}/*# sourceMappingURL=style.css.map */

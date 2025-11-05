@@ -1314,7 +1314,7 @@ mask-image: url(../images/home/banner-mask.webp);
 
         gap: 16px;
         display: flex;
-        align-items: flex-end;
+        // align-items: flex-end;
 
         p {
             line-height: normal;
@@ -1370,6 +1370,7 @@ mask-image: url(../images/home/banner-mask.webp);
         background-color: $primaryColor;
                  padding: 18px 15px 18px 15px;  
                          width: 100%;
+                         height: fit-content;
         @include min(576){
                     width:49.7622%;
  
@@ -1391,6 +1392,9 @@ mask-image: url(../images/home/banner-mask.webp);
 
         p {
             color: #B3C4F7;
+            strong{
+                color: #fff;
+            }
         }
 
         svg {
@@ -1421,25 +1425,25 @@ mask-image: url(../images/home/banner-mask.webp);
         }
         }
 
-        .testimonial-profile-details {
+        .testimonial-profile {
             margin-top: 30px;
             @include min(768){
-                margin-top: 25px;
+                margin-top: 20px;
             }
             @include min(992){
-                margin-top: 27px;
+                margin-top: 23px;
             }
             @include min(1200){
-                margin-top: 46.7px;
+                margin-top: 26.7px;
             }
             @include min(1280){
-                margin-top: 48.7px;
+                margin-top: 28.7px;
             }
             @include min(1440){
-                margin-top: 50.7px;
+                margin-top: 30.7px;
             }
             @include min(1900){
-                margin-top: 54.7px;
+                margin-top: 35.7px;
             }
 
             p {
@@ -1550,8 +1554,13 @@ mask-image: url(../images/home/banner-mask.webp);
                 margin: -19.74px 0px;
             }
         }
+        .social-media {
+    bottom: 6px;
+    right: 6px;
+}
 
         .slick-slide {
+            position: relative;
             margin: 5px 0px;
             background-color: $white;
             border-radius: 30px;
@@ -1636,6 +1645,25 @@ mask-image: url(../images/home/banner-mask.webp);
         }
 
     }
+        .social-media picture {
+                width: fit-content;
+        //  position: absolute;
+    bottom: 0;
+    background: #fff;
+    border-radius: 50%;
+    padding: 2px;
+        display: flex
+;    margin-left: auto;
+    justify-content: flex-end;
+        }
+    .social-media img {
+    width: 24px !important;
+}
+.social-media {
+    position: absolute;
+    bottom: 0;
+    right: 2px;
+}
 }
 
 
@@ -1643,6 +1671,10 @@ mask-image: url(../images/home/banner-mask.webp);
 .clients{
     padding: 35px 0px;
     overflow-x: hidden;
+    .slick-track{
+        margin-left: auto;
+        margin-right: auto;
+    }
     picture{
         border: 1px solid #f8f8f8;
         padding: 10px 25px;

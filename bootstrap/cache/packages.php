@@ -1,24 +1,24 @@
 <?php return array (
   'buglinjo/laravel-webp' => 
   array (
-    'providers' => 
-    array (
-      0 => 'Buglinjo\\LaravelWebp\\WebpServiceProvider',
-    ),
     'aliases' => 
     array (
       'Webp' => 'Buglinjo\\LaravelWebp\\Webp',
     ),
+    'providers' => 
+    array (
+      0 => 'Buglinjo\\LaravelWebp\\WebpServiceProvider',
+    ),
   ),
   'facade/ignition' => 
   array (
-    'providers' => 
-    array (
-      0 => 'Facade\\Ignition\\IgnitionServiceProvider',
-    ),
     'aliases' => 
     array (
       'Flare' => 'Facade\\Ignition\\Facades\\Flare',
+    ),
+    'providers' => 
+    array (
+      0 => 'Facade\\Ignition\\IgnitionServiceProvider',
     ),
   ),
   'fideloper/proxy' => 
@@ -79,13 +79,13 @@
   ),
   'realrashid/sweet-alert' => 
   array (
-    'providers' => 
-    array (
-      0 => 'RealRashid\\SweetAlert\\SweetAlertServiceProvider',
-    ),
     'aliases' => 
     array (
       'Alert' => 'RealRashid\\SweetAlert\\Facades\\Alert',
+    ),
+    'providers' => 
+    array (
+      0 => 'RealRashid\\SweetAlert\\SweetAlertServiceProvider',
     ),
   ),
 );
