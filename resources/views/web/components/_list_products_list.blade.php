@@ -9,7 +9,7 @@
             <a href="">{{$product->category->title ?? ''}}</a>
             <a href="">{{$product->brand->title ?? ''}}</a>
         </div>
-        {!! \Illuminate\Support\Str::words(strip_tags($product->short_description ?? $product->description), 10, '...') !!}
+        {!! \Illuminate\Support\Str::words(strip_tags($product->short_description ?? $product->description), 8, '...') !!}
     </div>
     <a href="{{route('product-detail',['short_url' => $product->short_url])}}" class="btn product-btn">
         View More

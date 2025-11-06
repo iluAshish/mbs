@@ -523,7 +523,7 @@ background: rgba(217, 217, 217, 0.22);
 .submenu {
 	list-style: none;
 	margin: 0;
-	padding: 0 0px 0px 14px;
+	padding: 0 14px 0px 14px;
 	display: none;
     max-height: 139px;
     overflow-y: auto;
@@ -554,7 +554,7 @@ background: rgba(217, 217, 217, 0.22);
 	display: flex;
 	flex-wrap: wrap;
 	gap: 10px;
-	picture {
+	a {
         text-align: center;
             width: 48%;
 		background: #fff;

@@ -41,7 +41,32 @@ $(document).ready(function () {
 });
 
 
-
+//Key feature slider
+$('.about .service ').slick({
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    focusOnSelect: false,
+    autoplay: true,
+    infinite: true,
+    draggable: true,
+    swipeToSlide: true,
+    dots: false,
+    arrows:true,
+    pauseOnHover: false,
+    centerMode: false,
+    responsive: [
+     
+     
+        {
+            breakpoint: 991,
+            settings: {slidesToShow: 2,}
+        },
+        {
+            breakpoint: 575.98,
+            settings: {slidesToShow: 1,}
+        },
+    ]
+});
 
 // ===========Products Section Slider=====================
 $(document).ready(function () {
@@ -596,12 +621,17 @@ window.addEventListener("load", () => {
   setTimeout(() => {
     setEqualHeightFor(".our-services-details");
     setEqualHeightFor(".other-product-details");
+    setEqualHeightFor(".slider-nav .slick-slide");
+    setEqualHeightFor(".companies-item");
   }, 300);
 });
 
 window.addEventListener("resize", () => {
   setEqualHeightFor(".our-services-details");
   setEqualHeightFor(".other-product-details");
+  setEqualHeightFor(".slider-nav .slick-slide");
+      setEqualHeightFor(".companies-item");
+
 });
 
 
@@ -757,29 +787,29 @@ document.addEventListener("DOMContentLoaded", function() {var lazyImages = docum
 // ======================Lazy Loading End===============================
 
 // =====================Home Service  slider=====================
-function initservice() {
-  if ($(window).width() <= 767) {
-    if (!$(".about .service").hasClass("slick-initialized")) {
-      $(".about .service").slick({
-        slidesToScroll: 1,
-        dots: true,
-        autoplay:true,
-        cssEase: "linear",
+// function initservice() {
+//   if ($(window).width() <= 767) {
+//     if (!$(".about .service").hasClass("slick-initialized")) {
+//       $(".about .service").slick({
+//         slidesToScroll: 1,
+//         dots: true,
+//         autoplay:true,
+//         cssEase: "linear",
       
-      });
-    }
-  } else {
-    if ($(".about .service").hasClass("slick-initialized")) {
-      $(".about .service").slick("unslick");
-    }
-  }
-}
+//       });
+//     }
+//   } else {
+//     if ($(".about .service").hasClass("slick-initialized")) {
+//       $(".about .service").slick("unslick");
+//     }
+//   }
+// }
 
-initservice();
+// initservice();
 
-$(window).resize(function () {
-  initservice();
-});
+// $(window).resize(function () {
+//   initservice();
+// });
 
 // ========================gallery Slider=======================
 // $(document).ready(function () {

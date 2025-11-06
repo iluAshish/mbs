@@ -68,7 +68,7 @@
             </div>
 
             @if($features->isNotEmpty())
-                <div class="d-md-flex flex-wrap service justify-content-between container-box">
+                <div class="service container-box">
                     @include('web.components._feature', ['features' => $features])
                 </div>
             @endif
@@ -254,12 +254,12 @@
             <path d="M169.99 32.5566C164.376 32.5566 158.992 34.7867 155.022 38.7562C151.053 42.7257 148.823 48.1096 148.823 53.7233V117.223C148.823 122.837 151.053 128.221 155.022 132.19C158.992 136.16 164.376 138.39 169.99 138.39C172.796 138.39 175.488 139.505 177.473 141.49C179.458 143.475 180.573 146.166 180.573 148.973V159.557C180.573 165.17 178.343 170.554 174.373 174.524C170.404 178.493 165.02 180.723 159.406 180.723C156.599 180.723 153.907 181.838 151.923 183.823C149.938 185.808 148.823 188.5 148.823 191.307V212.473C148.823 215.28 149.938 217.972 151.923 219.957C153.907 221.942 156.599 223.057 159.406 223.057C176.247 223.057 192.399 216.366 204.308 204.458C216.216 192.549 222.906 176.398 222.906 159.557V53.7233C222.906 48.1096 220.676 42.7257 216.707 38.7562C212.737 34.7867 207.353 32.5566 201.74 32.5566H169.99ZM53.5729 32.5566C47.9592 32.5566 42.5753 34.7867 38.6058 38.7562C34.6363 42.7257 32.4063 48.1096 32.4062 53.7233V117.223C32.4063 122.837 34.6363 128.221 38.6058 132.19C42.5753 136.16 47.9592 138.39 53.5729 138.39C56.3798 138.39 59.0717 139.505 61.0565 141.49C63.0412 143.475 64.1562 146.166 64.1562 148.973V159.557C64.1562 165.17 61.9262 170.554 57.9567 174.524C53.9872 178.493 48.6033 180.723 42.9896 180.723C40.1827 180.723 37.4908 181.838 35.506 183.823C33.5213 185.808 32.4063 188.5 32.4062 191.307V212.473C32.4063 215.28 33.5213 217.972 35.506 219.957C37.4908 221.942 40.1827 223.057 42.9896 223.057C59.8308 223.057 75.9823 216.366 87.8909 204.458C99.7994 192.549 106.49 176.398 106.49 159.557V53.7233C106.49 48.1096 104.26 42.7257 100.29 38.7562C96.3205 34.7867 90.9367 32.5566 85.3229 32.5566H53.5729Z" stroke="#A5A5DF" stroke-opacity="0.06" stroke-width="21.1667" stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
         <div class="container-ctn">
-            <div class="d-flex flex-wrap justify-content-between">
+            <div class="d-flex flex-wrap justify-content-between align-items-end">
                 <div class="testimonial-head">
                     <h2>Testimonials</h2>
                     <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been
                         the industry's standard dummy text</p>
-                    <div class="slick-nav d-flex justify-content-center">
+                    <div class="slick-nav d-flex justify-content-center ">
                         <div class="testimonial-slider-prev ">
                             <svg xmlns="http://www.w3.org/2000/svg" width="21" height="12" viewBox="0 0 21 12"
                                 fill="none">
@@ -292,7 +292,7 @@
                                     stroke="#A5A5DF" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
                             </svg>
                             {!! $testimonial->message !!}
-                            <div class="testimonial-profile">
+                            <div class="testimonial-profile ">
                                 <picture>
                                     <img src="{{asset($testimonial->author_image_webp ?? author_image)}}" width="58" height="58" {{$testimonial->author_image_attribute}}>
                                 </picture>
@@ -300,6 +300,11 @@
                                     <p>{{$testimonial->name}}</p>
                                     <span>{{$testimonial->designation}}</span>
                                 </div>
+                                   <div class="social-media">
+                                       <!-- <picture><img src="{{ asset('web/images/icons/google.webp')}}" width="30" height="30" alt=""></picture> -->
+                                       <picture><img src="{{ asset('web/images/icons/facebook.webp')}}" width="30" height="30" alt=""></picture>
+                                <!-- <picture><img src="{{ asset('web/images/icons/instagram.webp')}}" width="30" height="30" alt=""></picture> -->
+                            </div>
                             </div>
                         </div>
                     @endforeach
@@ -312,7 +317,7 @@
                     @foreach($testimonials as $testimonial)
                     <div>
                         {!! $testimonial->message !!}
-                        <div class="testimonial-profile">
+                        <div class="testimonial-profile ">
                             <picture>
                                 <img src="{{asset($testimonial->author_image_webp ?? author_image)}}" width="58" height="58" {{$testimonial->author_image_attribute}}>
                             </picture>
@@ -320,6 +325,12 @@
                                 <p>{{$testimonial->name}}</p>
                                 <span>{{$testimonial->designation}}</span>
                             </div>
+                            <div class="social-media">
+                                <!-- <picture><img src="{{ asset('web/images/icons/google.webp')}}" width="30" height="30" alt=""></picture> -->
+                                <picture><img src="{{ asset('web/images/icons/facebook.webp')}}" width="30" height="30" alt=""></picture>
+                                <!-- <picture><img src="{{ asset('web/images/icons/instagram.webp')}}" width="30" height="30" alt=""></picture> -->
+                            </div>
+
                         </div>
                     </div>
                     @endforeach

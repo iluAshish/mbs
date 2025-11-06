@@ -161,7 +161,70 @@
         
         </div>
         <div class="tab-pane fade list" id="video" role="tabpanel">
-        
+            <div id="playerWrapper" class="position-relative yt-video">
+    <iframe
+      id="ytPlayer"
+      width="560"
+      height="315"
+      src="https://www.youtube.com/embed/vrssjWvQMEc?enablejsapi=1"
+      frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+      allowfullscreen>
+    </iframe>
+  <div id="controls" class="controls">
+      <button id="playBtn">
+        <svg xmlns="http://www.w3.org/2000/svg" width="33" height="36" viewBox="0 0 33 36" fill="none"> <path fill-rule="evenodd" clip-rule="evenodd" d="M0.825001 2.7008C0.881264 2.22776 1.0471 1.77436 1.30934 1.37666C1.57157 0.978961 1.92297 0.647918 2.33559 0.409851C2.74821 0.171784 3.21068 0.0332571 3.68624 0.00528466C4.16179 -0.0226878 4.63731 0.0606648 5.075 0.248716C7.2875 1.19455 12.2458 3.44247 18.5375 7.07372C24.8312 10.707 29.2583 13.88 31.1812 15.3195C32.8229 16.5508 32.8271 18.9925 31.1833 20.2279C29.2792 21.6591 24.9062 24.7904 18.5375 28.4695C12.1625 32.1487 7.2625 34.3696 5.07083 35.3029C3.18333 36.1091 1.07083 34.8862 0.825001 32.8508C0.537501 30.4716 0 25.0695 0 17.7737C0 10.482 0.535417 5.08205 0.825001 2.7008Z" fill="#2E3192"/> </svg>
+      </button>
+      <button id="pauseBtn" style="display:none;">
+        <svg xmlns="http://www.w3.org/2000/svg" width="42" height="42" viewBox="0 0 42 42" fill="none"> <path d="M0 8.33333C0 4.40417 -1.24176e-07 2.44167 1.22083 1.22083C2.44167 -1.24176e-07 4.40417 0 8.33333 0C12.2625 0 14.225 -1.24176e-07 15.4458 1.22083C16.6667 2.44167 16.6667 4.40417 16.6667 8.33333V33.3333C16.6667 37.2625 16.6667 39.225 15.4458 40.4458C14.225 41.6667 12.2625 41.6667 8.33333 41.6667C4.40417 41.6667 2.44167 41.6667 1.22083 40.4458C-1.24176e-07 39.225 0 37.2625 0 33.3333V8.33333Z" fill="#2E3192"/> <path opacity="0.5" d="M25 8.33333C25 4.40417 25 2.44167 26.2208 1.22083C27.4417 -1.24176e-07 29.4042 0 33.3333 0C37.2625 0 39.225 -1.24176e-07 40.4458 1.22083C41.6667 2.44167 41.6667 4.40417 41.6667 8.33333V33.3333C41.6667 37.2625 41.6667 39.225 40.4458 40.4458C39.225 41.6667 37.2625 41.6667 33.3333 41.6667C29.4042 41.6667 27.4417 41.6667 26.2208 40.4458C25 39.225 25 37.2625 25 33.3333V8.33333Z" fill="#2E3192"/> </svg>
+      </button>
+    </div>
+    </div>
+
+
+
+  <script>
+    const iframe = document.getElementById('ytPlayer');
+    const playBtn = document.getElementById('playBtn');
+    const pauseBtn = document.getElementById('pauseBtn');
+
+    function sendCommand(funcName) {
+      iframe.contentWindow.postMessage(JSON.stringify({
+        event: 'command',
+        func: funcName,
+        args: []
+      }), '*');
+    }
+
+    playBtn.addEventListener('click', () => {
+      sendCommand('playVideo');
+      playBtn.style.display = 'none';
+      pauseBtn.style.display = 'inline-block';
+    });
+
+    pauseBtn.addEventListener('click', () => {
+      sendCommand('pauseVideo');
+      pauseBtn.style.display = 'none';
+      playBtn.style.display = 'inline-block';
+    });
+
+    window.addEventListener('message', (event) => {
+      try {
+        const data = JSON.parse(event.data);
+
+        if (data.event === 'onStateChange') {
+          if (data.info === 1) { 
+            pauseBtn.style.display = 'none';
+            playBtn.style.display = 'inline-block';
+          } else if (data.info === 2 || data.info === 0) { 
+            playBtn.style.display = 'none';
+            pauseBtn.style.display = 'inline-block';
+          }
+        }
+      } catch (e) {
+      }
+    });
+  </script>
         </div>
         </div>
 

@@ -24,20 +24,22 @@
           <div class="accordion" id="categoryAccordion">
                 @foreach($categories as $index => $category)
                     <div class="accordion-item border-0 border-bottom">
-                        <div class="d-flex justify-content-between align-items-center px-3 py-3">
+                        <div class="d-flex justify-content-between align-items-center ">
                             <!-- Clickable Link -->
-                            <a href="{{ route('categories.detail', ['short_url' => $category->short_url]) }}"
-                            class="fw-bold text-primary ">
-                                {{ $category->title }}
-                            </a>
+                           
 
                             <!-- Collapse Toggle -->
-                            <button class="btn p-0 border-0 bg-transparent accordion-button collapsed flex-shrink-0 w-auto"
+                            <button class="btn w-100 border-0 bg-transparent accordion-button collapsed flex-shrink-0"
                                     type="button"
                                     data-bs-toggle="collapse"
                                     data-bs-target="#collapse{{ $index }}"
                                     aria-expanded="false"
                                     aria-controls="collapse{{ $index }}">
+
+                                     <a href="{{ route('categories.detail', ['short_url' => $category->short_url]) }}"
+                            class=" ">
+                                {{ $category->title }}
+                            </a>
                             </button>
                         </div>
 
