@@ -162,7 +162,7 @@
 
                             <div class="form-row">
                                 <div class="form-group col-md-6">
-                                    <label> Admin Image*</label>
+                                    <label> Admin Image</label>
                                     <div class="file-loading">
                                         <input id="admin_image" name="admin_image" type="file" accept="image/*">
                                     </div>

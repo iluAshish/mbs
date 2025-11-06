@@ -49,11 +49,10 @@
                                          <th>Category</th>
                                          <th>Brand</th>
                                          <th>Sort Order</th>
-                                         <th>Featured to Home</th> 
+                                         <th>Display to home</th> 
                                         {{-- <th>Specification</th> --}}
                                         <th>Gallery</th>
                                         <th>Status</th>
-                                       <th>Case study</th>
                                         <th class="not-sortable">Actions</th>
                                     </tr>
                                     </thead>
@@ -86,13 +85,22 @@
                                             </td>
                                             <td>
                                                 <label class="switch">
+                                                    <input type="checkbox" class="bool_status"
+                                                           data-url='/change-bool-status' data-table="Product"
+                                                           data-id="{{$product->id}}" data-field="display_to_home" data-pk="{{ $product->id}}"
+                                                        {{($product->display_to_home == "Yes")?'checked':''}}>
+                                                    <span class="slider"></span>
+                                                </label>
+                                            </td>
+                                            {{-- <td>
+                                                <label class="switch">
                                                     <input type="checkbox" class="bool_status "
                                                            data-url='/featured-bool-status' data-table="Product"
                                                            data-id="{{$product->id}}" data-field="featured-to-home" data-pk="{{$product->id}}"
                                                         {{($category->featured_to_home == "Yes")?'checked':''}}>
                                                     <span class="slider"></span>
                                                 </label>
-                                            </td> 
+                                            </td> --}}
                                             {{-- <td>
                                                 <a href="{{url(Helper::sitePrefix().'products/specification/'.$product->id)}}"
                                                    class="btn btn-sm btn-danger mr-2 tooltips"
@@ -107,15 +115,6 @@
                                                            data-url="/status-change" data-table="Product"
                                                            data-field="status" data-pk="{{ $product->id}}"
                                                         {{($product->status=="Active")?'checked':''}}>
-                                                    <span class="slider"></span>
-                                                </label>
-                                            </td>
-                                            <td>
-                                                <label class="switch">
-                                                    <input type="checkbox" class="bool_status"
-                                                           data-url='/change-bool-status' data-table="Product"
-                                                           data-id="{{$product->id}}" data-field="display_to_home" data-pk="{{ $product->id}}"
-                                                        {{($product->display_to_home == "Yes")?'checked':''}}>
                                                     <span class="slider"></span>
                                                 </label>
                                             </td>
