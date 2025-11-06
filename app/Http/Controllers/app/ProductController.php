@@ -12,7 +12,9 @@ use App\Models\ProductSpecification;
 use App\Http\Helpers\Helper;
 use App\Models\Brands;
 use App\Models\ProductBrandGallery;
+use App\Models\ProductBrandIcon;
 use App\Models\ServiceFaq;
+use Exception;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\File;
@@ -595,6 +597,7 @@ class ProductController extends Controller
         $category->thumbnail_image_attribute = $request->thumbnail_image_attribute ?? '';
         $category->featured_image_attribute = $request->featured_image_attribute ?? '';
         $category->banner_image_attribute = $request->banner_image_attribute ?? '';
+        $category->product_ids = $request->product_ids ?? '';
 
 
         $meta_title = $request->meta_title ?? '';
@@ -707,6 +710,7 @@ class ProductController extends Controller
         $category->thumbnail_image_attribute = $request->thumbnail_image_attribute ?? '';
         $category->featured_image_attribute = $request->featured_image_attribute ?? '';
         $category->banner_image_attribute = $request->banner_image_attribute ?? '';
+        $category->product_ids = $request->product_ids ?? '';
 
 
         $meta_title = $request->meta_title ?? '';
@@ -819,7 +823,8 @@ class ProductController extends Controller
     {
         $validatedData = $request->validate([
             'title' => 'required|min:2|max:255',
-            'short_url' => 'required'
+            'short_url' => 'required',
+            'brand_name' => 'required'
         ]);
         $brand = new ProductBrands;
 
@@ -843,6 +848,17 @@ class ProductController extends Controller
         $brand->thumbnail_image_attribute = $request->thumbnail_image_attribute ?? '';
         $brand->featured_image_attribute = $request->featured_image_attribute ?? '';
         $brand->banner_image_attribute = $request->banner_image_attribute ?? '';
+
+        $brand->alternate_description = $request->alternate_description ?? '';
+        $brand->brand_name = $request->brand_name ?? '';
+        $brand->sub_title = $request->sub_title ?? '';
+        $brand->product_ids = $request->product_ids ?? '';
+
+        $brand->service_short_description_two = $request->service_short_description_two ?? '';
+        $brand->service_short_description_one = $request->service_short_description_one ?? '';
+        $brand->product_short_description = $request->product_short_description ?? '';
+        $brand->service_ids = $request->service_ids ?? '';
+
 
 
         $meta_title = $request->meta_title ?? '';
@@ -955,6 +971,16 @@ class ProductController extends Controller
         $brand->thumbnail_image_attribute = $request->thumbnail_image_attribute ?? '';
         $brand->featured_image_attribute = $request->featured_image_attribute ?? '';
         $brand->banner_image_attribute = $request->banner_image_attribute ?? '';
+
+        $brand->alternate_description = $request->alternate_description ?? '';
+        $brand->brand_name = $request->brand_name ?? '';
+        $brand->sub_title = $request->sub_title ?? '';
+        $brand->product_ids = $request->product_ids ?? '';
+        $brand->service_ids = $request->service_ids ?? '';
+
+        $brand->service_short_description_two = $request->service_short_description_two ?? '';
+        $brand->service_short_description_one = $request->service_short_description_one ?? '';
+        $brand->product_short_description = $request->product_short_description ?? '';
 
 
         $meta_title = $request->meta_title ?? '';
@@ -1177,6 +1203,124 @@ class ProductController extends Controller
                 }
                 if (File::exists(public_path($brand_gallery->image_webp))) {
                     File::delete(public_path($brand_gallery->image_webp));
+                }
+                $deleted = $brand_gallery->delete();
+                if ($deleted == true) {
+                    return response()->json(['status' => true]);
+                } else {
+                    return response()->json(['status' => false, 'message' => 'Some error occurred,please try after sometime']);
+                }
+            } else {
+                return response()->json(['status' => false, 'message' => 'Model class not found']);
+            }
+        } else {
+            return response()->json(['status' => false, 'message' => 'Empty value submitted']);
+        }
+
+    }
+
+    // brand icon update function
+    public function brand_icon($brand_id)
+    {
+        $key = "Create";
+        $title = "Create Brand Icon";
+        $brand = ProductBrands::find($brand_id);
+        $brandIcons = ProductBrandIcon::where('brand_id','=',$brand_id)->get();
+       
+        return view('app.product.brands.icon.list', compact('key', 'title', 'brand', 'brandIcons'));
+        
+    }
+
+    public function brand_icon_create($brand_id)
+    {
+        $key = "Create";
+        $title = "Create Brand Icon";
+        $brand = ProductBrands::find($brand_id);
+        return view('app.product.brands.icon.form', compact('key', 'title', 'brand_id','brand'));
+    }
+
+    public function brand_icon_store(Request $request)
+    {
+        try {
+            $request->validate([
+                'icon.*' => 'required|image|mimes:jpeg,png,jpg|max:10240',
+                'icon_attribute' => 'required',
+            ]);
+
+            $brand = ProductBrands::find($request->brand_id);       
+        
+            $brand_gallery = new ProductBrandIcon;
+            $gallery_image = $request->icon;
+            $brand_gallery = $this->brand_icon_store_items($request, $gallery_image, $brand_gallery, $brand);
+            $brand_gallery->description = $request->description ?? '';
+            $brand_gallery->save();
+
+            session()->flash('message', " icon images of Product '" . $brand->title . "' has been added successfully");
+            return redirect(Helper::sitePrefix() . 'products/brand/icon/' . $request->brand_id);
+
+        } catch (Exception $e) {
+            return back()->with('message', 'Error while creating the product icon');
+        }
+    }
+
+    public function brand_icon_store_items(Request $request, $gallery_icon, $brand_icon, $brand)
+    {
+        $brand_icon->icon_webp = Helper::uploadWebpImage($gallery_icon, 'uploads/products/brand/icon/image/webp/', $brand->short_url);
+        $brand_icon->icon = Helper::uploadFile($gallery_icon, 'uploads/products/brand/icon/image/', $brand->short_url);
+        
+        $brand_icon->brand_id = $brand->id;
+        $brand_icon->icon_attribute = $request->icon_attribute;
+
+        return $brand_icon;
+    }
+
+    public function brand_icon_edit($id)
+    {
+        $key = "Update";
+        $title = "Update Brand Icon";
+        $brand_icon = ProductBrandIcon::find($id);
+        $brand_id =  $brand_icon->brand_id;
+        $brand = ProductBrands::find($brand_icon->brand_id);
+        return view('app.product.brands.icon.form', compact('key', 'title', 'brand_icon', 'brand','brand_id'));
+    }
+
+    public function brand_icon_update(Request $request, $id)
+    {
+        $product_gallery = ProductBrandIcon::find($id);
+        $product_brand = ProductBrands::find($request->brand_id);
+
+        if ($request->hasFile('icon')) {
+            if (File::exists(public_path($product_gallery->icon))) {
+                File::delete(public_path($product_gallery->icon));
+            }
+            if (File::exists(public_path($product_gallery->icon_webp))) {
+                File::delete(public_path($product_gallery->icon_webp));
+            }
+                $product_gallery->icon_webp = Helper::uploadWebpImage($request->icon, 'uploads/brands/icon/image/webp/', $product_brand->short_url);
+                $product_gallery->icon = Helper::uploadFile($request->icon, 'uploads/brands/icon/image/', $product_brand->short_url);
+        }
+        $product_gallery->description = $request->description ?? '';
+        $product_gallery->brand_id = $request->brand_id;
+        $product_gallery->updated_at = now();
+
+        if ($product_gallery->save()) {
+            session()->flash('message', "Brand Icon has been updated successfully");
+            return redirect(Helper::sitePrefix() . 'products/brand/icon/' . $product_brand->id);
+        } else {
+            return back()->with('message', 'Error while updating the icon'); 
+        }
+    }
+
+    public function brand_icon_delete(Request $request)
+    {
+        if (isset($request->id) && $request->id != NULL) {
+            $brand_gallery = ProductBrandIcon::find($request->id);
+            if ($brand_gallery) {
+                if (File::exists(public_path($brand_gallery->icon))) {
+                    File::delete(public_path($brand_gallery->icon));
+                }
+                if (File::exists(public_path($brand_gallery->icon_webp))) {
+                    File::delete(public_path($brand_gallery->icon_webp));
                 }
                 $deleted = $brand_gallery->delete();
                 if ($deleted == true) {

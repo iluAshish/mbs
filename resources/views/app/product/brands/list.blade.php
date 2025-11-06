@@ -53,11 +53,12 @@
                                         <th>#</th>
                                         <th>Brand Title</th>
                                         <th>Brand Image</th>
-                                        <th>Parent Brand</th>
+                                        <!-- <th>Parent Brand</th> -->
                                         <th>Sort Order</th>
                                         <th>Status</th>
                                         <th>Display to Home</th>
                                         <th>Gallery</th>
+                                        <th>Icon</th>
                                         <th>Created Date</th>
                                         <th class="not-sortable">Actions</th>
                                     </tr>
@@ -76,13 +77,13 @@
                                             <img src="{{url($brand->banner_image)}}" width="80"/>
                                             @endif
                                             </td>
-                                             <td>
+                                            {{-- <td>
                                                 @foreach($brands as $brand_stored)
                                                     @if($brand_stored->id == $brand->parent_id)
                                                         {{ $brand_stored->title }}
                                                     @endif
                                                 @endforeach
-                                            </td>
+                                            </td>--}}
                                             
                                             <td>
                                                 <input type="text" name="sort_order"
@@ -110,9 +111,15 @@
                                                     <span class="slider"></span>
                                                 </label>
                                             </td>
+                                            
                                             <td><a href="{{url(Helper::sitePrefix().'products/brand/gallery/'.$brand->id)}}"
                                                    class="btn btn-sm btn-primary mr-2 tooltips" title="Add Gallery">Gallery</a>
                                             </td>
+
+                                            <td><a href="{{url(Helper::sitePrefix().'products/brand/icon/'.$brand->id)}}"
+                                                   class="btn btn-sm btn-primary mr-2 tooltips" title="Add Icon">Icon</a>
+                                            </td>
+                                            
                                             <td>{{ date("d-M-Y", strtotime($brand->created_at))  }}</td>
                                             <td class="text-right py-0 align-middle">
                                                 <div class="btn-group btn-group-sm">

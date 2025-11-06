@@ -51,6 +51,35 @@
                                             @endforeach
                                     </select>
                                 </div>
+                                <div class="form-group col-md-6">
+                                    <label>Select products</label>
+                                    <select name="product_ids[]" id="product_ids" class="form-control select2" multiple search>
+                                        @php
+                                            use App\Models\Product;
+                                           if (isset($category) && isset($category->id)) {
+                                                $allProducts = Product::select('id', 'title')
+                                                    ->where('category_id', $category->id)
+                                                    ->active()
+                                                    ->get();
+                                            } else {
+                                                $allProducts = Product::select('id', 'title')
+                                                    ->active()
+                                                    ->get();
+                                            }
+
+                                            $selectedProducts = isset($category) && !empty($category->product_ids)
+                                                ? json_decode($category->product_ids, true)
+                                                : [];
+
+                                        @endphp
+                                        @foreach($allProducts as $product)
+                                            <option value="{{ $product->id }}" {{ in_array($product->id, $selectedProducts) ? 'selected' : '' }}>
+                                                {{ $product->title }}
+                                            </option>
+                                        @endforeach
+                                    </select>
+                                    <div class="help-block with-errors" id="status_error"></div>
+                                </div>
                             </div>
 
                             <div class="form-row">
@@ -134,6 +163,16 @@
                                               name="short_description">{!! old('short_description', isset($category)?$category->short_description : '') !!}</textarea>
                                               <div class="help-block with-errors" id="short_description_error"></div>
                                               @error('short_description')
+                                    <div class="invalid-feedback">{{ $message }}</div>
+                                    @enderror
+                                </div>
+
+                                <div class="form-group col-md-12">
+                                    <label for="description">Description</label>
+                                    <textarea class="form-control tinyeditor" id="description" placeholder="Description"
+                                              name="description">{!! old('description', isset($category)?$category->description : '') !!}</textarea>
+                                              <div class="help-block with-errors" id="description_error"></div>
+                                              @error('description')
                                     <div class="invalid-feedback">{{ $message }}</div>
                                     @enderror
                                 </div>

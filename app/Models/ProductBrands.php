@@ -37,4 +37,9 @@ class ProductBrands extends Model
     {
         return $this->hasMany(ProductBrandGallery::class, 'brand_id', 'id');
     }
+
+    public function icons()
+    {
+        return $this->hasMany(ProductBrandIcon::class, 'brand_id', 'id');
+    }
 }

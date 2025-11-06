@@ -101,23 +101,20 @@
             <div class="content list d-flex flex-wrap">
                 <div>
                     <h1 class="h2">{{$brand->title??''}}</h1>
-                    {!! $brand->description ??  $brand->short_description !!}
+                    {!! $brand->short_description !!}
                 </div>
-                <!-- <div class="highlights d-flex flex-wrap align-items-center">
-                    <div>
-                        <picture><img src="{{asset('web/images/brands/icon-1.png')}}" width="22" height="22" alt=""></picture>
-                        <p>Dynamic Storage Solutions</p>
-                    </div>
-                    <div>
-                        <picture><img src="{{asset('web/images/brands/icon-2.png')}}" width="22" height="22" alt=""></picture>
-                        <p>Small Parts Storage Solutions</p>
-                    </div>
-                    <div>
-                        <picture><img src="{{asset('web/images/brands/icon-3.png')}}" width="22" height="22" alt=""></picture>
-                        <p> Our Solutions</p>
-                    </div>
+                <div class="highlights d-flex flex-wrap align-items-center">
+                    @foreach($brand->icons as $icon)
+                        <div >
+                            <picture><img src="{{ asset($icon->icon_webp ?? $icon->icon) }}" width="22" height="22" {{$icon->icon_attribute}}></picture>
+                           <div> {!! $icon->description ?? '' !!}</div>
+                        </div>
+                    @endforeach
+                </div>
 
-                </div> -->
+                <div class="detailed-description">
+                    {!! $brand->description ?? '' !!}
+                </div>
             </div>
         </div>
 
@@ -125,8 +122,8 @@
 
 </section>
 
+@if($products->isNotEmpty())
 
-@if($brand->products->isNotEmpty())
 <section class="brands-other-products why-choose">
     <div class="container-short position-relative">
         <div class="header-slider  d-flex flex-wrap justify-content-between align-items-center">
@@ -134,8 +131,7 @@
                 <h2><span>Our </span> Products</h2>
             </div>
             <div class="col-right">
-                <p>Whatever your storage needs, Dexion has all the products, solutions and accessories you need to make
-                    the most out of every section of available space in your storage area.</p>
+                {!! $brand->product_short_description !!}
             </div>
         </div>
         <div class="slick-nav ">
@@ -156,7 +152,7 @@
             </div>
         </div>
         <div class="brands-other-products-slider slider-container">
-            @foreach($brand->products as $product)
+            @foreach($products as $product)
             <a href="{{route('product-detail',['short_url' => $product->short_url])}}" class="other-product-card">
                 <picture>
                     <img src="{{asset($product->thumbnail_image_webp ?? $brand->thumbnail_image)}}" width="334" height="249" {{$product->thumbnail_image_attribute}}>
@@ -176,22 +172,24 @@
     </div>
 </section>
 @endif
-{{--<section class="our-services">
+
+<!-- services  -->
+@if($services->isNotEmpty())
+<section class="our-services">
     <div class="container-short position-relative">
         <div class="header-slider position-relative  d-flex flex-wrap justify-content-between align-items-center">
             <div class="col-left title">
                 <h2><span>Our </span> Services</h2>
-                <strong>Alongside world-leading storage solutions, comes world-class rack inspection and warehouse
-                    safety consultancy and installation.</strong>
+                {!! $brand->service_short_description_one !!}
             </div>
             <div class="col-right">
-                <p>Complementing our extensive product portfolio of customer-focused storage solutions, is our
-                    comprehensive package of rack inspection and safety services from our qualified inspectors and
-                    engineers.</p>
+                {!! $brand->service_short_description_two !!}
             </div>
         </div>
 
     </div>
+    @if($services->isNotEmpty())
+   
     <div class="container-short position-relative">
         <div class="slick-nav ">
             <div class="our-services-prev ">
@@ -213,65 +211,15 @@
         <div class=" slider-container slider-container-services">
 
             <div class="our-services-slider">
-                <a href="" class="our-services-card">
-                    <picture>
-                        <img src="public/images/brands/s1.jpg" width="182" height="114" alt="">
-                    </picture>
-                    <div class="our-services-details">
-                        <h3>Consulting Services</h3>
-                        <p>When finding the right storage solution, it's always reassuring to have an expert by your
-                            side.
-                        </p>
-                    </div>
-
-                </a>
-                <a href="" class="our-services-card">
-                    <picture>
-                        <img src="public/images/brands/s2.jpg" width="182" height="114" alt="">
-                    </picture>
-                    <div class="our-services-details">
-                        <h3>Rack Inspection</h3>
-                        <p>Dexion racking is manufactured to the highest quality and is designed to give you years of
-                        </p>
-                    </div>
-
-                </a>
-                <a href="" class="our-services-card">
-                    <picture>
-                        <img src="public/images/brands/s3.jpg" width="182" height="114" alt="">
-                    </picture>
-                    <div class="our-services-details">
-                        <h3>Rack Installation</h3>
-                        <p>Whether you need a single bay of shelving, or an extensive system installation, Dexion</p>
-                    </div>
-
-                </a>
-                <a href="" class="our-services-card">
-                    <picture>
-                        <img src="public/images/brands/s4.jpg" width="182" height="114" alt="">
-                    </picture>
-                    <div class="our-services-details">
-                        <h3>Service & Maintenance</h3>
-                        <p>Guaranteeing ongoing safe operations means accepting your legal responsibility to </p>
-                    </div>
-
-                </a>
-                <a href="" class="our-services-card">
-                    <picture>
-                        <img src="public/images/brands/s1.jpg" width="182" height="114" alt="">
-                    </picture>
-                    <div class="our-services-details">
-                        <h3>Consulting Services</h3>
-                        <p>When finding the right storage solution, it's always reassuring to have an expert by your
-                            side.
-                        </p>
-                    </div>
-
-                </a>
+                @include('web.components._list_services', ['services' => $services])
             </div>
         </div>
     </div>
-</section> --}}
+    @endif
+</section>
+
+@endif
+
 
 <section class="cta m-0">
     <div class="cta-container">
@@ -294,7 +242,7 @@
                 </a>
             </div>
 
-            <button data-bs-toggle="modal" href="#ServiceEnquiryForm" role="button" class="btn-theme">Service
+            <button data-bs-toggle="modal" href="#ServiceEnquiryForm" role="button" class="btn-theme">Brand
                 Enquiry</button>
         </div>
     </div>

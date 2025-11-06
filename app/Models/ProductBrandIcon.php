@@ -5,22 +5,24 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
-class Product extends Model
+
+class ProductBrandIcon extends Model
 {
     use HasFactory, SoftDeletes;
+
+    protected $table = 'product_brand_icon';
 
     public function scopeActive($query)
     {
         return $query->where('status', 'Active');
     }
-        // Product model
-    public function category()
+    public function scopeShortUrl($query, $hort_url)
     {
-        return $this->belongsTo(Category::class, 'category_id');
+        return $query->where('short_url', $hort_url);
     }
-    
-    public function brand()
+   
+    public function productBarandIcon()
     {
-        return $this->belongsTo(ProductBrands::class, 'brand_id');
+        return $this->belongsTo(ProductBrands::class, 'brand_id', 'id');
     }
 }

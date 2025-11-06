@@ -51,6 +51,7 @@ Route::get('sectors', [WebHome::class, 'sectors'])->name('sectors');
 Route::get('media', [WebHome::class, 'media'])->name('media');
 Route::get('brands', [WebHome::class, 'brands'])->name('brands');
 Route::get('brands/{short_url}', [WebHome::class, 'brand_detail'])->name('brands.brand_detail');
+Route::get('category-detail/{short_url}', [WebHome::class, 'category_detail'])->name('category.category_detail');
 
 
 
@@ -197,6 +198,15 @@ Route::group(['prefix' => 'admin'], function () {
                 Route::get('edit/{id}', [ProductController::class, 'brand_gallery_edit']);
                 Route::post('edit/{id}', [ProductController::class, 'brand_gallery_update']);
                 Route::post('delete', [ProductController::class, 'brand_gallery_delete']);
+            });
+
+            Route::prefix('icon')->group(function () {
+                Route::get('/{brand_id}', [ProductController::class, 'brand_icon']);
+                Route::get('create/{brand_id}', [ProductController::class, 'brand_icon_create']);
+                Route::post('create/{brand_id}', [ProductController::class, 'brand_icon_store']);
+                Route::get('edit/{id}', [ProductController::class, 'brand_icon_edit']);
+                Route::post('edit/{id}', [ProductController::class, 'brand_icon_update']);
+                Route::post('delete', [ProductController::class, 'brand_icon_delete']);
             });
         });
 
