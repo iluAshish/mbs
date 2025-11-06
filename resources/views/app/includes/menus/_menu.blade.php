@@ -182,6 +182,14 @@
 {{--        </li>--}}
     </ul>
 </li>
+
+<li class="nav-item">
+    <a href="{{url(Helper::sitePrefix().'products/brand')}}" class="nav-link {{ (Request::segment(3)=='brand')?'active':'' }}">
+        <i class="nav-icon far fa-circle"></i>
+        <p>Brands</p>
+    </a>
+</li>
+
 <li class="nav-item {{ (Request::segment(2)=='products')?'menu-is-opening menu-open':'' }}">
     <a href="#" class="nav-link {{ (Request::segment(2)=='products')?'active':'' }}">
         <i class="nav-icon fab fa-blogger-b"></i>
@@ -196,12 +204,12 @@
                 <p>Categories</p>
             </a>
         </li>
-        <li class="nav-item">
+        <!-- <li class="nav-item">
             <a href="{{url(Helper::sitePrefix().'products/brand')}}" class="nav-link {{ (Request::segment(3)=='brand')?'active':'' }}">
                 <i class="nav-icon far fa-circle"></i>
                 <p>Brands</p>
             </a>
-        </li>
+        </li> -->
         <li class="nav-item">
             <a href="{{url(Helper::sitePrefix().'products')}}" class="nav-link {{ (Request::segment(3)=='products')?'active':'' }}">
                 <i class="nav-icon far fa-circle"></i>

@@ -38,7 +38,7 @@
                             use App\Models\ProductBrands;
                             $brands = ProductBrands::active()->get();
                             @endphp
-                            <div class="form-row">
+                            {{-- <div class="form-row">
                                 <div class="form-group col-md-6">
                                     <label> Brands</label>
                                     <select name="parent_id" id="parent_id"
@@ -51,16 +51,36 @@
                                             @endforeach
                                     </select>
                                 </div>
-                            </div>
+                            </div>--}}
                             
                             <div class="form-row">
                                 <div class="form-group col-md-6">
+                                    <label> Brand Name*</label>
+                                    <input type="text" name="brand_name" id="brand_name" placeholder="Enter Brand Name"
+                                           class="form-control required" autocomplete="off"
+                                           value="{{ isset($brand)?$brand->brand_name:'' }}">
+                                    <div class="help-block with-errors" id="brand_name_error"></div>
+                                    @error('brand_name')
+                                    <div class="invalid-feedback">{{ $message }}</div>
+                                    @enderror
+                                </div>
+                                <div class="form-group col-md-6">
                                     <label> Title*</label>
-                                    <input type="text" name="title" id="title" placeholder="Title"
+                                    <input type="text" name="title" id="title" placeholder="Enter title"
                                            class="form-control for_canonical_url required" autocomplete="off"
                                            value="{{ isset($brand)?$brand->title:'' }}">
                                     <div class="help-block with-errors" id="title_error"></div>
                                     @error('title')
+                                    <div class="invalid-feedback">{{ $message }}</div>
+                                    @enderror
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label> Sub Title</label>
+                                    <input type="text" name="sub_title" id="sub_title" placeholder="Enter sub title"
+                                           class="form-control" autocomplete="off"
+                                           value="{{ isset($brand)?$brand->sub_title:'' }}">
+                                    <div class="help-block with-errors" id="sub_title_error"></div>
+                                    @error('sub_title')
                                     <div class="invalid-feedback">{{ $message }}</div>
                                     @enderror
                                 </div>
@@ -71,6 +91,93 @@
                                            value="{{ isset($brand)?$brand->short_url:'' }}">
                                     <div class="help-block with-errors" id="short_url_error"></div>
                                     @error('short_url')
+                                    <div class="invalid-feedback">{{ $message }}</div>
+                                    @enderror
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label>Select products</label>
+                                    <select name="product_ids[]" id="product_ids" class="form-control select2" multiple search>
+                                        @php
+                                            use App\Models\Product;
+                                           if (isset($brand) && isset($brand->id)) {
+                                                $allProducts = Product::select('id', 'title')
+                                                    ->where('brand_id', $brand->id)
+                                                    ->active()
+                                                    ->get();
+                                            } else {
+                                                $allProducts = Product::select('id', 'title')
+                                                    ->active()
+                                                    ->get();
+                                            }
+
+                                            $selectedProducts = isset($brand) && !empty($brand->product_ids)
+                                                ? json_decode($brand->product_ids, true)
+                                                : [];
+
+                                        @endphp
+                                        @foreach($allProducts as $product)
+                                            <option value="{{ $product->id }}" {{ in_array($product->id, $selectedProducts) ? 'selected' : '' }}>
+                                                {{ $product->title }}
+                                            </option>
+                                        @endforeach
+                                    </select>
+                                    <div class="help-block with-errors" id="status_error"></div>
+                                </div>
+
+                                <div class="form-group col-md-6">
+                                    <label for="product_short_description">Product Short Description </label>
+                                    <textarea class="form-control tinyeditor" id="product_short_description" placeholder="Short Description"
+                                              name="product_short_description">{!! old('product_short_description', isset($brand)?$brand->product_short_description : '') !!}</textarea>
+                                              <div class="help-block with-errors" id="product_short_description_error"></div>
+                                              @error('product_short_description')
+                                    <div class="invalid-feedback">{{ $message }}</div>
+                                    @enderror
+                                </div>
+                            </div>
+
+                            <div class="form-row" id="">
+                                <div class="form-group col-md-6">
+                                    <label>Select services</label>
+                                    <select name="service_ids[]" id="service_ids" class="form-control select2" multiple search>
+                                        @php
+                                            use App\Models\Service;
+                                           
+                                            $allServices = Service::select('id', 'title')
+                                                ->active()
+                                                ->get();
+                                            
+
+                                            $selectedServices = isset($brand) && !empty($brand->service_ids)
+                                                ? json_decode($brand->service_ids, true)
+                                                : [];
+                                         
+
+                                        @endphp
+                                        @foreach($allServices as $service)
+                                            <option value="{{ $service->id }}" {{ in_array($service->id, $selectedServices) ? 'selected' : '' }}>
+                                                {{ $service->title }}
+                                            </option>
+                                        @endforeach
+                                    </select>
+                                    <div class="help-block with-errors" id="service_ids_error"></div>
+                                </div>
+                                <div class="form-group col-md-6">
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label for="service_short_description_one">Service Short Description one </label>
+                                    <textarea class="form-control tinyeditor" id="service_short_description_one" placeholder="Service Short Description one"
+                                              name="service_short_description_one">{!! old('service_short_description_one', isset($brand)?$brand->service_short_description_one : '') !!}</textarea>
+                                              <div class="help-block with-errors" id="service_short_description_one_error"></div>
+                                              @error('service_short_description_one')
+                                    <div class="invalid-feedback">{{ $message }}</div>
+                                    @enderror
+                                </div>
+                                 <div class="form-group col-md-6">
+                                    <label for="service_short_description_two">service Short Description two </label>
+                                    <textarea class="form-control tinyeditor" id="service_short_description_two" placeholder="Service Short Description one"
+                                              name="service_short_description_two">{!! old('service_short_description_two', isset($brand)?$brand->service_short_description_two : '') !!}</textarea>
+                                              <div class="help-block with-errors" id="service_short_description_two_error"></div>
+                                              @error('service_short_description_two')
                                     <div class="invalid-feedback">{{ $message }}</div>
                                     @enderror
                                 </div>
@@ -146,6 +253,16 @@
                                     >{{ old('description',isset($brand)?$brand->description:'') }}</textarea>
                                     <div class="help-block with-errors" id="description_error"></div>
                                     @error('description')
+                                    <div class="invalid-feedback">{{ $message }}</div>
+                                    @enderror
+                                </div>
+
+                                <div class="form-group col-md-12">
+                                    <label for="alternate_description">Alternate Description</label>
+                                    <textarea class="form-control tinyeditor" id="alternate_description" placeholder="Alternate Description"
+                                              name="alternate_description">{!! old('alternate_description', isset($brand)?$brand->alternate_description : '') !!}</textarea>
+                                              <div class="help-block with-errors" id="alternate_description_error"></div>
+                                              @error('alternate_description')
                                     <div class="invalid-feedback">{{ $message }}</div>
                                     @enderror
                                 </div>

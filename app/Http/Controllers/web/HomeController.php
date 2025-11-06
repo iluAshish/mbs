@@ -432,9 +432,24 @@ class HomeController extends Controller
         $related_category = Category::active()->where('id', '!=', $category_id)->get();
         $condition=Product::where('status','Active')->where('category_id',$category_id )->orderBy('sort_order')->get();
         $totalProducts = $condition->count();
-        $products = $condition->take(4);
-        $offset = $products->count();
+
+        $brands = ProductBrands::where('status', 'Active')
+                                ->latest()
+                                ->get();
+        
+        $products = collect();
+
+        if (!empty($category_products->product_ids)) {
+            $productIds = json_decode($category_products->product_ids, true);
+
+            $products = Product::whereIn('id', $productIds)
+                ->active()
+                ->get();
+        }
         $loading_limit = 4;
+
+        // dd($category_products);
+
         if ($category_products) {
             return view('web.category_detail', compact(
                 'category_products',
@@ -442,7 +457,7 @@ class HomeController extends Controller
                 'related_category',
                 'totalProducts',
                 'loading_limit',
-                'offset',
+                'brands',
                 'products'
             ));
         } else {
@@ -613,7 +628,7 @@ class HomeController extends Controller
     }
 
     public function brand_detail($short_url){
-        $brand = ProductBrands::where('short_url', $short_url)->with('galleries','products')->first();
+        $brand = ProductBrands::where('short_url', $short_url)->with('galleries','icons')->first();
         if (!$brand) {
             abort(404);
         }
@@ -625,13 +640,36 @@ class HomeController extends Controller
                                  ->orderBy('sort_order')
                                  ->take(8)
                                  ->get();
-        // dd($brand->products);
+
+        $allProducts = Product::active()->get();
+
+        $products = collect();
+
+        if (!empty($brand->product_ids)) {
+            $productIds = json_decode($brand->product_ids, true);
+
+            $products = Product::whereIn('id', $productIds)
+                ->active()
+                ->get();
+        }
+
+        $services = collect();
+
+        if (!empty($brand->service_ids)) {
+            $serviceIds = json_decode($brand->service_ids, true);
+
+            $services = Service::whereIn('id', $serviceIds)
+                ->active()
+                ->get();
+        }
         return view('web.brand_detail', compact(
             'meta_data',
             'brand',
             'relatedBrands',
             'banner',
-            'brandsList'
+            'brandsList',
+            'products',
+            'services'
         ));
     }
 
