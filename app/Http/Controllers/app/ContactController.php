@@ -86,6 +86,8 @@ class ContactController extends Controller
         $location->location = $validatedData['location'];
         $location->office_address = $validatedData['office_address'];
         $location->phone_number = $request->phone_number;
+        $location->phone_number2 = $request->phone_number2;
+        
         $location->name = $request->name;
         $location->google_map = $request->google_map;
         $location->land_phone = $request->land_phone??'';
@@ -139,6 +141,7 @@ class ContactController extends Controller
         $location->location = $validatedData['location'];
         $location->office_address = $validatedData['office_address'];
         $location->phone_number = $request->phone_number;
+        $location->phone_number2 = $request->phone_number2;
         $location->name = $request->name;
         $location->land_phone = $request->land_phone??'';
         $location->land_phone = $request->land_phone??'';

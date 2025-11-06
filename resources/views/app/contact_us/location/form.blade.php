@@ -84,13 +84,23 @@
                                 
                             </div>
                             <div class="form-row">
-                            <div class="form-group col-md-6">
+                                <div class="form-group col-md-6">
                                     <label for="phone_number">Mobile Phone Number*</label>
                                     <input type="text" class="form-control required"
                                            id="phone_number" name="phone_number" minlength="9" maxlength="15" placeholder="Phone Number"
                                            value="{{ isset($location)?$location->phone_number:'' }}">
                                     <div class="help-block with-errors" id="phone_number_error"></div>
                                     @error('phone_number')
+                                    <div class="invalid-feedback">{{ $message }}</div>
+                                    @enderror
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label for="phone_number2">Secondary Phone Number </label>
+                                    <input type="text" class="form-control "
+                                           id="phone_number2" name="phone_number2" minlength="9" maxlength="15" placeholder="Phone Number"
+                                           value="{{ isset($location)?$location->phone_number2:'' }}">
+                                    <div class="help-block with-errors" id="phone_number2_error"></div>
+                                    @error('phone_number2')
                                     <div class="invalid-feedback">{{ $message }}</div>
                                     @enderror
                                 </div>

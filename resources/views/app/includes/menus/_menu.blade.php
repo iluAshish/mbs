@@ -337,12 +337,12 @@
     </a>
 </li>
 
-<li class="nav-item">
+<!-- <li class="nav-item">
     <a href="{{url(Helper::sitePrefix().'media/news-events')}}" class="nav-link {{ (Request::segment(2)=='media' && Request::segment(3)=='news-events')?'active':'' }}">
         <i class="nav-icon fab fa-blogger-b"></i>
         <p>News & Events</p>
     </a>
-</li>
+</li> -->
 
 <li class="nav-item {{ (Request::segment(2)=='enquiry')?'menu-is-opening menu-open':'' }}">
     <a href="#" class="nav-link {{ (Request::segment(2)=='enquiry')?'active':'' }}">
