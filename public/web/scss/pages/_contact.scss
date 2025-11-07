@@ -519,7 +519,17 @@ p,a{
             height: fit-content;
         }
         ul{
-            gap: 14px;
+            gap: 8px;
+            @include max(767){
+                svg{
+                    width: 20px;
+                height: 20px;
+                }
+            }
+            @include min(768){
+                gap: 14px;
+
+            }
         }
     }
 }

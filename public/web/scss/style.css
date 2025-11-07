@@ -5051,6 +5051,12 @@ textarea {
   gap: 16px;
   display: flex;
 }
+@media (max-width: 575px) {
+  .testimonial-profile {
+    height: 100%;
+    align-items: center;
+  }
+}
 .testimonial-profile p {
   line-height: normal;
 }
@@ -5294,7 +5300,7 @@ textarea {
   }
 }
 @media (max-width: 575px) {
-  .testimonial .slider-nav .slick-slide > p {
+  .testimonial .slider-nav .slick-slide > p, .testimonial .slider-nav .slick-slide > strong, .testimonial .slider-nav .slick-slide > p strong {
     font-size: 0;
   }
 }
@@ -5439,6 +5445,11 @@ textarea {
 }
 .testimonial .social-media img {
   width: 24px !important;
+}
+@media (max-width: 575px) {
+  .testimonial .social-media img {
+    width: 18px !important;
+  }
 }
 .testimonial .social-media {
   bottom: 0;
@@ -10937,7 +10948,7 @@ details[open] > summary::after {
   flex-wrap: wrap;
   border-radius: 5px;
   background: #FADBDB;
-  padding: 10px 15px;
+  padding: 10px 7px;
   width: 48.6%;
 }
 @media (max-width: 767px) {
@@ -11798,7 +11809,18 @@ details[open] > summary::after {
   height: fit-content;
 }
 .form-wrapper .socials ul {
-  gap: 14px;
+  gap: 8px;
+}
+@media (max-width: 767px) {
+  .form-wrapper .socials ul svg {
+    width: 20px;
+    height: 20px;
+  }
+}
+@media (min-width: 768px) {
+  .form-wrapper .socials ul {
+    gap: 14px;
+  }
 }
 
 .follow-and-working {

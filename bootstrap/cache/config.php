@@ -1,16 +1,16 @@
 <?php return array (
   'app' => 
   array (
-    'name' => 'MBS',
+    'name' => 'Laravel',
     'env' => 'local',
     'debug' => true,
-    'url' => 'https://www.medicom-grp.com/',
+    'url' => 'http://localhost',
     'asset_url' => NULL,
     'timezone' => 'UTC',
     'locale' => 'en',
     'fallback_locale' => 'en',
     'faker_locale' => 'en_US',
-    'key' => 'base64:9igGoa7C0xT0LZKu+6vJ4K8juR+My1nm+igq41aloEM=',
+    'key' => 'base64:0HpJkE/tgeFNRb7eyc4YBHVTzo/qTNT+/EEcBmLQFDY=',
     'cipher' => 'AES-256-CBC',
     'providers' => 
     array (
@@ -196,7 +196,7 @@
       'file' => 
       array (
         'driver' => 'file',
-        'path' => 'D:\\projects\\mbs\\storage\\framework/cache/data',
+        'path' => 'C:\\xampp\\htdocs\\mbs\\storage\\framework/cache/data',
       ),
       'memcached' => 
       array (
@@ -235,7 +235,7 @@
         'endpoint' => NULL,
       ),
     ),
-    'prefix' => 'mbs_cache',
+    'prefix' => 'laravel_cache',
   ),
   'cors' => 
   array (
@@ -273,7 +273,7 @@
       array (
         'driver' => 'sqlite',
         'url' => NULL,
-        'database' => 'medicom3_medicom',
+        'database' => 'mbs',
         'prefix' => '',
         'foreign_key_constraints' => true,
       ),
@@ -283,7 +283,7 @@
         'url' => NULL,
         'host' => '127.0.0.1',
         'port' => '3306',
-        'database' => 'medicom3_medicom',
+        'database' => 'mbs',
         'username' => 'root',
         'password' => '',
         'unix_socket' => '',
@@ -303,7 +303,7 @@
         'url' => NULL,
         'host' => '127.0.0.1',
         'port' => '3306',
-        'database' => 'medicom3_medicom',
+        'database' => 'mbs',
         'username' => 'root',
         'password' => '',
         'charset' => 'utf8',
@@ -318,7 +318,7 @@
         'url' => NULL,
         'host' => '127.0.0.1',
         'port' => '3306',
-        'database' => 'medicom3_medicom',
+        'database' => 'mbs',
         'username' => 'root',
         'password' => '',
         'charset' => 'utf8',
@@ -333,7 +333,7 @@
       'options' => 
       array (
         'cluster' => 'redis',
-        'prefix' => 'mbs_database_',
+        'prefix' => 'laravel_database_',
       ),
       'default' => 
       array (
@@ -362,13 +362,13 @@
       'local' => 
       array (
         'driver' => 'local',
-        'root' => 'D:\\projects\\mbs\\storage\\app',
+        'root' => 'C:\\xampp\\htdocs\\mbs\\storage\\app',
       ),
       'public' => 
       array (
         'driver' => 'local',
-        'root' => 'D:\\projects\\mbs\\storage\\app/public',
-        'url' => 'https://www.medicom-grp.com//storage',
+        'root' => 'C:\\xampp\\htdocs\\mbs\\storage\\app/public',
+        'url' => 'http://localhost/storage',
         'visibility' => 'public',
       ),
       's3' => 
@@ -384,7 +384,7 @@
     ),
     'links' => 
     array (
-      'D:\\projects\\mbs\\public\\storage' => 'D:\\projects\\mbs\\storage\\app/public',
+      'C:\\xampp\\htdocs\\mbs\\public\\storage' => 'C:\\xampp\\htdocs\\mbs\\storage\\app/public',
     ),
   ),
   'hashing' => 
@@ -433,13 +433,13 @@
       'single' => 
       array (
         'driver' => 'single',
-        'path' => 'D:\\projects\\mbs\\storage\\logs/laravel.log',
+        'path' => 'C:\\xampp\\htdocs\\mbs\\storage\\logs/laravel.log',
         'level' => 'debug',
       ),
       'daily' => 
       array (
         'driver' => 'daily',
-        'path' => 'D:\\projects\\mbs\\storage\\logs/laravel.log',
+        'path' => 'C:\\xampp\\htdocs\\mbs\\storage\\logs/laravel.log',
         'level' => 'debug',
         'days' => 14,
       ),
@@ -489,7 +489,7 @@
       ),
       'emergency' => 
       array (
-        'path' => 'D:\\projects\\mbs\\storage\\logs/laravel.log',
+        'path' => 'C:\\xampp\\htdocs\\mbs\\storage\\logs/laravel.log',
       ),
     ),
   ),
@@ -501,11 +501,11 @@
       'smtp' => 
       array (
         'transport' => 'smtp',
-        'host' => 'smtp.gmail.com',
-        'port' => '587',
-        'encryption' => 'TLS',
-        'username' => 'info@medicom-grp.com',
-        'password' => 'epevramwqlokpgoj',
+        'host' => 'mailhog',
+        'port' => '1025',
+        'encryption' => NULL,
+        'username' => NULL,
+        'password' => NULL,
         'timeout' => NULL,
         'auth_mode' => NULL,
       ),
@@ -538,15 +538,15 @@
     ),
     'from' => 
     array (
-      'address' => 'info@medicom-grp.com',
-      'name' => 'MBS',
+      'address' => NULL,
+      'name' => 'Laravel',
     ),
     'markdown' => 
     array (
       'theme' => 'default',
       'paths' => 
       array (
-        0 => 'D:\\projects\\mbs\\resources\\views/vendor/mail',
+        0 => 'C:\\xampp\\htdocs\\mbs\\resources\\views/vendor/mail',
       ),
     ),
   ),
@@ -609,7 +609,7 @@
       2 => '127.0.0.1',
       3 => '127.0.0.1:8000',
       4 => '::1',
-      5 => 'www.medicom-grp.com',
+      5 => 'localhost',
     ),
     'guard' => 
     array (
@@ -647,7 +647,7 @@
     'lifetime' => '120',
     'expire_on_close' => false,
     'encrypt' => false,
-    'files' => 'D:\\projects\\mbs\\storage\\framework/sessions',
+    'files' => 'C:\\xampp\\htdocs\\mbs\\storage\\framework/sessions',
     'connection' => NULL,
     'table' => 'sessions',
     'store' => NULL,
@@ -656,7 +656,7 @@
       0 => 2,
       1 => 100,
     ),
-    'cookie' => 'mbs_session',
+    'cookie' => 'laravel_session',
     'path' => '/',
     'domain' => NULL,
     'secure' => NULL,
@@ -725,9 +725,9 @@
   array (
     'paths' => 
     array (
-      0 => 'D:\\projects\\mbs\\resources\\views',
+      0 => 'C:\\xampp\\htdocs\\mbs\\resources\\views',
     ),
-    'compiled' => 'D:\\projects\\mbs\\storage\\framework\\views',
+    'compiled' => 'C:\\xampp\\htdocs\\mbs\\storage\\framework\\views',
   ),
   'flare' => 
   array (
