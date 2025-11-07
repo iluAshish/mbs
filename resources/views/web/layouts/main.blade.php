@@ -262,7 +262,7 @@
                     <a href="" class="btn-theme btnDark">Read More</a>
                 </div>
             </div>
-            <form class="subscribe-form">
+            <form class="subscribe-form" id="newsletter-form">
                 <strong>Newsletter</strong>
                 <p>Sign up to receive news, app updates, and other exclusive info via email</p>
                 <div class="d-flex w-100 align-items-center justify-content-between">
@@ -271,9 +271,10 @@
                             <path fill-rule="evenodd" clip-rule="evenodd"
                                 d="M17.7836 4.15231L10.6815 10.0338C10.4797 10.201 10.2258 10.2925 9.96372 10.2925C9.70164 10.2925 9.44778 10.201 9.24597 10.0338L2.14722 4.15231C2.10913 4.26696 2.08976 4.387 2.08984 4.50781V13.5078C2.08984 13.8062 2.20837 14.0923 2.41935 14.3033C2.63033 14.5143 2.91648 14.6328 3.21484 14.6328H16.7148C17.0132 14.6328 17.2994 14.5143 17.5103 14.3033C17.7213 14.0923 17.8398 13.8062 17.8398 13.5078V4.50781C17.8403 4.38706 17.8213 4.26703 17.7836 4.15231ZM3.21484 2.25781H16.7148C17.3116 2.25781 17.8839 2.49487 18.3058 2.91682C18.7278 3.33878 18.9648 3.91108 18.9648 4.50781V13.5078C18.9648 14.1045 18.7278 14.6768 18.3058 15.0988C17.8839 15.5208 17.3116 15.7578 16.7148 15.7578H3.21484C2.61811 15.7578 2.04581 15.5208 1.62385 15.0988C1.2019 14.6768 0.964844 14.1045 0.964844 13.5078V4.50781C0.964844 3.91108 1.2019 3.33878 1.62385 2.91682C2.04581 2.49487 2.61811 2.25781 3.21484 2.25781ZM2.97859 3.38281L9.25159 8.56119C9.4525 8.72713 9.70479 8.81818 9.96536 8.8188C10.2259 8.81942 10.4787 8.72955 10.6803 8.56456L17.0163 3.38281H2.97859Z"
                                 fill="#818DA6" /> </svg>
-                        <input type="email" id="email-subscribe" placeholder="Email address" />
+                        <input type="email" id="email-subscribe" name="email" placeholder="Email address" required>
+                        
                     </label>
-                    <button type="submit" class="btn-theme btnLight">Subscribe</button>
+                    <button type="submit" class="btn-theme btnLight submit_form_btn_newsletter" data-url="newsletter/subscribe">Subscribe</button>
                 </div>
             </form>
 
@@ -536,31 +537,8 @@
             </button>
 
             <div class="modal-body p-0">
-                        <p class="title">Service Enquiry</p>
-                        <form id="enquiryFormValidation" action="" method="post" enctype="multipart/form-data">
-                            <div class="row justify-content-between">
-                                  <div class="formGroup col--4">
-                                <input type="text" id="name_enquiry" name="name_enquiry" placeholder="Name">
-                                <span id="name_enquiryError" class="error-message">Please enter your name</span>
-                            </div>
-                            <div class="formGroup col--4">
-                                <input type="email" id="email_enquiry" name="email_enquiry" placeholder="Email">
-                                <span id="email_enquiryError" class="error-message">Please enter a valid email</span>
-                            </div>
-                            <div class="formGroup col--4">
-                                <input type="tel" id="phone_enquiry" name="phone_enquiry" class="phone_number" placeholder="Phone">
-                                <span id="phone_enquiryError" class="error-message">Please enter a valid phone number</span>
-                            </div>
-                            <div class="formGroup col-12">
-                                <textarea id="message_enquiry" name="message_enquiry" rows="" cols="" placeholder="Enquiry"></textarea>
-                                <span id="message_enquiryError" class="error-message">Please enter your message</span>
-                            </div>
-                            <div class="d-flex justify-content-end buttonGroup p-0">
-                                <button type="submit" class="btn-theme btnDark"> Submit</button>  
-                            <button type="button" class="btn-cancel btn-theme btnBorder" data-bs-dismiss="modal" aria-label="Close" id="enquiryFormClose">Cancel</button>
-                            </div>
-                            </div>  
-                     </form>
+                <p class="title">Enquiry</p>
+                @include('web.components._form',['prefix'=> 'contact-us'])
             </div>
         </div>
     </div>

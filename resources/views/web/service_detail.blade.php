@@ -1,5 +1,10 @@
 @extends('web.layouts.main')
 @section('content')
+
+@php
+
+    $service_page = isset($service_details) ? $service_details : null;
+@endphp
 <picture>
     <img src="{{asset('web/images/inner/bg.webp')}}" alt="">
 </picture>

@@ -44,6 +44,7 @@ use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Http;
 use Session;
 use RealRashid\SweetAlert\Facades\Alert;
+use Illuminate\Support\Str;
 
 class HomeController extends Controller
 {
@@ -951,11 +952,15 @@ class HomeController extends Controller
     
     public function enquiry(Request $request)
     {
+        // dd($request);
         $keyFlag = $request->prefixKey;
         $name = $keyFlag.'_name';
         $email = $keyFlag.'_email';
         $phone = $keyFlag.'_phone';
         $message = $keyFlag.'_message';
+        $product_id = $keyFlag.'_product_id';
+        $service_id = $keyFlag.'_service_id';
+        $brand_id = $keyFlag.'_brand_id';
 
         if (filter_var($request->$email, FILTER_VALIDATE_EMAIL)) {
             $enquiry = new Enquiry();
@@ -963,15 +968,10 @@ class HomeController extends Controller
             $enquiry->email = $request->$email;
             $enquiry->message = $request->$message ?? '';
 
-            // $ip = $request->ip();
-            $ip= '152.59.183.61';
-
-            $locationData = Http::get("https://ipwho.is/{$ip}")->json();
-
-            // Format phone number with country code
-            $formattedPhone = $locationData['calling_code'] ? "+{$locationData['calling_code']}{$request->$phone}" : $request->$phone;
-
-            $enquiry->phone = $formattedPhone;
+            $enquiry->phone = $request->$phone;
+            $enquiry->product_id = $request->$product_id ?? '';
+            $enquiry->service_id = $request->$service_id ?? '';
+            $enquiry->brand_id = $request->$brand_id ?? '';
 
             $enquiry->enquiry_type = $request->type ? $request->type : 'contact-us';
             $enquiry->request_url = url()->previous();
@@ -1089,6 +1089,33 @@ class HomeController extends Controller
         
         }
     }
+
+    // Subscribe to Newsletter
+    public function subscribe(Request $request)
+    {
+        // dd($request);
+        $request->validate(['email' => 'required|email']);
+
+        $subscriber = Subscriber::updateOrCreate(
+            ['email' => $request->email],
+            ['is_subscribed' => true, 'unsubscribe_token' => Str::random(60)]
+        );
+
+        return response()->json([
+            'status' => 'success',
+            'message' => 'Subscribed successfully!',
+        ]);
+    }
+
+    // Unsubscribe
+    public function unsubscribe($token)
+    {
+        $subscriber = Subscriber::where('unsubscribe_token', $token)->firstOrFail();
+        $subscriber->update(['is_subscribed' => false]);
+
+        return redirect('/')->with('success', 'You '."$subscriber->email". ' have been unsubscribed successfully.');
+    }
+
     public function page_404(){
         return view('web.error.404');
     }

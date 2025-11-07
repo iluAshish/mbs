@@ -75,8 +75,8 @@ $(document).on('click', '.submit-form-btn', function (e) {
                         text: response.message,
                         icon: "success"
                     }).then(() => {
-                      $('#' + form_flag + 'Form')[0].reset(); // ✅ form reset
-                    window.location.href = response.redirect;
+                        $('#' + form_flag + 'Form')[0].reset(); // ✅ form reset
+                            window.location.href = response.redirect;
                     });
                 } else if (response.status === "error") {
                     Swal.fire({
@@ -95,6 +95,41 @@ $(document).on('click', '.submit-form-btn', function (e) {
         });
     }
 });
+
+$(document).on('click', '.submit_form_btn_newsletter', function (e) {
+    e.preventDefault();
+
+    let btn = $(this);
+    let url = $(this).data('url');
+
+    let email = $('#email-subscribe').val().trim();
+
+    if (email === '') {
+        Swal.fire('Error', 'Email is required', 'error');
+        return;
+    }
+
+    btn.html('Please wait...');
+    $.ajax({
+        type: 'POST',
+        url: base_url + '/' + url,
+        data: { email },
+        headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        },
+        success: function (res) {
+            btn.html('Subscribe');
+            if (res.status === 'success') {
+                Swal.fire('Success', res.message, 'success');
+                $('#newsletter-form')[0].reset();
+            } else {
+                Swal.fire('Error', res.message, 'error');
+            }
+        }
+    });
+});
+
+
 
 
 $(document).ready(function () {
