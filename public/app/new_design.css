@@ -111,7 +111,7 @@ a.btn.btn-success.gloss_edit ,a.btn.btn-success.mr-2.tooltips.tooltipstered,a.bt
 .gloss_body .switch input {
     opacity: 0;
     width: 0;
-    height: 0;
+    height: 0; 
 }
 
 .gloss_body .slider {
