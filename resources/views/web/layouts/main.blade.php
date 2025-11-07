@@ -559,20 +559,20 @@
                         <p class="title">Quick Enquiry</p>
                         <form id="ProductEnquiryFormValidation" action="" method="post" enctype="multipart/form-data">
                             <div class="row justify-content-between">
-                                  <div class="formGroup col--6">
+                                  <div class="formGroup col--4">
                                 <input type="text" id="name_enquiry" name="name_enquiry" placeholder="Name">
                                 <span id="name_enquiryError" class="error-message">Please enter your name</span>
                             </div>
-                            <div class="formGroup col--6">
+                            <div class="formGroup col--4">
                                 <input type="email" id="email_enquiry" name="email_enquiry" placeholder="Email">
                                 <span id="email_enquiryError" class="error-message">Please enter a valid email</span>
                             </div>
-                            <div class="formGroup col--6">
+                            <div class="formGroup col--4">
                                 <input type="tel" id="phone_enquiry" name="phone_enquiry" class="phone_number" placeholder="Phone">
                                 <span id="phone_enquiryError" class="error-message">Please enter a valid phone number</span>
                             </div>
-                            <div class="formGroup col--6">
-                                <input type="text" id="product_enquiry" name="product_enquiry" class="product_name" placeholder="Product Name">
+                            <div class="formGroup col-12">
+                                <input type="text" id="product_enquiry" name="product_enquiry" class="product_name" placeholder="Product Name" disabled>
                                 <span id="phone_enquiryError" class="error-message">Please enter a product name</span>
                             </div>
                             <div class="formGroup col-12">

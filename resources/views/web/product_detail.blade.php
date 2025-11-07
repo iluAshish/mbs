@@ -128,7 +128,7 @@
                    {!! $product->description ?? '' !!}
                 </div>
                 <div class="btn-group">
-                    <a href="#enquiryForm" class="btn-theme btnDark" data-bs-toggle="modal" role="button" >Quick Enquiry</a>
+                    <a href="#ProductEnquiryForm" class="btn-theme btnDark" data-bs-toggle="modal" role="button" >Quick Enquiry</a>
                     <a href="{{ asset($product->brochure_link ?? '') }}" class="btn-theme btnBorder" download>
                         Download Brochure
                     </a>
