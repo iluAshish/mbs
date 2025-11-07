@@ -1327,6 +1327,10 @@ mask-image: url(../images/home/banner-mask.webp);
         gap: 16px;
         display: flex;
         // align-items: flex-end;
+        @include max(575){
+            height: 100%;
+            align-items: center;
+        }
 
         p {
             line-height: normal;
@@ -1521,7 +1525,7 @@ mask-image: url(../images/home/banner-mask.webp);
                width: 35.266%;
         }
         .slick-slide{
-            >p{
+            >p,>strong,> p strong{
                 @include max(575){
                     font-size: 0;
                 }
@@ -1670,6 +1674,9 @@ mask-image: url(../images/home/banner-mask.webp);
         }
     .social-media img {
     width: 24px !important;
+    @include max(575){
+            width: 18px !important;
+    }
 }
 .social-media {
     // position: absolute;
