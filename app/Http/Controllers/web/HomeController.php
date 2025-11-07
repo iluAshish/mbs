@@ -36,6 +36,7 @@ use App\Models\OurSector;
 use App\Models\Project;
 use App\Models\ProjectGallery;
 use App\Models\SuccessStory;
+use App\Models\Subscriber;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\View;
