@@ -105,6 +105,9 @@ Route::post('enquiry', [WebHome::class, 'enquiry']);
 Route::post('service-enquiry', [WebHome::class, 'enquiry']);
 Route::post('product-enquiry', [WebHome::class, 'serviceEnquiry']);
 
+Route::post('/newsletter/subscribe', [WebHome::class, 'subscribe']);
+Route::get('/newsletter/unsubscribe/{token}', [WebHome::class, 'unsubscribe']);
+
 Route::group(['prefix' => 'admin'], function () {
     Route::get('/', [LoginController::class, 'showLoginForm'])->middleware('guest')->name('login');
     Route::post('/', [LoginController::class, 'login']);
