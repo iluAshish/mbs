@@ -423,7 +423,7 @@
         <li class="nav-item">
             <a href="{{url(Helper::sitePrefix().'tag/products')}}" class="nav-link {{ (Request::segment(3)=='products')?'active':'' }}">
                 <i class="far fa-circle nav-icon"></i>
-                <p>products</p>
+                <p>Products</p>
             </a>
         </li>
         <li class="nav-item">
@@ -432,7 +432,7 @@
                 <p>Blog</p>
             </a>
         </li>
-        <li class="nav-item">
+        <!-- <li class="nav-item">
             <a href="{{url(Helper::sitePrefix().'tag/news-events')}}" class="nav-link {{ (Request::segment(3)=='news-events')?'active':'' }}">
                 <i class="far fa-circle nav-icon"></i>
                 <p>News & Events </p>
@@ -448,6 +448,57 @@
             <a href="{{url(Helper::sitePrefix().'tag/contact')}}" class="nav-link {{ (Request::segment(3)=='contact')?'active':'' }}">
                 <i class="far fa-circle nav-icon"></i>
                 <p>Contact</p>
+            </a>
+        </li> -->
+
+        <li class="nav-item">
+            <a href="{{url(Helper::sitePrefix().'tag/sector')}}" class="nav-link {{ (Request::segment(3)=='sector')?'active':'' }}">
+                <i class="far fa-circle nav-icon"></i>
+                <p>Sector</p>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a href="{{url(Helper::sitePrefix().'tag/brand')}}" class="nav-link {{ (Request::segment(3)=='brand')?'active':'' }}">
+                <i class="far fa-circle nav-icon"></i>
+                <p>Brand</p>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a href="{{url(Helper::sitePrefix().'tag/media')}}" class="nav-link {{ (Request::segment(3)=='media')?'active':'' }}">
+                <i class="far fa-circle nav-icon"></i>
+                <p>Media</p>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a href="{{url(Helper::sitePrefix().'tag/project')}}" class="nav-link {{ (Request::segment(3)=='project')?'active':'' }}">
+                <i class="far fa-circle nav-icon"></i>
+                <p>Project</p>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a href="{{url(Helper::sitePrefix().'tag/term')}}" class="nav-link {{ (Request::segment(3)=='term')?'active':'' }}">
+                <i class="far fa-circle nav-icon"></i>
+                <p>Term & Conditions</p>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a href="{{url(Helper::sitePrefix().'tag/privacy')}}" class="nav-link {{ (Request::segment(3)=='privacy')?'active':'' }}">
+                <i class="far fa-circle nav-icon"></i>
+                <p>Privacy Policy</p>
+            </a>
+        </li>
+
+        <li class="nav-item">
+            <a href="{{url(Helper::sitePrefix().'tag/thankyou')}}" class="nav-link {{ (Request::segment(3)=='thankyou')?'active':'' }}">
+                <i class="far fa-circle nav-icon"></i>
+                <p>Thank You</p>
+            </a>
+        </li>
+
+        <li class="nav-item">
+            <a href="{{url(Helper::sitePrefix().'tag/404')}}" class="nav-link {{ (Request::segment(3)=='404')?'active':'' }}">
+                <i class="far fa-circle nav-icon"></i>
+                <p>404 Page</p>
             </a>
         </li>
         <!--<li class="nav-item">-->

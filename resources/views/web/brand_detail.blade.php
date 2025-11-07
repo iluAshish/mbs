@@ -1,6 +1,11 @@
 @extends('web.layouts.main')
 @section('content')
 
+@php 
+$brand_page = isset($brand) ? $brand : null;
+
+@endphp
+
 <picture>
     <img src="{{asset('web/images/inner/bg.webp')}}" alt="">
 </picture>

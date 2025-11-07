@@ -28,7 +28,31 @@ class TagController extends Controller
 
     public function tag_store(Request $request)
     {
-        $type_array = array('Home', 'About', 'Services', 'Blog','Portfolio','Videos','Testimonials', 'Contact', 'Privacy', 'Terms','Products', 'All-rights-reserved','News-events');
+        $type_array = array(
+            'Home', 
+            'About', 
+            'Services', 
+            'Products',
+            'Blog', 
+            'Sector',
+            'Brand',
+            'Media',
+            'Project',
+            'Privacy', 
+            'Term',
+            'Thankyou',
+            '404',
+            
+            
+            'Portfolio',
+            'Videos',
+            'Testimonials', 
+            'Contact', 
+            
+            
+            'All-rights-reserved',
+            'News-events'
+        );
         if (in_array($request->page_name, $type_array)) {
             $validatedData = $request->validate([
                 'page_name' => 'required|min:2',
