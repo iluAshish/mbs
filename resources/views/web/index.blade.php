@@ -10,7 +10,7 @@
                     <div class="slide">
                         <a href="{{ $banner->button_url ?? '#' }}" class="slide-link" aria-label="MBSGroup banner">
                             <picture>
-                                <img src="{{ asset($banner->bg_image) }}"
+                                <img  src="{{ asset($banner->bg_image) }}"
                                     width="1367" height="676"
                                     alt="MBSGroup">
                             </picture>
@@ -53,7 +53,7 @@
             <div class="d-flex flex-wrap commonPadding">
                 <div class="about-image">
                     <picture>
-                        <img src="{{asset($homeAbout->webp_image ?? $homeAbout->image)}}" width="458" height="488" {{$homeAbout->image_attribute}}>
+                        <img  loading="lazy" src="{{asset($homeAbout->webp_image ?? $homeAbout->image)}}" width="458" height="488" {{$homeAbout->image_attribute}}>
                     </picture>
                     <div class="about-image-text counter ">
                         <strong  class="timer" data-to="{{$homeAbout->years_of_experience}}" data-speed="1000">{{$homeAbout->years_of_experience}}</strong>
@@ -62,7 +62,7 @@
                 </div>
                 <div class="about-description">
                     <h2>{{$homeAbout->sub_title}}</h2>
-                    <h3>{!!$homeAbout->short_description!!}</h3>
+                    <h3p>{!!$homeAbout->short_description!!}</p>
                     <a href="{{ $homeAbout->button_url ?? '#' }}" class="btn-theme btnDark">Read More</a>
                 </div>
             </div>
@@ -122,7 +122,7 @@
                 <div class="d-flex flex-wrap  justify-content-between">
                     <div class="col-left">
                         <picture>
-                            <img src="{{asset('web/images/home/why-choose.jpg')}}" width="346" height="480" alt="">
+                            <img  loading="lazy" src="{{asset('web/images/home/why-choose.jpg')}}" width="346" height="480" alt="">
                         </picture>
                     </div>
                     <div class="col-right">
@@ -157,7 +157,7 @@
                 <div class="partners-logos d-flex flex-wrap justify-content-between">
                     @foreach($brands_menu as $brand)
                         <picture>
-                            <img src="{{asset($brand->featured_image_webp ?? $brand->featured_image)}}" width="217" height="85" {{$brand->featured_image_attribute}}>
+                            <img  loading="lazy" src="{{asset($brand->featured_image_webp ?? $brand->featured_image)}}" width="217" height="85" {{$brand->featured_image_attribute}}>
                         </picture>
                     @endforeach
                     
@@ -181,7 +181,7 @@
                     @foreach($sectors as $sector)
                         <li>
                             <picture>
-                                <img src="{{asset($sector->webp_image ?? $sector->image)}}" width="42" height="42" {{$sector->image_attribute}}>
+                                <img  loading="lazy" src="{{asset($sector->webp_image ?? $sector->image)}}" width="42" height="42" {{$sector->image_attribute}}>
                             </picture>
                             <p>{{$sector->title}}</p>
                         </li>
@@ -226,7 +226,7 @@
                 @foreach($caseStudies as $caseStudy)
                     <div class="caseStudies-slider-item">
                         <picture>
-                            <img src="{{asset($caseStudy->webp_image ?? $caseStudy->image)}}" width="346" height="346" {{$caseStudy->image_attribute}}>
+                            <img  loading="lazy" src="{{asset($caseStudy->webp_image ?? $caseStudy->image)}}" width="474" height="474" {{$caseStudy->image_attribute}}>
                         </picture>
                         <div class="caseStudies-slider-item-title">
 
@@ -294,17 +294,17 @@
                             {!! $testimonial->message !!}
                             <div class="testimonial-profile ">
                                 <picture>
-                                    <img src="{{asset($testimonial->author_image_webp ?? author_image)}}" width="58" height="58" {{$testimonial->author_image_attribute}}>
+                                    <img  loading="lazy" src="{{asset($testimonial->author_image_webp ?? author_image)}}" width="58" height="58" {{$testimonial->author_image_attribute}}>
                                 </picture>
                                 <div class="testimonial-profile-details">
-                                    <p>{{$testimonial->name}}</p>
+                                      <div class="social-media d-flex flex-wrap"> <p>{{$testimonial->name}}</p>
+                                       <!-- <picture><img  loading="lazy" src="{{ asset('web/images/icons/google.webp')}}" width="30" height="30" alt=""></picture> -->
+                                       <picture><img  loading="lazy" src="{{ asset('web/images/icons/facebook.webp')}}" width="30" height="30" alt=""></picture>
+                                <!-- <picture><img  loading="lazy" src="{{ asset('web/images/icons/instagram.webp')}}" width="30" height="30" alt=""></picture> -->
+                            </div>
                                     <span>{{$testimonial->designation}}</span>
                                 </div>
-                                   <div class="social-media">
-                                       <!-- <picture><img src="{{ asset('web/images/icons/google.webp')}}" width="30" height="30" alt=""></picture> -->
-                                       <picture><img src="{{ asset('web/images/icons/facebook.webp')}}" width="30" height="30" alt=""></picture>
-                                <!-- <picture><img src="{{ asset('web/images/icons/instagram.webp')}}" width="30" height="30" alt=""></picture> -->
-                            </div>
+                                
                             </div>
                         </div>
                     @endforeach
@@ -319,17 +319,16 @@
                         {!! $testimonial->message !!}
                         <div class="testimonial-profile ">
                             <picture>
-                                <img src="{{asset($testimonial->author_image_webp ?? author_image)}}" width="58" height="58" {{$testimonial->author_image_attribute}}>
+                                <img  loading="lazy" src="{{asset($testimonial->author_image_webp ?? author_image)}}" width="58" height="58" {{$testimonial->author_image_attribute}}>
                             </picture>
-                            <div class="testimonial-profile-details">
-                                <p>{{$testimonial->name}}</p>
-                                <span>{{$testimonial->designation}}</span>
+                               <div class="testimonial-profile-details">
+                                      <div class="social-media d-flex flex-wrap"> <p>{{$testimonial->name}}</p>
+                                       <!-- <picture><img  loading="lazy" src="{{ asset('web/images/icons/google.webp')}}" width="30" height="30" alt=""></picture> -->
+                                       <picture><img  loading="lazy" src="{{ asset('web/images/icons/facebook.webp')}}" width="30" height="30" alt=""></picture>
+                                <!-- <picture><img  loading="lazy" src="{{ asset('web/images/icons/instagram.webp')}}" width="30" height="30" alt=""></picture> -->
                             </div>
-                            <div class="social-media">
-                                <!-- <picture><img src="{{ asset('web/images/icons/google.webp')}}" width="30" height="30" alt=""></picture> -->
-                                <picture><img src="{{ asset('web/images/icons/facebook.webp')}}" width="30" height="30" alt=""></picture>
-                                <!-- <picture><img src="{{ asset('web/images/icons/instagram.webp')}}" width="30" height="30" alt=""></picture> -->
-                            </div>
+                                    <span>{{$testimonial->designation}}</span>
+                                </div>
 
                         </div>
                     </div>
@@ -349,7 +348,7 @@
             <div class="clients-slider">
                 @foreach($projects as $project)
                 <picture>
-                    <img src="{{asset($project->logo_web_image ?? $project->logo_image)}}" width="150" height="78" {{$project->logo_image_attribute}} class="img-fluid w-100">
+                    <img  loading="lazy" src="{{asset($project->logo_web_image ?? $project->logo_image)}}" width="150" height="78" {{$project->logo_image_attribute}} class="img-fluid w-100">
                 </picture>
                 @endforeach
                 
@@ -391,7 +390,7 @@
                 @foreach($blogs as $blog)
                     <a href="" class="articles-slider-item">
                         <picture>
-                            <img src="{{asset($blog->image_webp ?? $blog->image)}}" width="365" height="214" {{$blog->image_attribute}} >
+                            <img  loading="lazy" src="{{asset($blog->image_webp ?? $blog->image)}}" width="365" height="214" {{$blog->image_attribute}} >
                         </picture>
                         <div class="articles-slider-info d-flex">
                             <div class="date">

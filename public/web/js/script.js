@@ -623,6 +623,10 @@ window.addEventListener("load", () => {
     setEqualHeightFor(".other-product-details");
     setEqualHeightFor(".slider-nav .slick-slide");
     setEqualHeightFor(".companies-item");
+          setEqualHeightFor(".sub-category .product-card");
+                setEqualHeightFor(".other-products-slider .product-card");
+
+
   }, 300);
 });
 
@@ -631,6 +635,8 @@ window.addEventListener("resize", () => {
   setEqualHeightFor(".other-product-details");
   setEqualHeightFor(".slider-nav .slick-slide");
       setEqualHeightFor(".companies-item");
+      setEqualHeightFor(".sub-category .product-card");
+      setEqualHeightFor(".other-products-slider .product-card");
 
 });
 

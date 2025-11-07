@@ -554,6 +554,13 @@ background: rgba(217, 217, 217, 0.22);
 	display: flex;
 	flex-wrap: wrap;
 	gap: 10px;
+    picture {
+    max-height: 33px;
+    overflow: hidden;
+    @include min(1900){
+        min-height: 37px;
+    }
+}
 	a {
         text-align: center;
             width: 48%;

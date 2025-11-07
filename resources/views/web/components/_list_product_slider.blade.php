@@ -1,7 +1,7 @@
 @if($products->isNotEmpty())
     @foreach($products as $product)
         <div class="products-slider-item">
-            <picture><img src="{{asset($product->thumbnail_image_webp ?? $product->thumbnail_image)}}" width="251" height="322" {{$product->thumbnail_image_attribute}}>
+            <picture><img src="{{asset($product->thumbnail_image_webp ?? $product->thumbnail_image)}}" width="251" height="322" loading="lazy"  {{$product->thumbnail_image_attribute}}>
             </picture>
             <div class="product-description">
                 <h3>{{ \Illuminate\Support\Str::words(strip_tags($product->title ?? ''), 4, '...') }}</h3>

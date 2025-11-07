@@ -315,28 +315,28 @@
                 <div>
                     <strong>Mbs group Cantilever Racking System</strong>
                     <ul>
-                        <li><a href="products-details.php">Heavy Duty Cantilever</a></li>
-                        <li><a href="products-details.php">Light Duty Cantilever</a></li>
-                        <li><a href="products-details.php">Rollrack</a></li>
+                        <li><a href=" ">Heavy Duty Cantilever</a></li>
+                        <li><a href=" ">Light Duty Cantilever</a></li>
+                        <li><a href=" ">Rollrack</a></li>
                     </ul>
 
                     <strong>Mezzanine Floors & Partitioning</strong>
                     <ul>
-                        <li><a href="products-details.php">Mezzanine floor System</a></li>
-                        <li><a href="products-details.php">Wiremesh Decking & Shelving</a></li>
-                        <li><a href="products-details.php">Anti Collapse Mesh</a></li>
-                        <li><a href="products-details.php">Sign & Marketing System</a></li>
-                        <li><a href="products-details.php">Storage Cabinets</a></li>
+                        <li><a href=" ">Mezzanine floor System</a></li>
+                        <li><a href=" ">Wiremesh Decking & Shelving</a></li>
+                        <li><a href=" ">Anti Collapse Mesh</a></li>
+                        <li><a href=" ">Sign & Marketing System</a></li>
+                        <li><a href=" ">Storage Cabinets</a></li>
                     </ul>
                 </div>
                 <div>
                     <strong>Doors & Dock Leveller in Middle East</strong>
                     <ul>
-                        <li><a href="products-details.php">Industrial Doors</a></li>
-                        <li><a href="products-details.php">Overhead sectional doors</a></li>
-                        <li><a href="products-details.php">High-Performance doors</a></li>
-                        <li><a href="products-details.php">Mega Doors</a></li>
-                        <li><a href="products-details.php">Loading Dock Equipment</a></li>
+                        <li><a href=" ">Industrial Doors</a></li>
+                        <li><a href=" ">Overhead sectional doors</a></li>
+                        <li><a href=" ">High-Performance doors</a></li>
+                        <li><a href=" ">Mega Doors</a></li>
+                        <li><a href=" ">Loading Dock Equipment</a></li>
                     </ul>
 
                     <strong>Contact Info</strong>
@@ -470,8 +470,8 @@
                                 </svg>
                             </button>
                             <ul class="dropdown-menu" aria-labelledby="servicesMenu2" style="">
-                              <li><a href="products-details.php">Mobile Pallet racking</a></li>
-                        <li><a href="products-details.php">Multi-Tier Pallet racking</a></li>
+                              <li><a href=" ">Mobile Pallet racking</a></li>
+                        <li><a href=" ">Multi-Tier Pallet racking</a></li>
 
 
                             </ul>
@@ -488,9 +488,9 @@
                                 </svg>
                             </button>
                             <ul class="dropdown-menu" aria-labelledby="servicesMenu2" style="">
-                                 <li><a href="products-details.php">Mobile Pallet racking</a></li>
-                        <li><a href="products-details.php">Multi-Tier Pallet racking</a></li>
-                        <li><a href="products-details.php">Narrow Aisle racking</a></li>
+                                 <li><a href=" ">Mobile Pallet racking</a></li>
+                        <li><a href=" ">Multi-Tier Pallet racking</a></li>
+                        <li><a href=" ">Narrow Aisle racking</a></li>
 
 
                             </ul>
@@ -522,6 +522,54 @@
 <a href="web/pdf/medicom-catalogue.pdf" download class="brochureFixed">
     <img src="{{ asset('web/images/svg/download.svg') }}" class="img-fluid" alt="">
 </a> --}}
+
+
+
+
+<div class="modal fade  enquiryForm" id="enquiryForm" aria-hidden="true" aria-labelledby="enquiryFormLabel" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" id="enquiryFormClose">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                <path d="M7.75696 16.2428L16.243 7.75684M16.243 16.2428L7.75696 7.75684" stroke="#414A66" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </button>
+
+            <div class="modal-body p-0">
+                        <p class="title">Service Enquiry</p>
+                        <form id="enquiryFormValidation" action="" method="post" enctype="multipart/form-data">
+                            <div class="row justify-content-between">
+                                  <div class="formGroup col--4">
+                                <input type="text" id="name_enquiry" name="name_enquiry" placeholder="Name">
+                                <span id="name_enquiryError" class="error-message">Please enter your name</span>
+                            </div>
+                            <div class="formGroup col--4">
+                                <input type="email" id="email_enquiry" name="email_enquiry" placeholder="Email">
+                                <span id="email_enquiryError" class="error-message">Please enter a valid email</span>
+                            </div>
+                            <div class="formGroup col--4">
+                                <input type="tel" id="phone_enquiry" name="phone_enquiry" class="phone_number" placeholder="Phone">
+                                <span id="phone_enquiryError" class="error-message">Please enter a valid phone number</span>
+                            </div>
+                            <div class="formGroup col-12">
+                                <textarea id="message_enquiry" name="message_enquiry" rows="" cols="" placeholder="Enquiry"></textarea>
+                                <span id="message_enquiryError" class="error-message">Please enter your message</span>
+                            </div>
+                            <div class="d-flex justify-content-end buttonGroup p-0">
+                                <button type="submit" class="btn-theme btnDark"> Submit</button>  
+                            <button type="button" class="btn-cancel btn-theme btnBorder" data-bs-dismiss="modal" aria-label="Close" id="enquiryFormClose">Cancel</button>
+                            </div>
+                            </div>  
+                     </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
 
     <script src="{{ asset('web/js/custom.js') }}"></script>
 

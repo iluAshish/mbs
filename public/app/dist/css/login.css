@@ -1,6 +1,5 @@
 
-@import url('https://fonts.googleapis.com/css2?family=Mulish:wght@200;300;400;500;600;700;800;900;1000&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 body {
     margin: 0;
     padding: 0;
@@ -8,22 +7,23 @@ body {
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    font-family: "Mulish", sans-serif!important;
+    font-family: "Inter", sans-serif!important;
 
-    background: #e2251d1a;
+    background: #d6dffa;
     background-size: cover;
 }
 
 .main {
+    border-radius: 10px;
     width: 350px;
-    height: 570px;
+    height: 510px;
     overflow: hidden;
-    background: #000;
-    box-shadow: 0px 20px 40px 0px rgba(197, 154, 100, 0.4);
+    background: #fff;
+    box-shadow: 0px 20px 40px 0px rgb(53 56 155 / 17%);
 }
 
 .main .logo {
-    padding: 30px 10px;
+    /* padding: 30px 10px; */
     height: auto;
 }
 
@@ -44,7 +44,7 @@ body {
 }
 
 label {
-    color: #fff;
+    color: #000;
     font-weight: 400;
     font-size: 1.8em;
     justify-content: center;
@@ -58,14 +58,19 @@ label {
 input {
     width: 280px;
     height: 20px;
-    background: #e0dede;
+    background: transparent;
     display: flex;
     justify-content: center;
     margin: 20px auto;
     padding: 10px;
     border: none;
     outline: none;
-    border-radius: 0;
+    border-radius: 6px;
+        border: 1px solid #d6dffa;
+            color: #2E3192;
+}
+input::placeholder{
+    color: #2E3192;
 }
 
 .login-btn {
@@ -85,7 +90,7 @@ input {
     transition: .2s ease-in;
     cursor: pointer;
     padding: 10px;
-    font-family: "Mulish", sans-serif!important;
+    font-family: "Inter", sans-serif!important;
 
 }
 
@@ -95,7 +100,7 @@ input {
 }
 
 .register-show {
-    padding-top: 10px;
+    padding-top: 5px;
 }
 
 .register-show .login-btn:hover {
@@ -105,21 +110,22 @@ input {
 
 .login {
     height: 460px;
-    background: #eee;
+    background: #f4f4ff;
     /* border-radius: 60% / 10%; */
     transform: translateY(-135px);
     transition: .8s ease-in-out;
     position: relative;
-    top: -90px;
+    top: -120px;
+    border-radius: 10px;
 }
 
 .login label {
-    color: #e2251d;
+    color: #2e3192;
     transform: scale(.6);
 }
 
 #chk:checked ~ .login {
-    transform: translateY(-450px);
+    transform: translateY(-340px);
 }
 
 #chk:checked ~ .login label {
@@ -139,7 +145,7 @@ input {
 
 .alignText {
     text-align: center;
-    padding: 30px 0;
+    padding: 25px 0;
 }
 
 .invalid-feedback {
@@ -160,10 +166,10 @@ input {
     padding: 8px 30px 8px 33px;
     font-size: 16px;
     line-height: 30px;
-    font-weight: 400;
-    background: #e2251d;
-    color: #eee;
-    border-radius: 0;
+font-weight: 600;
+background-color: #D6DFFA;
+    color: #2E3192;
+      border-radius: 5px;
     grid-gap: 50px;
     align-items: center;
     border: unset;
@@ -191,28 +197,27 @@ input {
     -webkit-transition: all 0.3s ease;
 }
 .primary_btn:hover {
-    background: #e2251d;
-    color: #eee;
-    color: #fff;
+    background-color: #2E3192;
+    color: #D6DFFA;
 }
 .primary_btn:hover .circle {
     background: #e2251d;
     color: #e2251d;
 }
 input#forgot_password_btn {
-    background: #e2251d;
+    background: #2E3192;
     height: fit-content;
     font-size: 16px;
-    line-height: 30px;
-    font-weight: 400;
+    line-height: 22px;
+    font-weight: 600;
     color: #ffff;
     text-transform: uppercase;
     cursor: pointer;
     width: 85%;
 }
 input#forgot_password_btn:hover{
-    color: #fff;
-    background-color: #e2251d;
+    color: #2E3192;
+    background-color: #fff;
     transition: all 0.3s ease;
     -o-transition: all 0.3s ease;
     -moz-transition: all 0.3s ease;
