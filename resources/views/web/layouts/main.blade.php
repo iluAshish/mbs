@@ -571,6 +571,53 @@
 
 
 
+<div class="modal fade  enquiryForm" id="ProductEnquiryForm" aria-hidden="true" aria-labelledby="ProductEnquiryFormLabel" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" id="ProductEnquiryFormClose">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                <path d="M7.75696 16.2428L16.243 7.75684M16.243 16.2428L7.75696 7.75684" stroke="#414A66" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </button>
+
+            <div class="modal-body p-0">
+                        <p class="title">Quick Enquiry</p>
+                        <form id="ProductEnquiryFormValidation" action="" method="post" enctype="multipart/form-data">
+                            <div class="row justify-content-between">
+                                  <div class="formGroup col--6">
+                                <input type="text" id="name_enquiry" name="name_enquiry" placeholder="Name">
+                                <span id="name_enquiryError" class="error-message">Please enter your name</span>
+                            </div>
+                            <div class="formGroup col--6">
+                                <input type="email" id="email_enquiry" name="email_enquiry" placeholder="Email">
+                                <span id="email_enquiryError" class="error-message">Please enter a valid email</span>
+                            </div>
+                            <div class="formGroup col--6">
+                                <input type="tel" id="phone_enquiry" name="phone_enquiry" class="phone_number" placeholder="Phone">
+                                <span id="phone_enquiryError" class="error-message">Please enter a valid phone number</span>
+                            </div>
+                            <div class="formGroup col--6">
+                                <input type="text" id="product_enquiry" name="product_enquiry" class="product_name" placeholder="Product Name">
+                                <span id="phone_enquiryError" class="error-message">Please enter a product name</span>
+                            </div>
+                            <div class="formGroup col-12">
+                                <textarea id="message_enquiry" name="message_enquiry" rows="" cols="" placeholder="Enquiry"></textarea>
+                                <span id="message_enquiryError" class="error-message">Please enter your message</span>
+                            </div>
+                            <div class="d-flex justify-content-end buttonGroup p-0">
+                                <button type="submit" class="btn-theme btnDark"> Submit</button>  
+                            <button type="button" class="btn-cancel btn-theme btnBorder" data-bs-dismiss="modal" aria-label="Close" id="ProductEnquiryFormClose">Cancel</button>
+                            </div>
+                            </div>  
+                     </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
     <script src="{{ asset('web/js/custom.js') }}"></script>
 
     <script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
