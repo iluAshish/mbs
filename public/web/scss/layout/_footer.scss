@@ -237,6 +237,9 @@ footer {
     p {
         line-height: 138.462%;
     }
+    input:focus {
+        border: unset;
+    }
 
     p,
     input,

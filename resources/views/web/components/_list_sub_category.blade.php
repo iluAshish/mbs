@@ -9,7 +9,8 @@
             <a href="">Storage Solutions</a>
             <a href="">Pallet Racking</a>
         </div> -->
-        {{ \Illuminate\Support\Str::words(strip_tags($category->short_description), 15, '...') }}
+        <p>        {{ \Illuminate\Support\Str::words(strip_tags($category->short_description), 15, '...') }}
+</p>
     </div>
     <a href="{{url('category-detail', ['short_url' => $category->short_url]) }}" class="btn product-btn">
         View More

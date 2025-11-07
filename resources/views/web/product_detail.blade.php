@@ -237,7 +237,7 @@
         <div class="brands-slider">
             @foreach($brandsList as $brand)
             <picture>
-                <img src="{{asset($brand->featured_image_webp ?? $brand->featured_image)}}" width="168" height="85" class="w-100 h-auto" {{$brand->featured_image_attribute}}>
+                <img src="{{asset($brand->featured_image_webp ?? $brand->featured_image)}}" width="168" height="85" class="w-100" {{$brand->featured_image_attribute}}>
             </picture>
             @endforeach
         </div>

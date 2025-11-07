@@ -52,7 +52,7 @@ table.dataTable.dtr-inline.collapsed > tbody > tr > td.dtr-control:before, table
     margin-left: 0rem;
     margin-right: 0rem;
     margin-top: 0px;
-    max-height: 40px;
+    max-height: 85px;
     width: auto;
     margin:  0 auto;
 }

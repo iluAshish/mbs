@@ -1,6 +1,6 @@
 @foreach($features as $feature)
     <div class="service-col">
-        <picture><img src="{{asset($feature->image_webp ?? $feature->image)}}"  width="321" height="226" {{$feature->image_attribute}}></picture>
+        <picture><img src="{{asset($feature->image_webp ?? $feature->image)}}"  width="321" height="226" loading="lazy"  {{$feature->image_attribute}}></picture>
         <div class="service-description">
             <h3>{{$feature->title ?? ''}}</h3>
             {!! $feature->alternate_description ?? '' !!}

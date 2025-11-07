@@ -979,10 +979,11 @@ mask-image: url(../images/home/banner-mask.webp);
         }
 
         picture {
+            overflow: hidden;
             width: 32%;
 
             @include min(992) {
-                height: 100px;
+             
                 width: 47.73%;
             }
 
@@ -993,9 +994,14 @@ mask-image: url(../images/home/banner-mask.webp);
         }
 
         img {
+            object-fit: contain;
             border-radius: 10px;
-            width: 100%;
-            height: auto;
+            width: 90%;
+            margin: 5px auto;
+            height: 37px;
+            @include min(992){
+                height: 100px;
+            }
         }
     }
 }
@@ -1277,6 +1283,12 @@ mask-image: url(../images/home/banner-mask.webp);
             border-radius: 20px;
             width: 100%;
             height: auto;
+            min-height: 300px;
+            @include min(768){min-height: 346px;}
+            @include min(1280){min-height: 335px;}
+            @include min(1440){min-height: 346px;}
+            @include min(1600){min-height: 400px;}
+            @include min(1900){min-height: 474px;}
         }
     }
 
@@ -1653,14 +1665,14 @@ mask-image: url(../images/home/banner-mask.webp);
     border-radius: 50%;
     padding: 2px;
         display: flex
-;    margin-left: auto;
+;    margin-left: 10px;
     justify-content: flex-end;
         }
     .social-media img {
     width: 24px !important;
 }
 .social-media {
-    position: absolute;
+    // position: absolute;
     bottom: 0;
     right: 2px;
 }
