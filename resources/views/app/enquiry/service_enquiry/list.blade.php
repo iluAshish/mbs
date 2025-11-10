@@ -93,7 +93,7 @@
                                         <div class="actions delete_btn" style="display: none;">
                                             <input type="hidden" name="ids" id="ids">
                                             <a href="javascript:void(0);" id="delete_multiple_item_btn"
-                                               class="btn btn-danger" data-url="/enquiry/service-enquiries/delete-multiple">
+                                               class="btn btn-danger" data-url="/enquiry/service-detail/delete-multiple">
                                                 <i class="fa fa-trash"></i> Delete</a>
                                         </div>
                                     </div>
@@ -135,14 +135,14 @@
                                                 <div class="btn-group btn-group-sm">
                                                     <a href="javascript:void(0)"
                                                        class="btn btn-danger mr-2 delete_entry tooltips"
-                                                       title="Delete enquiry" data-url="enquiry/service-enquiries/delete"
+                                                       title="Delete enquiry" data-url="enquiry/service-detail/delete"
                                                        data-id="{{$enquiry->id}}"><i class="fas fa-trash"></i></a>
                                                     <a class="mr-2 btn btn-primary"
-                                                       href="{{ url(Helper::sitePrefix().'enquiry/service-enquiries/view/'.$enquiry->id) }}"><i
+                                                       href="{{ url(Helper::sitePrefix().'enquiry/service-detail/view/'.$enquiry->id) }}"><i
                                                             class="fa fa-eye fa-lg"></i></a>
                                                     <a style="pointer-events: {{ ($enquiry->reply==NULL)?'auto':'none' }};" class="btn btn-success mr-2 replay_modal"
                                                        href="javascript:void(0)"
-                                                       data-url="enquiry/service-enquiries/replay_to_quote" data-toggle="modal"
+                                                       data-url="enquiry/service-detail/replay_to_quote" data-toggle="modal"
                                                        data-replay="{!! $enquiry->reply !!}"
                                                        data-id="{{ $enquiry->id }}"
                                                        data-request="{!! $enquiry->email !!}"><i

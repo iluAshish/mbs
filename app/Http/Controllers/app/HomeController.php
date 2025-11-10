@@ -20,7 +20,7 @@ use App\Models\CommonContent;
 use App\Models\Feature;
 use App\Models\ServiceFaq;
 use App\Models\PortfolioGallery;
-
+use App\Models\Subscriber;
 use http\Env\Response;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Http\Request;
@@ -1015,6 +1015,39 @@ class HomeController extends Controller
             
            } }
     }
+
+    // aur subscriber list 
+
+    public function subscriber_list()
+    {
+        $type = "Subscriber List";
+        $subscriberList = Subscriber::get();
+        return view('app.subscriber.list', compact(
+            'subscriberList',
+            'type'
+        ));
+    }
+
+    public function delete_subscriber(Request $request)
+    {
+        if (isset($request->id) && $request->id != null) {
+            $subscriber = Subscriber::find($request->id);
+            if ($subscriber) {
+                $deleted = $subscriber->delete();
+                if ($deleted == true) {
+                    echo (json_encode(array('status' => true)));
+                } else {
+                    echo (json_encode(array('status' => false, 'message' => 'Some error occured,please try after sometime')));
+                }
+            } else {
+                echo (json_encode(array('status' => false, 'message' => 'Model class not found')));
+            }
+        } else {
+            echo (json_encode(array('status' => false, 'message' => 'Empty value submitted')));
+        }
+    }
+
+
 
     // Home Our Services
     // public function home_our_services()

@@ -120,7 +120,7 @@ class EnquiryController extends Controller
     public function product_enquiry_list()
     {
         $title = "Enquiry List";
-        $enquiryList = Enquiry::where('enquiry_type','service-detail')->whereNotNull('product_id')->orderBy('id', 'desc')->get();;
+        $enquiryList = Enquiry::where('enquiry_type','product-detail')->whereNotNull('product_id')->orderBy('id', 'desc')->get();;
         return view('app.enquiry.product_enquiry.list', compact('enquiryList', 'title'));
     }
 
@@ -151,6 +151,61 @@ class EnquiryController extends Controller
     }
 
     public function delete_multi_product_enquiry(Request $request)
+    {
+        if (isset($request->id) && $request->id != null) {
+            $contactArray = explode(',', $request->id);
+            $successArray = array();
+            foreach ($contactArray as $con) {
+                $contact = Enquiry::find($con);
+                $deleted = $contact->delete();
+                if ($deleted == true) {
+                    $successArray[] = '1';
+                }
+            }
+            if ($successArray) {
+                echo (json_encode(array('status' => true)));
+            }
+        } else {
+            echo (json_encode(array('status' => false, 'message' => 'Empty value submitted')));
+        }
+    }
+
+    // brand details enquiry functions can be added here
+
+    public function brand_enquiry_list()
+    {
+        $title = "Brand Enquiry List";
+        $enquiryList = Enquiry::where('enquiry_type','brand-detail')->whereNotNull('brand_id')->orderBy('id', 'desc')->get();;
+        return view('app.enquiry.brand_enquiry.list', compact('enquiryList', 'title'));
+    }
+
+    public function brand_enquiry_view($id)
+    {
+        $title = "View Request";
+        $enquiry = Enquiry::find($id);
+        return view('app.enquiry.brand_enquiry.view', compact('enquiry', 'title'));
+    }
+
+    public function delete_brand_enquiry(Request $request)
+    {
+        if (isset($request->id) && $request->id != null) {
+            $contact = Enquiry::find($request->id);
+            if ($contact) {
+                $deleted = $contact->delete();
+                if ($deleted == true) {
+                    echo (json_encode(array('status' => true)));
+                } else {
+                    echo (json_encode(array('status' => false, 'message' => 'Some error occured,please try after sometime')));
+                }
+            } else {
+                echo (json_encode(array('status' => false, 'message' => 'Model class not found')));
+            }
+        } else {
+            echo (json_encode(array('status' => false, 'message' => 'Empty value submitted')));
+        }
+    }
+
+    public function delete_multi_brand_enquiry(Request $request)
     {
         if (isset($request->id) && $request->id != null) {
             $contactArray = explode(',', $request->id);

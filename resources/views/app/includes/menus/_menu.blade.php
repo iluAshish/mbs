@@ -372,16 +372,22 @@
                 <p>Contact-us</p>
             </a>
         </li>
-        {{-- <li class="nav-item">
-            <a href="{{url(Helper::sitePrefix().'enquiry/service-enquiries')}}" class="nav-link {{ (Request::segment(3)=='service-enquiries')?'active':'' }}">
+        <li class="nav-item">
+            <a href="{{url(Helper::sitePrefix().'enquiry/service-detail')}}" class="nav-link {{ (Request::segment(3)=='service-detail')?'active':'' }}">
                 <i class="far fa-circle nav-icon"></i>
                 <p>Service Enquiry</p>
             </a>
-        </li> --}}
+        </li>
         <li class="nav-item">
-            <a href="{{url(Helper::sitePrefix().'enquiry/product-enquiries')}}" class="nav-link {{ (Request::segment(3)=='product-enquiries')?'active':'' }}">
+            <a href="{{url(Helper::sitePrefix().'enquiry/product-detail')}}" class="nav-link {{ (Request::segment(3)=='product-detail')?'active':'' }}">
                 <i class="far fa-circle nav-icon"></i>
                 <p>Product Enquiry</p>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a href="{{url(Helper::sitePrefix().'enquiry/brand-detail')}}" class="nav-link {{ (Request::segment(3)=='brand-detail')?'active':'' }}">
+                <i class="far fa-circle nav-icon"></i>
+                <p>Brand Enquiry</p>
             </a>
         </li>
     </ul>
@@ -393,6 +399,15 @@
         </p>
     </a>
 </li>
+<!-- subscription managment -->
+<li class="nav-item {{ (Request::segment(2)=='subscription')?'menu-is-opening menu-open':'' }}">
+    <a href="{{url(Helper::sitePrefix().'subscription')}}" class="nav-link {{ (Request::segment(2)=='subscription')?'active':'' }}">
+        <i class="far fa-circle nav-icon"></i>
+        <p>Our Subscribers
+        </p>
+    </a>
+</li>
+
 <li class="nav-item {{ (Request::segment(2)=='tag')?'menu-is-opening menu-open':'' }}">
     <a href="#" class="nav-link {{ (Request::segment(2)=='tag' || Request::segment(2)=='other-meta-tag')?'active':'' }}">
         <i class="nav-icon fas fa-asterisk"></i>

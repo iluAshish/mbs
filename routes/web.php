@@ -117,6 +117,13 @@ Route::group(['prefix' => 'admin'], function () {
     Route::post('reset-password-store', [LoginController::class, 'reset_password_store']);
     Route::get('account/verify/{token}', [LoginController::class, 'verifyAccount'])->name('user.verify');
 
+    Route::prefix('subscription')->group(function () {
+
+        Route::get('/', [HomeController::class, 'subscriber_list']);
+        Route::post('delete', [HomeController::class, 'delete_subscriber']);
+
+    });
+
 
     Route::prefix('success-stories')->group(function () {
 
@@ -549,18 +556,25 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function () {
             Route::post('delete-multiple', [EnquiryController::class, 'delete_multi_enquiry']);
         });
 
-        Route::prefix('service-enquiries')->group(function () {
+        Route::prefix('service-detail')->group(function () {
             Route::get('/', [EnquiryController::class, 'service_enquiry_list']);
             Route::get('view/{id}', [EnquiryController::class, 'service_enquiry_view']);
             Route::post('delete', [EnquiryController::class, 'delete_service_enquiry']);
             Route::post('delete-multiple', [EnquiryController::class, 'delete_multi_service_enquiry']);
         });
 
-        Route::prefix('product-enquiries')->group(function () {
+        Route::prefix('product-detail')->group(function () {
             Route::get('/', [EnquiryController::class, 'product_enquiry_list']);
             Route::get('view/{id}', [EnquiryController::class, 'product_enquiry_view']);
             Route::post('delete', [EnquiryController::class, 'delete_product_enquiry']);
             Route::post('delete-multiple', [EnquiryController::class, 'delete_multi_product_enquiry']);
+        });
+
+        Route::prefix('brand-detail')->group(function () {
+            Route::get('/', [EnquiryController::class, 'brand_enquiry_list']);
+            Route::get('view/{id}', [EnquiryController::class, 'brand_enquiry_view']);
+            Route::post('delete', [EnquiryController::class, 'delete_brand_enquiry']);
+            Route::post('delete-multiple', [EnquiryController::class, 'delete_multi_brand_enquiry']);
         });
     });
 

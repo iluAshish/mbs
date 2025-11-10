@@ -10,7 +10,7 @@
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="{{url(Helper::sitePrefix().'dashboard')}}">Home</a></li>
-              <li class="breadcrumb-item"><a href="{{url(Helper::sitePrefix().'enquiry/service-enquiries')}}"> Enquiry List</a></li>
+              <li class="breadcrumb-item"><a href="{{url(Helper::sitePrefix().'enquiry/service-detail')}}"> Enquiry List</a></li>
               <li class="breadcrumb-item active">Enquiry View</li>
             </ol>
           </div>

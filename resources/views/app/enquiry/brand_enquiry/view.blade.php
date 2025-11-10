@@ -10,7 +10,7 @@
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="{{url(Helper::sitePrefix().'dashboard')}}">Home</a></li>
-              <li class="breadcrumb-item"><a href="{{url(Helper::sitePrefix().'enquiry/product-detail')}}"> Enquiry List</a></li>
+              <li class="breadcrumb-item"><a href="{{url(Helper::sitePrefix().'enquiry/brand-detail')}}"> Enquiry List</a></li>
               <li class="breadcrumb-item active">Enquiry View</li>
             </ol>
           </div>
@@ -59,8 +59,8 @@
                                             <strong><i class="fas fa-phone mr-1"></i>Phone Number</strong>
                                             <p class="text-muted">{{$enquiry->phone}}</p>
                                             <hr>
-                                            <strong><i class="fas fa-wrench"></i> Product Name</strong>
-                                            <p class="text-muted">{{ @$enquiry->product->title }}</p>
+                                            <strong><i class="fas fa-wrench"></i> Brand Name</strong>
+                                            <p class="text-muted">{{ @$enquiry->brand->title }}</p>
                                             <hr>
                                               <strong><i class="fas fa-wrench"></i> Requested Url</strong>
                                             <p class="text-muted"><a href="{{$enquiry->request_url}}" target="_blank" rel="noopener noreferrer">{{$enquiry->request_url}}</a></p>
