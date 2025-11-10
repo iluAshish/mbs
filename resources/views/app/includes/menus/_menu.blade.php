@@ -399,6 +399,15 @@
         </p>
     </a>
 </li>
+<!-- subscription managment -->
+<li class="nav-item {{ (Request::segment(2)=='subscription')?'menu-is-opening menu-open':'' }}">
+    <a href="{{url(Helper::sitePrefix().'subscription')}}" class="nav-link {{ (Request::segment(2)=='subscription')?'active':'' }}">
+        <i class="far fa-circle nav-icon"></i>
+        <p>Our Subscribers
+        </p>
+    </a>
+</li>
+
 <li class="nav-item {{ (Request::segment(2)=='tag')?'menu-is-opening menu-open':'' }}">
     <a href="#" class="nav-link {{ (Request::segment(2)=='tag' || Request::segment(2)=='other-meta-tag')?'active':'' }}">
         <i class="nav-icon fas fa-asterisk"></i>

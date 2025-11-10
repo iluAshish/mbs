@@ -1098,7 +1098,7 @@ class HomeController extends Controller
 
         $subscriber = Subscriber::updateOrCreate(
             ['email' => $request->email],
-            ['is_subscribed' => true, 'unsubscribe_token' => Str::random(60)]
+            ['status' => 'Active', 'unsubscribe_token' => Str::random(60)]
         );
 
         return response()->json([
@@ -1111,7 +1111,7 @@ class HomeController extends Controller
     public function unsubscribe($token)
     {
         $subscriber = Subscriber::where('unsubscribe_token', $token)->firstOrFail();
-        $subscriber->update(['is_subscribed' => false]);
+        $subscriber->update(['status' => 'Inactive']);
 
         return redirect('/')->with('success', 'You '."$subscriber->email". ' have been unsubscribed successfully.');
     }

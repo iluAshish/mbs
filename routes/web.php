@@ -117,6 +117,13 @@ Route::group(['prefix' => 'admin'], function () {
     Route::post('reset-password-store', [LoginController::class, 'reset_password_store']);
     Route::get('account/verify/{token}', [LoginController::class, 'verifyAccount'])->name('user.verify');
 
+    Route::prefix('subscription')->group(function () {
+
+        Route::get('/', [HomeController::class, 'subscriber_list']);
+        Route::post('delete', [HomeController::class, 'delete_subscriber']);
+
+    });
+
 
     Route::prefix('success-stories')->group(function () {
 
