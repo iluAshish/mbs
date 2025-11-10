@@ -58,13 +58,13 @@
             <div class="container-fluid">
                 <div class="row mb-2">
                     <div class="col-sm-6">
-                        <h1> Manage Product Enquiry</h1>
+                        <h1> Manage Brand Enquiry</h1>
                     </div>
                     <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-right">
                             <li class="breadcrumb-item"><a href="{{ url(Helper::sitePrefix() . 'dashboard') }}">Home</a>
                             </li>
-                            <li class="breadcrumb-item active">Product Enquiry List</li>
+                            <li class="breadcrumb-item active">Brand Enquiry List</li>
                         </ol>
                     </div>
                 </div>
@@ -113,7 +113,7 @@
                                             <th>Name</th>
                                             <th>Email</th>
                                             <th>Phone Number</th>
-                                            <th>Product Name</th>
+                                            <th>Brand Name</th>
                                             <th>Message</th>
                                             <th>Created Date</th>
                                             <th>Action</th>
@@ -128,7 +128,7 @@
                                                 <td>{{ $enquiry->name }}</td>
                                                 <td>{{ $enquiry->email }}</td>
                                                 <td>{{ $enquiry->phone }}</td>
-                                                <td>{{ @$enquiry->product->title }}</td>
+                                                <td>{{ @$enquiry->brand->title }}</td>
                                                 <td>{{ $enquiry->message }}</td>
                                                 <td>{{ date('d-M-Y', strtotime($enquiry->created_at)) }}</td>
                                                 <td class="text-right py-0 align-middle">
@@ -136,15 +136,15 @@
                                                         <a href="javascript:void(0)"
                                                             class="btn btn-danger mr-2 delete_entry tooltips"
                                                             title="Delete enquiry"
-                                                            data-url="enquiry/product-detail/delete"
+                                                            data-url="enquiry/brand-detail/delete"
                                                             data-id="{{ $enquiry->id }}"><i class="fas fa-trash"></i></a>
                                                         <a class="mr-2 btn btn-primary"
-                                                            href="{{ url(Helper::sitePrefix() . 'enquiry/product-detail/view/' . $enquiry->id) }}"><i
+                                                            href="{{ url(Helper::sitePrefix() . 'enquiry/brand-detail/view/' . $enquiry->id) }}"><i
                                                                 class="fa fa-eye fa-lg"></i></a>
                                                         {{-- <a style="pointer-events: {{ $enquiry->reply == null ? 'auto' : 'none' }};"
                                                             class="btn btn-success mr-2 replay_modal"
                                                             href="javascript:void(0)"
-                                                            data-url="enquiry/product-detail/replay_to_quote"
+                                                            data-url="enquiry/brand-detail/replay_to_quote"
                                                             data-toggle="modal" data-replay="{!! $enquiry->reply !!}"
                                                             data-id="{{ $enquiry->id }}"
                                                             data-request="{!! $enquiry->email !!}"><i
