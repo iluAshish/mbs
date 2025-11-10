@@ -11,7 +11,7 @@
                             <li class="breadcrumb-item">
                                 <a href="{{url(Helper::sitePrefix().'dashboard')}}">Home</a>
                             </li>
-                            <li class="breadcrumb-item active">{{$type}} List</li>
+                            <li class="breadcrumb-item active">{{$type}}</li>
                         </ol>
                     </div>
                 </div>
@@ -34,11 +34,11 @@
                         @endif
 
 
-                        <div class="gloss_card-header">
+                        {{-- <div class="gloss_card-header">
                             <a href="{{url(Helper::sitePrefix().'success-stories/create')}}"
                                class="btn btn-success pull-right">Add {{$type}} <i
                                     class="fa fa-plus-circle pull-right mt-1 ml-2"></i></a>
-                        </div>
+                        </div> --}}
                         <div class="gloss_card">
                             <div class="gloss_card-body">
                                 <table class="table table-bordered table-hover dataTable" width="100%">

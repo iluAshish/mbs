@@ -3,7 +3,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <link rel="icon" type="image/x-icon" href="{{asset('app/images/favicon.svg')}}">
+    <link rel="icon" type="image/x-icon" href="{{asset(@$siteInformation->dashboard_logo)}}">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>{{@$siteInformation->brand_name}} | Login</title>
     <link rel="stylesheet" href="{{asset('app/dist/css/sweetalert.min.css')}}">
