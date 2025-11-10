@@ -536,9 +536,8 @@
                 </svg>
             </button>
 
-            <div class="modal-body p-0">
-                <p class="title">Enquiry</p>
-                @include('web.components._form',['prefix'=> 'contact-us'])
+            
+                @include('web.components._form')
             </div>
         </div>
     </div>
