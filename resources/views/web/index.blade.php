@@ -294,14 +294,24 @@
                             {!! $testimonial->message !!}
                             <div class="testimonial-profile ">
                                 <picture>
-                                    <img  loading="lazy" src="{{asset($testimonial->author_image_webp ?? author_image)}}" width="58" height="58" {{$testimonial->author_image_attribute}}>
+                                    <img  loading="lazy" src="{{asset($testimonial->author_image_webp ?? $testimonial->author_image)}}" width="58" height="58" {{$testimonial->author_image_attribute}}>
                                 </picture>
                                 <div class="testimonial-profile-details">
-                                      <div class="social-media d-flex flex-wrap"> <p>{{$testimonial->name}}</p>
-                                       <!-- <picture><img  loading="lazy" src="{{ asset('web/images/icons/google.webp')}}" width="30" height="30" alt=""></picture> -->
-                                       <picture><img  loading="lazy" src="{{ asset('web/images/icons/facebook.webp')}}" width="30" height="30" alt=""></picture>
-                                <!-- <picture><img  loading="lazy" src="{{ asset('web/images/icons/instagram.webp')}}" width="30" height="30" alt=""></picture> -->
-                            </div>
+                                    <div class="social-media d-flex flex-wrap"> <p>{{$testimonial->name}}</p>
+                                        @if($testimonial->review_type == 'Google')
+                                            <picture><img  loading="lazy" src="{{ asset('web/images/icons/google.webp')}}" width="30" height="30" alt=""></picture>
+                                        @elseif($testimonial->review_type == 'Facebook')
+                                            <picture><img  loading="lazy" src="{{ asset('web/images/icons/facebook.webp')}}" width="30" height="30" alt=""></picture>
+                                        @elseif($testimonial->review_type == 'Instagram')
+                                            <picture><img  loading="lazy" src="{{ asset('web/images/icons/instagram.webp')}}" width="30" height="30" alt=""></picture>
+                                        @elseif($testimonial->review_type == 'Normal')
+                                            <!-- No icon for Normal reviews -->
+                                        @endif
+                                        <!-- <picture><img  loading="lazy" src="{{ asset('web/images/icons/google.webp')}}" width="30" height="30" alt=""></picture> -->
+                                        <!-- <picture><img  loading="lazy" src="{{ asset('web/images/icons/facebook.webp')}}" width="30" height="30" alt=""></picture> -->
+                                            
+                                        <!-- <picture><img  loading="lazy" src="{{ asset('web/images/icons/instagram.webp')}}" width="30" height="30" alt=""></picture> -->
+                                    </div>
                                     <span>{{$testimonial->designation}}</span>
                                 </div>
                                 
@@ -319,17 +329,25 @@
                         {!! $testimonial->message !!}
                         <div class="testimonial-profile ">
                             <picture>
-                                <img  loading="lazy" src="{{asset($testimonial->author_image_webp ?? author_image)}}" width="58" height="58" {{$testimonial->author_image_attribute}}>
+                                <img  loading="lazy" src="{{asset($testimonial->author_image_webp ?? $testimonial->author_image)}}" width="58" height="58" {{$testimonial->author_image_attribute}}>
                             </picture>
-                               <div class="testimonial-profile-details">
-                                      <div class="social-media d-flex flex-wrap"> <p>{{$testimonial->name}}</p>
-                                       <!-- <picture><img  loading="lazy" src="{{ asset('web/images/icons/google.webp')}}" width="30" height="30" alt=""></picture> -->
-                                       <picture><img  loading="lazy" src="{{ asset('web/images/icons/facebook.webp')}}" width="30" height="30" alt=""></picture>
-                                <!-- <picture><img  loading="lazy" src="{{ asset('web/images/icons/instagram.webp')}}" width="30" height="30" alt=""></picture> -->
-                            </div>
-                                    <span>{{$testimonial->designation}}</span>
+                            <div class="testimonial-profile-details">
+                                <div class="social-media d-flex flex-wrap"> <p>{{$testimonial->name}}</p>
+                                        @if($testimonial->review_type == 'Google')
+                                            <picture><img  loading="lazy" src="{{ asset('web/images/icons/google.webp')}}" width="30" height="30" alt=""></picture>
+                                        @elseif($testimonial->review_type == 'Facebook')
+                                            <picture><img  loading="lazy" src="{{ asset('web/images/icons/facebook.webp')}}" width="30" height="30" alt=""></picture>
+                                        @elseif($testimonial->review_type == 'Instagram')
+                                            <picture><img  loading="lazy" src="{{ asset('web/images/icons/instagram.webp')}}" width="30" height="30" alt=""></picture>
+                                        @elseif($testimonial->review_type == 'Normal')
+                                            <!-- No icon for Normal reviews -->
+                                        @endif
+                                    <!-- <picture><img  loading="lazy" src="{{ asset('web/images/icons/google.webp')}}" width="30" height="30" alt=""></picture> -->
+                                    <!-- <picture><img  loading="lazy" src="{{ asset('web/images/icons/facebook.webp')}}" width="30" height="30" alt=""></picture> -->
+                                    <!-- <picture><img  loading="lazy" src="{{ asset('web/images/icons/instagram.webp')}}" width="30" height="30" alt=""></picture> -->
                                 </div>
-
+                                <span>{{$testimonial->designation}}</span>
+                            </div>
                         </div>
                     </div>
                     @endforeach
