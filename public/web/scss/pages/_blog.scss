@@ -453,6 +453,8 @@
       width: 100%;
     }
     picture{
+            width: 100%;
+
       margin-bottom: 18px;
       @include min(992){
         margin-bottom: 28px;
@@ -517,6 +519,7 @@
         align-items: center;
         gap: 12px;
         > a{
+           color: #596075;
           gap: 5px;
           display: flex;
           align-items: center;
