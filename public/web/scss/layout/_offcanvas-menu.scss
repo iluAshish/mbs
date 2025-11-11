@@ -71,8 +71,8 @@
 
     @include max(575){
         nav {
-            height: 380px;
-            align-items: flex-start;
+            // height: 380px;
+            // align-items: flex-start;
         }
     }
     li.has-sub > ul {

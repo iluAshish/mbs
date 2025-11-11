@@ -1394,8 +1394,8 @@ background: #FFF;
 
 
 .modal-backdrop.show {
-    opacity: 1;
-    background: rgba(25, 33, 60, 0.53);
+    opacity: 0.53;
+    background: rgb(25, 33, 60);
 }
 .product-btn{
   font-weight: 500;

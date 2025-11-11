@@ -1473,8 +1473,8 @@ input[type=number] {
 }
 
 .modal-backdrop.show {
-  opacity: 1;
-  background: rgba(25, 33, 60, 0.53);
+  opacity: 0.53;
+  background: rgb(25, 33, 60);
 }
 
 .product-btn {
@@ -2008,6 +2008,7 @@ header .contact-details svg {
 
 .mobDropDown {
   position: relative;
+  background-color: unset;
 }
 .mobDropDown button {
   background-color: #2E3192;
@@ -2020,6 +2021,7 @@ header .contact-details svg {
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: 0px;
 }
 .mobDropDown button svg {
   transform: rotate(0deg);
@@ -3166,12 +3168,6 @@ footer strong {
   color: #596075;
   font-weight: 400;
 }
-@media (max-width: 575px) {
-  .mobile_left_menu nav {
-    height: 380px;
-    align-items: flex-start;
-  }
-}
 .mobile_left_menu li.has-sub > ul {
   padding-left: 25px;
   margin-bottom: 20px;
@@ -3346,10 +3342,22 @@ footer strong {
   right: 20px;
   background-color: #DEDEF6;
   border-radius: 50%;
-  width: 42px;
-  height: 42px;
+  width: 32px;
+  height: 32px;
   top: 32px;
   z-index: 2;
+  z-index: 2;
+}
+@media (max-width: 991px) {
+  .enquiryForm .btn-close svg {
+    width: 20px;
+  }
+}
+@media (min-width: 992px) {
+  .enquiryForm .btn-close {
+    width: 42px;
+    height: 42px;
+  }
 }
 .enquiryForm .btn-close:focus {
   outline: unset;
@@ -3360,7 +3368,12 @@ footer strong {
 }
 .enquiryForm .buttonGroup button {
   min-width: 119px;
-  min-height: 46px;
+  min-height: 36px;
+}
+@media (min-width: 1200px) {
+  .enquiryForm .buttonGroup button {
+    min-height: 46px;
+  }
 }
 .enquiryForm .buttonGroup .btn-cancel:hover {
   background-color: #D6DFFA;
@@ -10239,6 +10252,7 @@ details[open] > summary::after {
   width: 100%;
 }
 .newsDetail article picture {
+  width: 100%;
   margin-bottom: 18px;
 }
 @media (min-width: 992px) {
@@ -10326,6 +10340,7 @@ details[open] > summary::after {
   gap: 12px;
 }
 .newsDetail article .navigation-and-share .share > a {
+  color: #596075;
   gap: 5px;
   display: flex;
   align-items: center;
@@ -11581,6 +11596,14 @@ details[open] > summary::after {
   }
 }
 
+.get-in-touch .btn-theme.btnDark {
+  margin-right: auto;
+  padding-top: 0px;
+  padding-bottom: 0px;
+}
+.get-in-touch button + button {
+  display: none;
+}
 .get-in-touch h3, .get-in-touch h3 span, .get-in-touch h3 strong {
   line-height: normal;
   font-size: 24px;

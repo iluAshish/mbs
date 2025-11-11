@@ -311,7 +311,16 @@
 
 // ==========================Contact Form======================================
 .get-in-touch {
-
+    .btn-theme.btnDark {
+    margin-right: auto;
+        padding-top: 0px;
+    padding-bottom: 0px;
+}
+  button{
+        + button{
+            display: none;
+        }
+    }
    
     h3,h3 span,h3 strong{
         line-height: normal;
