@@ -22,7 +22,7 @@
     <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
     <!-- tel With country code -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.13/css/intlTelInput.css">
-    <link rel="stylesheet" href="https://pentacodesdemo.com/medicom/assets/css/star-rating-svg.css">
+    <!-- <link rel="stylesheet" href="{{ asset('web/css/star-rating-svg.css') }}"> -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <!--Fancy Box-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css">
@@ -430,8 +430,8 @@
             <div class="d-flex flex-wrap justify-content-between copy-text">
                 <p>MBSGroup © 2025. All Rights Reserved</p>
                 <ul>
-                    <li><a href="">Terms & Conditions</a></li>
-                    <li><a href="">Privacy & Policy</a></li>
+                    <li><a href="{{ url('/terms-and-conditions') }}">Terms & Conditions</a></li>
+                    <li><a href="{{ url('/privacy-policy') }}">Privacy & Policy</a></li>
                 </ul>
             </div>
             <p>Design by : <a href="https://mightywarner.ae/" target="_blank">
@@ -458,9 +458,11 @@
                 <li><a href="{{route('about-us')}}">About us </a></li>
                 <li class="submenu">
                     <a href="{{url('products')}}">Products</a>
+                     @foreach($categories_menu as $category)
                     <ul>
+                       
                         <li class="nav-item mobDropDown dropdown">
-                            <a href="products-category.php">Pallet Racking System</a>
+                            <a href="javascript:void(0)">{{\Illuminate\Support\Str::words(strip_tags( $category->title ?? ''), 3, '...') }}</a>
                             <button class="" type="button" id="servicesMenu2" data-bs-toggle="dropdown"
                                 aria-expanded="false">
                                 <svg width="10" height="6" viewBox="0 0 10 6" fill="none"
@@ -471,32 +473,19 @@
                                 </svg>
                             </button>
                             <ul class="dropdown-menu" aria-labelledby="servicesMenu2" style="">
-                              <li><a href=" ">Mobile Pallet racking</a></li>
-                        <li><a href=" ">Multi-Tier Pallet racking</a></li>
-
-
-                            </ul>
-                        </li>
-                        <li class="nav-item mobDropDown dropdown">
-                            <a href="products-category.php">Best Shelving System</a>
-                            <button class="" type="button" id="servicesMenu2" data-bs-toggle="dropdown"
-                                aria-expanded="false">
-                                <svg width="10" height="6" viewBox="0 0 10 6" fill="none"
-                                    xmlns="http://www.w3.org/2000/svg">
-                                    <path
-                                        d="M6.51406 4.49656L9.79231 1.21831C9.92533 1.08449 10 0.903472 10 0.714787C10 0.526101 9.92533 0.345081 9.79231 0.211264C9.72592 0.144322 9.64692 0.0911882 9.55989 0.0549283C9.47285 0.0186685 9.3795 -2.71228e-08 9.28522 -3.12441e-08C9.19093 -3.53655e-08 9.09758 0.0186685 9.01055 0.0549283C8.92351 0.0911881 8.84452 0.144322 8.77812 0.211264L5.50701 3.49666C5.44062 3.5636 5.36162 3.61674 5.27459 3.653C5.18756 3.68926 5.0942 3.70792 4.99992 3.70792C4.90563 3.70792 4.81228 3.68926 4.72525 3.653C4.63821 3.61674 4.55922 3.5636 4.49282 3.49666L1.22171 0.211264C1.08817 0.076774 0.906672 0.000842317 0.717145 0.000172601C0.527617 -0.000497115 0.345586 0.0741506 0.211096 0.207693C0.0766069 0.341236 0.000674462 0.522734 4.74545e-06 0.712261C-0.000664971 0.901789 0.0739834 1.08382 0.207526 1.21831L3.48578 4.49656C3.88753 4.89781 4.43211 5.12319 4.99992 5.12319C5.56772 5.12319 6.11231 4.89781 6.51406 4.49656Z"
-                                        fill="white"></path>
-                                </svg>
-                            </button>
-                            <ul class="dropdown-menu" aria-labelledby="servicesMenu2" style="">
-                                 <li><a href=" ">Mobile Pallet racking</a></li>
-                        <li><a href=" ">Multi-Tier Pallet racking</a></li>
-                        <li><a href=" ">Narrow Aisle racking</a></li>
+                                     @foreach($category->subcategories as $subcategory)
+                                                    <li>
+                                                        <a href="{{ route('categories.detail', ['short_url' => $subcategory->short_url]) }}">
+                                                            {{ \Illuminate\Support\Str::words(strip_tags($subcategory->title ?? ''), 5, '...')}}
+                                                        </a>
+                                                    </li>
+                                                @endforeach
 
 
                             </ul>
                         </li>
                     </ul>
+                          @endforeach
                 </li>
 
                 <li><a href="{{route('services')}}">Services</a></li>

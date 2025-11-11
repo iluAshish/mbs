@@ -72,7 +72,7 @@
                 </svg>
             </div>
         </div>
-        <h1>Thanks you for submitting</h1>
+        <h1>Thank you for submitting</h1>
         <p>Your submission has been received. We will be in touch & contact you soon.</p>
         <a href="{{url('/')}}" class="btn-theme btnDark mx-auto">Go to Home Page</a>
 

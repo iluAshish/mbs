@@ -31,7 +31,7 @@
     <p class="title">{{$title}}</p>
     <form id="{{ $prefix }}Form" role="form" method="POST" enctype="multipart/form-data">
         @csrf
-        <div class="row justify-content-between">
+        <div class="row justify-content-between d-flex">
             <div class="formGroup {{$col}}">
                 <input type="text" class="form-control {{ $prefix }}-required" placeholder="Name" 
                     id="{{ $prefix }}_name" name="{{ $prefix }}_name">
@@ -69,7 +69,7 @@
             <input type="hidden" name="{{ $prefix }}_service_id" id="{{ $prefix }}_service_id" value="{{ isset($service_page) ? $service_page->id : '' }}">
             <input type="hidden" name="{{ $prefix }}_brand_id" id="{{ $prefix }}_brand_id" value="{{ isset($brand_page) ? $brand_page->id : '' }}">
 
-            <div class="d-flex justify-content-end buttonGroup p-0">
+            <div class="d-flex justify-content-end buttonGroup col-12">
                 <button type="submit" 
                         class="btn-theme btnDark submit-form-btn" 
                         data-flag="{{$prefix}}"

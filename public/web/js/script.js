@@ -324,6 +324,7 @@ initializePhoneInput("#enquiryForm");
 initializePhoneInput("#ProductEnquiryForm");	
 initializePhoneInput("#ServiceEnquiryForm");	
 initializePhoneInput("#quickContact");	
+initializePhoneInput("#contact-usForm");	
 initializePhoneInput("#get-in-touch");	
 
 // ======================Filter Dropdown==========================

@@ -108,7 +108,7 @@
                 <div class="d-flex flex-wrap justify-content-between">
                     <div class="col-left">
                         <h2>Why choose us</h2>
-                        <a href="" class="btn-theme btnDark">Read More</a>
+                        <a href="{{ url('/about-us') }}" class="btn-theme btnDark">Read More</a>
 
                     </div>
                     <div class="col-right">
@@ -388,7 +388,7 @@
                 </div>
             <div class="articles-slider">
                 @foreach($blogs as $blog)
-                    <a href="" class="articles-slider-item">
+                    <a href="{{route('blogs.blog_detail',['short_url' => $blog->short_url])}}" class="articles-slider-item">
                         <picture>
                             <img  loading="lazy" src="{{asset($blog->image_webp ?? $blog->image)}}" width="365" height="214" {{$blog->image_attribute}} >
                         </picture>

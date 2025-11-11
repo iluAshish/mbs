@@ -187,9 +187,14 @@ a.btn.btn-success.gloss_edit ,a.btn.btn-success.mr-2.tooltips.tooltipstered,a.bt
 }
 .gloss_body .alert-success {
     color: #fff;
-    background-color: #e2251d;
+    background-color: #2e3192;
     border-color: #ffffff;
     padding: 6px 10px;
+}
+.gloss_body .alert-success  button{
+    color: #fff;
+    opacity: 0.8;
+    font-weight: 400;
 }
 .sidebar_gloss{
     background-color: #d7d7d7;
@@ -197,6 +202,13 @@ a.btn.btn-success.gloss_edit ,a.btn.btn-success.mr-2.tooltips.tooltipstered,a.bt
 .sidebar_gloss .nav-pills .nav-link{
     color: #000;
 }
+.alert ul {
+    margin: 0;
+}
+.file-error-message ul {
+    padding-top: 0 !important;
+}
+
 .sidebar_gloss .nav-pills .nav-link.active, .sidebar_gloss .nav-pills .show>.nav-link {
     color: #fff;
     background-color: #2e3192;
