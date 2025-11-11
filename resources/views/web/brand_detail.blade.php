@@ -247,7 +247,7 @@ $brand_page = isset($brand) ? $brand : null;
                 </a>
             </div>
 
-            <button data-bs-toggle="modal" href="#ServiceEnquiryForm" role="button" class="btn-theme">Brand
+            <button data-bs-toggle="modal" href="#enquiryForm" role="button" class="btn-theme">Brand
                 Enquiry</button>
         </div>
     </div>
